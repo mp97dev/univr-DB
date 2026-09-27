@@ -1,3 +1,0 @@
-CompileFlags:
-  CompilationDatabase: build
-  Remove: [-fno-tree-switch-conversion, -fno-shrink-wrap, -mtext-section-literals, -mlongcalls, -fstrict-volatile-bitfields, -march=rv32imac_zicsr_zifencei]

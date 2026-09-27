@@ -1,1 +1,0 @@
-Si scriva un programma che stampa, una dopo l'altra, nove cornici, da quella 2 x 2 a quella 10 x 10.
