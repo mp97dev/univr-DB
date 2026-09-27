@@ -1,0 +1,125 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {section}{\numberline {1}Tecnologia dei DBMS}{5}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Architettura transazionale di un DBMS}{5}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Transazione}{5}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Sintassi}{6}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Proprietà delle transazioni}{6}{subsubsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.3}Architettura di un DBMS}{7}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Vista ad alto livello}{7}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}Modulo di gestione delle transazioni}{7}{subsubsection.1.3.2}%
+\contentsline {section}{\numberline {2}Linguaggio di interrogazione SQL}{9}{section.2}%
+\contentsline {subsection}{\numberline {2.1}PostgreSQL}{9}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Fondamenti del DDL}{9}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Identificatori}{9}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Domini elementari}{10}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Domini definiti dall'utente}{11}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}Vincoli intrarelazionali}{11}{subsubsection.2.2.4}%
+\contentsline {subsubsection}{\numberline {2.2.5}Vincoli interrelazionali}{12}{subsubsection.2.2.5}%
+\contentsline {subsubsection}{\numberline {2.2.6}Azioni referenziali: ON DELETE e ON UPDATE}{13}{subsubsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.3}CREATE TABLE}{13}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Modifiche degli schemi}{14}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}DROP DOMAIN}{14}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}DROP TABLE}{14}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}ALTER}{14}{subsubsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.5}Cancellazione dati in una tabella}{15}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Inserimento dati in una tabella}{15}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}Aggiornamento dati in una tabella}{15}{subsubsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.7}SELECT}{15}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}FROM}{17}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}WHERE}{18}{subsection.2.9}%
+\contentsline {subsubsection}{\numberline {2.9.1}LIKE}{19}{subsubsection.2.9.1}%
+\contentsline {subsubsection}{\numberline {2.9.2}SIMILAR TO}{20}{subsubsection.2.9.2}%
+\contentsline {subsubsection}{\numberline {2.9.3}BETWEEN}{21}{subsubsection.2.9.3}%
+\contentsline {subsubsection}{\numberline {2.9.4}IN}{21}{subsubsection.2.9.4}%
+\contentsline {subsubsection}{\numberline {2.9.5}IS NULL}{21}{subsubsection.2.9.5}%
+\contentsline {subsection}{\numberline {2.10}Gestione dei duplicati}{21}{subsection.2.10}%
+\contentsline {subsection}{\numberline {2.11}JOIN}{22}{subsection.2.11}%
+\contentsline {subsubsection}{\numberline {2.11.1}INNER JOIN}{24}{subsubsection.2.11.1}%
+\contentsline {subsubsection}{\numberline {2.11.2}LEFT OUTER JOIN}{24}{subsubsection.2.11.2}%
+\contentsline {subsubsection}{\numberline {2.11.3}RIGHT OUTER JOIN}{25}{subsubsection.2.11.3}%
+\contentsline {subsubsection}{\numberline {2.11.4}FULL OUTER JOIN}{25}{subsubsection.2.11.4}%
+\contentsline {subsection}{\numberline {2.12}Uso di variabili (alias)}{25}{subsection.2.12}%
+\contentsline {subsection}{\numberline {2.13}Ordinamento del risultato}{26}{subsection.2.13}%
+\contentsline {subsection}{\numberline {2.14}Operatori insiemistici}{27}{subsection.2.14}%
+\contentsline {subsection}{\numberline {2.15}Operatori aggregati}{28}{subsection.2.15}%
+\contentsline {subsubsection}{\numberline {2.15.1}COUNT}{28}{subsubsection.2.15.1}%
+\contentsline {subsubsection}{\numberline {2.15.2}SUM}{28}{subsubsection.2.15.2}%
+\contentsline {subsubsection}{\numberline {2.15.3}MAX/MIN}{28}{subsubsection.2.15.3}%
+\contentsline {subsubsection}{\numberline {2.15.4}AVG}{28}{subsubsection.2.15.4}%
+\contentsline {subsection}{\numberline {2.16}Interrogazioni con raggruppamento}{29}{subsection.2.16}%
+\contentsline {subsubsection}{\numberline {2.16.1}HAVING}{29}{subsubsection.2.16.1}%
+\contentsline {subsection}{\numberline {2.17}Interrogazioni nidificate}{29}{subsection.2.17}%
+\contentsline {subsubsection}{\numberline {2.17.1}WHERE}{29}{subsubsection.2.17.1}%
+\contentsline {subsubsection}{\numberline {2.17.2}Binding e EXISTS}{29}{subsubsection.2.17.2}%
+\contentsline {subsubsection}{\numberline {2.17.3}Interrogazioni nidificate nella clausola SELECT}{30}{subsubsection.2.17.3}%
+\contentsline {subsubsection}{\numberline {2.17.4}Interrogazioni nidificate nella clausola FROM}{30}{subsubsection.2.17.4}%
+\contentsline {subsubsection}{\numberline {2.17.5}Esercizi}{31}{subsubsection.2.17.5}%
+\contentsline {subsection}{\numberline {2.18}Viste}{33}{subsection.2.18}%
+\contentsline {subsection}{\numberline {2.19}Indici e piani di esecuzione in PostgreSQL}{33}{subsection.2.19}%
+\contentsline {subsubsection}{\numberline {2.19.1}Creazione degli indici}{34}{subsubsection.2.19.1}%
+\contentsline {subsubsection}{\numberline {2.19.2}EXPLAIN e EXPLAIN ANALYZE}{34}{subsubsection.2.19.2}%
+\contentsline {section}{\numberline {3}Strutture fisiche e strutture di accesso ai dati}{34}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Gestore dei buffer}{35}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Buffer}{35}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Politica di gestione della memoria}{35}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Gestione delle pagine}{35}{subsubsection.3.1.3}%
+\contentsline {subsubsection}{\numberline {3.1.4}Primitive per la gestione del buffer}{36}{subsubsection.3.1.4}%
+\contentsline {subsubsection}{\numberline {3.1.5}Politiche di gestione delle pagine sporche}{36}{subsubsection.3.1.5}%
+\contentsline {subsection}{\numberline {3.2}Gestore dell'affidabilità}{37}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}File di log}{37}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Regole di scrittura sul file di log}{38}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Guasti}{38}{subsubsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.3}Gestore dei metodi di accesso}{40}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Metodi di accesso}{40}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Organizzazione di una pagina}{41}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Operazioni sulle pagine}{43}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}Strutture primarie per l'organizzazione di file}{43}{subsubsection.3.3.4}%
+\contentsline {subsubsection}{\numberline {3.3.5}Struttura sequenziale}{44}{subsubsection.3.3.5}%
+\contentsline {subsubsection}{\numberline {3.3.6}Indici}{45}{subsubsection.3.3.6}%
+\contentsline {subsubsection}{\numberline {3.3.7}Struttura ad albero}{47}{subsubsection.3.3.7}%
+\contentsline {subsubsection}{\numberline {3.3.8}Struttura ad accesso calcolato (hash)}{53}{subsubsection.3.3.8}%
+\contentsline {subsubsection}{\numberline {3.3.9}Collisioni}{54}{subsubsection.3.3.9}%
+\contentsline {subsubsection}{\numberline {3.3.10}Confronto tra hash e B+-tree}{55}{subsubsection.3.3.10}%
+\contentsline {section}{\numberline {4}Transazioni concorrenti}{55}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Anomalie}{56}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Perdita di aggiornamento}{56}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Lettura inconsistente}{57}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}Lettura sporca}{57}{subsubsection.4.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.4}Aggiornamento fantasma}{58}{subsubsection.4.1.4}%
+\contentsline {subsubsection}{\numberline {4.1.5}Inserimento fantasma}{58}{subsubsection.4.1.5}%
+\contentsline {subsection}{\numberline {4.2}Schedule}{59}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Schedule seriale}{59}{subsubsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.3}Tecniche di gestione della concorrenza}{59}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}View-equivalenza}{59}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Conflict-equivalenza}{63}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Locking a due fasi}{67}{subsubsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.4}Blocco critico (deadlock)}{69}{subsubsection.4.3.4}%
+\contentsline {subsubsection}{\numberline {4.3.5}Gestione della concorrenza in SQL}{71}{subsubsection.4.3.5}%
+\contentsline {section}{\numberline {5}Ottimizzazione}{72}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Compilazione della query}{72}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Ottimizzazione dipendente dai metodi di accesso}{73}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Scansione sequenziale}{73}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}Ordinamento}{73}{subsubsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.3}Accesso diretto tramite indice}{74}{subsubsection.5.2.3}%
+\contentsline {subsubsection}{\numberline {5.2.4}Join}{75}{subsubsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.3}Scelta del piano di esecuzione}{79}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Riepilogo dei costi}{79}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}Esercizi}{80}{subsubsection.5.4.1}%
+\contentsline {section}{\numberline {6}MongoDB}{84}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Replicazione}{84}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}Algoritmo di elezione Raft}{85}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.2}Oplog}{85}{subsubsection.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.3}Replicazione delle scritture}{85}{subsubsection.6.1.3}%
+\contentsline {subsubsection}{\numberline {6.1.4}Replicazione delle letture}{86}{subsubsection.6.1.4}%
+\contentsline {subsection}{\numberline {6.2}Architettura dei replica set}{86}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Sharding}{87}{subsection.6.3}%
+\contentsline {subsubsection}{\numberline {6.3.1}Architettura dello sharding}{87}{subsubsection.6.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.2}Balancer}{87}{subsubsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.4}Interrogazioni in presenza di shared data}{88}{subsection.6.4}%
+\contentsline {subsubsection}{\numberline {6.4.1}Proprietà ACID}{88}{subsubsection.6.4.1}%
+\contentsline {section}{\numberline {7}Esercizi}{89}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Query}{89}{subsection.7.1}%
+\contentsline {subsubsection}{\numberline {7.1.1}Esercizio 1}{89}{subsubsection.7.1.1}%
+\contentsline {subsubsection}{\numberline {7.1.2}Esercizio 2}{89}{subsubsection.7.1.2}%
+\contentsline {subsubsection}{\numberline {7.1.3}Esercizio 3}{90}{subsubsection.7.1.3}%

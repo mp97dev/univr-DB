@@ -1,0 +1,6 @@
+[submodule "PrimoAnno/SecondoSemestre/Architettura/ElaboratoASM"]
+	path = PrimoAnno/SecondoSemestre/Architettura/ElaboratoASM
+	url = git@github.com:fabiooo4/ElaboratoASM.git
+[submodule "PrimoAnno/PrimoSemestre/Architettura/ElaboratoSIS"]
+	path = PrimoAnno/PrimoSemestre/Architettura/ElaboratoSIS
+	url = git@github.com:fabiooo4/ElaboratoSIS.git

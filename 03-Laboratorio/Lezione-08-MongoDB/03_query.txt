@@ -1,0 +1,23 @@
+-- Esercizio 3: Cercare tutti i musei che si trovano a Verona, riportando solo il nome ed il numero di telefono.
+
+db.museo.find({citta: 'Verona'}, {nome: 1, numeroTelefono: 1});
+
+-- Esercizio 4: Cercare tutti i musei che sono aperti il martedì oppure il giovedì.
+
+db.museo.find({ $or: [{'orari.giorno': 'Martedì'},{'orari.giorno': 'Giovedì'}] });
+
+-- Esercizio 5: Aggiornare i prezzi dei musei di Verona aggiungendo un prezzo ridotto pari a 5 euro.
+
+db.museo.updateMany( {citta: 'Verona'}, {$set: {prezzoRidotto: 5}});
+
+-- Esercizio 6: Selezionare tutti i musei che hanno una mostra attiva oggi, visualizzando il nome del museo ed il nome della mostra.
+
+db.museo.find( {'mostre.inizio': {$lte: ISODate('2025-05-26')}, 'mostre.fine': {$gte: ISODate('2025-05-26')}}, {nome: 1, 'mostre.titolo': 1} );
+
+-- Esercizio 7: Utilizzare l’operatore di lookup per eseguire un join tra ciascun documento Museo ed i corrispondenti documenti Mostra e Opera. Selezionare solo i musei di Verona.
+
+db.museo_ref.aggregate(
+[
+{$lookup:{ from: 'mostra', localField: 'mostre', foreignField: '_id', as: 'ope'}},
+{$match:{citta: 'Verona'}}
+]);

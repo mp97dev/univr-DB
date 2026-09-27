@@ -1,0 +1,25 @@
+db.opera.insertMany(
+[
+  {
+    nome: 'Piatto con scena di combattimento',
+    cognomeAutore: 'Scarpa',
+    nomeAutore: 'Carlo',
+    epoca: 'Fine VI - inizio VII secolo',
+  },
+  {
+    nome: 'Cristo tra i Santi Pietro e Paolo',
+    nomeAutore: 'Nicolò',
+    epoca: 'Prima metà del XII secolo',
+  },
+  {
+    nome: 'Arca dei Santi Sergio e Bacco',
+    anno: 1179
+  }
+]
+);
+
+RISULTATO:
+
+'0': ObjectId('68341688844cf798c0a4f3ef'),
+'1': ObjectId('68341688844cf798c0a4f3f0'),
+'2': ObjectId('68341688844cf798c0a4f3f1')

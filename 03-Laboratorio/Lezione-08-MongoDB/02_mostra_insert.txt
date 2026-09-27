@@ -1,0 +1,20 @@
+db.mostra.insertMany(
+[
+  {
+    titolo: 'Fascismo Resistenza e Libertà',
+    inizio: ISODate("2025-03-01"),
+    fine: ISODate("2025-07-27"),
+    prezzo: 5,
+  },
+  {
+    titolo: 'Il Settecento a Verona. Tiepolo Cignaroli Rotari',
+    inizio: ISODate("2011-11-26"),
+    fine: ISODate("2012-04-09"),
+    prezzo: 10,
+  },
+]
+);
+
+RISULTATO
+'0': ObjectId('683416d3844cf798c0a4f3f2'),
+'1': ObjectId('683416d3844cf798c0a4f3f3')

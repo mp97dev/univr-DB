@@ -1,0 +1,73 @@
+db.museo.insertOne(
+{
+  nome: 'Museo Castelvecchio',
+  citta: 'Verona',
+  indirizzo: 'Corso Castelvecchio, 27',
+  numeroTelefono: '045 8003204',
+  giornoChiusura: 'Lunedì',
+  prezzo: 10,
+  opere: [
+    {
+      nome: 'Piatto con scena di combattimento',
+      cognomeAutore: 'Scarpa',
+      nomeAutore: 'Carlo',
+      epoca: 'Fine VI - inizio VII secolo',
+    },
+    {
+      nome: 'Cristo tra i Santi Pietro e Paolo',
+      nomeAutore: 'Nicolò',
+      epoca: 'Prima metà del XII secolo',
+    },
+    {
+      nome: 'Arca dei Santi Sergio e Bacco',
+      anno: 1179
+    },
+  ],
+  mostre: [
+    {
+      titolo: 'Fascismo Resistenza e Libertà',
+      inizio: ISODate("2025-03-01"),
+      fine: ISODate("2025-07-27"),
+      prezzo: 5,
+    },
+    {
+      titolo: 'Il Settecento a Verona. Tiepolo Cignaroli Rotari',
+      inizio: ISODate("2011-11-26"),
+      fine: ISODate("2012-04-09"),
+      prezzo: 10,
+    },
+  ],
+  orari: [
+	{
+    giorno: 'Martedì',
+    orarioApertura: '9:00',
+    orarioChiusura: '18:00',
+	},
+  {
+    giorno: 'Mercoledì,
+    orarioApertura: '9:00',
+    orarioChiusura: '18:00',
+	},
+  {
+    giorno: 'Giovedì',
+    orarioApertura: '9:00',
+    orarioChiusura: '18:00',
+	},
+  {
+    giorno: 'Venerdì',
+    orarioApertura: '9:00',
+    orarioChiusura: '18:00',
+	},
+  {
+    giorno: 'Sabato',
+    orarioApertura: '9:00',
+    orarioChiusura: '22:00',
+	},
+  {
+    giorno: 'Domenica',
+    orarioApertura: '9:00',
+    orarioChiusura: '20:00',
+	},
+  ]
+}
+);

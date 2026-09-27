@@ -1,0 +1,2216 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[italian]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage[makeroom]{cancel}
+\usepackage{amsfonts}
+\usepackage{mdframed}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+\usetikzlibrary{pgfplots.fillbetween, pgfplots.statistics}
+\pgfplotsset{compat=newest, ticks=none}
+\usepackage{graphicx}
+\graphicspath{{./figures/}}
+
+\usepackage{import}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=false,
+}
+
+\usepackage{ntheorem}
+\newtheorem{theorem}{Teorema}
+
+% Useful definitions frame
+\theoremstyle{break}
+\theoremheaderfont{\bfseries}
+\newmdtheoremenv[%
+	linecolor=gray,leftmargin=0,%
+	rightmargin=0,
+	innertopmargin=8pt,%
+	ntheorem]{define}{Definizioni utili}[section]
+
+% Example frame
+\theoremstyle{break}
+\theoremheaderfont{\bfseries}
+\newmdtheoremenv[%
+	linecolor=gray,leftmargin=0,%
+	rightmargin=0,
+	innertopmargin=8pt,%
+	ntheorem]{example}{Esempio}[section]
+
+% Important definition frame
+\theoremstyle{break}
+\theoremheaderfont{\bfseries}
+\newmdtheoremenv[%
+	linecolor=gray,leftmargin=0,%
+	rightmargin=0,
+	backgroundcolor=gray!40,%
+	innertopmargin=8pt,%
+	ntheorem]{definition}{Definizione}[section]
+
+% Exercise frame
+\theoremstyle{break}
+\theoremheaderfont{\bfseries}
+\newmdtheoremenv[%
+	linecolor=gray,leftmargin=0,%
+	rightmargin=0,
+	innertopmargin=8pt,%
+	ntheorem]{exercise}{Esercizio}[section]
+
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\input{title.tex}
+
+\tableofcontents
+\pagebreak
+
+% Libro: S.M ROSS, Probabilità e Statistica per l'ingegneria e le scienze Apogeo, 2015 (ed. 3)
+
+\section{Cos'è la probabilità e la statistica?}
+La statistica è una scienza che si occupa di raccogliere, organizzare, analizzare
+e interpretare i dati. Nella statistica si cerca di estrapolare informazioni da
+esperimenti \textbf{aleatori} (esperimenti che non si possono ripetere esattamente allo stesso
+modo) e di prendere decisioni basate su queste informazioni. Ogni esperimento aleatorio
+ha bisogno di un \textbf{modello probabilistico} che ne descriva le caratteristiche principali.
+
+\subsection{Popolazione, variabili e campione}
+\begin{itemize}
+	\item \textbf{Popolazione}: tutti i possibili oggetti di un'indagine statistica
+	\item \textbf{Individuo}: un singolo oggetto della popolazione
+	\item \textbf{Variabile}: una qualsiasi caratteristica di un individuo della
+	      popolazione soggetta a possibili variazioni da individuo a individuo; è l'oggetto
+	      di interesse in uno studio
+	\item \textbf{Range della variabile}: \( R_x \) è l'insieme di tutti i possibili
+	      valori che la variabile \( x \) può assumere
+	\item \textbf{Campione}: un sottoinsieme rappresentativo della popolazione
+	      composto dalle variabili relative ad un sottoinsieme di individui
+	\item \textbf{Realizzazione del campione di dimension \( n \)}: (post esperimento)
+	      le osservazioni del campione:\[
+		      \underline{x} = (\tilde{x}_1, \ldots, \tilde{x}_n)
+	      \]
+	\item \textbf{Range dei dati}: \( \mathcal{R}_{\underline{x}} \) i valori che la
+	      variabile può assumere tra il minimo e il massimo
+\end{itemize}
+
+\subsection{Parametro e Stima}
+\begin{itemize}
+	\item \textbf{Parametro}:una misura che descrive una proprietà dell'intera popolazione
+	\item \textbf{Stima}: una misura che descrive una proprietà del campione e che
+	      fornisce informazioni sul parametro
+\end{itemize}
+
+\subsection{Variabili}
+Le variabili possono essere di diverso tipo:
+\begin{itemize}
+	\item \textbf{Variabili qualitative nominali}:
+	      \begin{itemize}
+		      \item \textbf{Ordinali}: possono essere ordinate
+		      \item \textbf{Non ordinali}: non possono essere ordinate
+	      \end{itemize}
+	      I valori che assumono si definiscono anche \textbf{modalità}
+	\item \textbf{Variabili quantitative}:
+	      Sono valori numerici e si distinguono in:
+	      \begin{itemize}
+		      \item \textbf{Aleatorie continue}: derivano da processi di misura e assumono
+		            i loro range (valori che possono assumere). Sono sottoinsiemi reali
+		      \item \textbf{Aleatorie discrete}: derivano da processi di conteggio e
+		            assumono valori interi
+	      \end{itemize}
+\end{itemize}
+
+
+\section{Statistica descrittiva}
+Consiste nella raccolta, organizzazione, rappresentazione e analisi dei \textbf{dati}.
+
+\subsection{Strumenti di sintesi}
+\subsubsection{Tabelle di frequenza}
+Sono tabelle di frequenze di individui con una certa caratteristica o aventi una caratteristica
+appartenente ad un certo intervallo.
+\begin{itemize}
+	\item \textbf{Frequenza assoluta}: conteggio del numero di individui
+	\item \textbf{Frequenza relativa}: percentuale del numero di individui
+	\item \textbf{Frequenza cumulativa}: conteggio o percentuale del numero di individui
+	      fino ad un certo punto
+\end{itemize}
+
+\subsubsection{Distribuzioni}
+Sono rappresentazioni del modo in cui diverse \textbf{modalità} si distribuiscono tra
+gli individui di una popolazione.
+\begin{itemize}
+	\item \textbf{Caso discreto}: \( f \): valore variabile \( \to  \) frequenza relativa
+	\item \textbf{Caso continuo o numerabile}: \( f \): intervallo di valori variabile \( \to  \) frequenza relativa
+\end{itemize}
+
+\subsubsection{Distribuzioni cumulative}
+Sono distribuzioni che rappresentano la frequenza cumulativa di una variabile. Possono essere:
+\begin{itemize}
+	\item \textbf{Caso discreto}: \( f \): valore variabile \( \to  \) frequenza cumulaiva
+	      relativa
+	\item \textbf{Caso continuo o numerabile}: \( f \): intervallo \( \to  \) frequenza
+	      cumulativa relativa
+\end{itemize}
+
+\subsubsection{Grafici}
+Sono rappresentazioni grafiche delle distribuzioni. Possono essere:
+\begin{itemize}
+	\item \textbf{Istogrammi}: è costituito da rettangoli, insistenti sulle classi
+	      della partizione, attigui le cui aree sono confrontabili con le probabilità.
+	      \[
+		      \text{area rettangolo} \quad i = h_i \cdot |\pi _i| \approx P_X(\pi ) \approx f_i
+	      \]
+	      \[
+		      h_i = \frac{f_i}{|\pi _i|} \quad \text{per ogni} \; i \in I
+	      \]
+	      L'area del rettangolo che insiste sulla classe \( \pi_i  \) della partizione è pari
+	      alla frequenza relativa della classe, quindi l'area torale è 1.
+	\item \textbf{Diagrammi a barre}: rappresentano le frequenze di una variabile. Le barre
+	      sono separate e la loro altezza è proporzionale alla frequenza
+	\item \textbf{Diagrammi a torta}: rappresentano le frequenze relative di una variabile
+	\item \textbf{Boxplot}: rappresentano le frequenze di una variabile
+	\item \textbf{Poligono di frequenza (ogiva)}: è un grafico a linee continue che ha
+	      sull'asse delle ordinate le frequenze cumulative. Questo tipo di grafici è il più comune
+	      per rappresentare le frequenze cumulative.
+\end{itemize}
+
+
+\section{Frequenze}
+Siano \( \underline{x} = (\tilde{x}_1, \ldots, \tilde{x}_n) \) una realizzazione del
+campione di dimensione \( n \) e \( \mathcal{R}_{\underline{x}} \) il range dei dati.
+Si dice \textbf{partizione} di \( \mathcal{R}_{\underline{x}} \):
+\[
+	\pi = \{\pi_i\}_{i \in I}
+\]
+La \textbf{classe i-esima} è l'elemento i-esimo della partizione
+
+\subsection{Frequenze campionarie}
+\subsubsection{Frequenza assoluta}
+Si dice \textbf{frequenza assoluta} \( n_i \) per ogni \( i \in I \) il numero di
+osservazioni che appartengono a \( \pi_i  \), cioè:
+\[
+	n_i = card(\tilde{x}_j \in \pi_i, \quad j = 1, \ldots, n) \quad \text{(cardinalità)}
+\]
+\[
+	0 \le n_i \le n, \; \text{per ogni}\; i \in I \quad e \quad \sum_{i \in I} n_i = n
+\]
+
+\subsubsection{Frequenza relativa}
+Si dice \textbf{frequenza relativa} \( f_i \) per ogni \( i \in I \) la percentuale delle
+osservazioni che appartengono a \( \pi _i \), cioè:
+\[
+	f_i = \frac{n_i}{n}
+\]
+\[
+	0 \le f_i \le 1, \; \text{per ogni}\; i \in I \quad e \quad \sum_{i \in I} f_i = 1
+\]
+
+\subsection{Frequenze cumulative}
+\subsubsection{Frequenza cumulativa assoluta}
+Si dice \textbf{frequenza cumulativa assoluta} \( N_i \) il numero di osservazioni che
+appartengono alle classi \( \pi_h \), con \( h \le i \), cioè:
+\[
+	N_i = \sum_{h=1}^{i} n_h
+\]
+\[
+	0 \le N_i \le n, \; \text{per ogni}\; i \in I \quad e \quad N_i \le N_j, \; i<j
+\]
+
+\subsubsection{Frequenza cumulativa relativa}
+Si dice \textbf{frequenza cumulativa relativa} \( F_i \) della i-esima classe la somma
+delle frequenze relative delle classi \( \pi _h \), con \( h \le i \), cioè:
+\[
+	F_i = \sum_{h=1}^{i} f_h = \frac{1}{n}N_i = \frac{1}{n}N_{i-1} + f_i
+\]
+\[
+	0 \le F_i \le 1, \; \text{per ogni}\; i \in I \quad e \quad F_i \le F_j, \; i<j
+\]
+
+\section{Statistica descrittiva}
+\subsection{Indici statistici}
+Sono misure quantitative che fornicono informazioni sulla distribuzione di una certa
+caratteristica.
+\subsubsection{Indici di posizione o centralità}
+Forniscono informazioni del valore attorno al quale si posizionano i dati. Consentono
+di valutare l'ordine di grandezza della variabile aleatoria e aiutano a "localizzare"
+la distribuzione. Sono espressi nella stessa unità di misura della variabile.
+
+\vspace{1em}
+\noindent Sia \( \underline{x} = (\tilde{x_1}, \ldots, \tilde{x_n}) \) un campione di dimensione \( n \).
+\begin{itemize}
+	\item \textbf{Media campionaria}: è il valore medio dei dati (baricentro dei dati):
+	      \[
+		      \overline{x} = \frac{1}{n} \sum_{j=1}^{n} \tilde{x}_j
+	      \]
+	\item \textbf{Moda campionaria}: \( m \) , valore che si ripete più frequentemente. Ci possono
+	      essere più valori modali.
+
+	      \vspace{1em}
+	      \noindent Sia \( \underline{y} = (y_1, \ldots, y_n) \) il campione
+	      ordinato (\( y_i \in \{\tilde{x_1}, \ldots, \tilde{x_n}\}  \) e \( y_i \le y_{i+1} \) )
+	\item \textbf{Mediana campionaria}:\( M \): è il valore centrale del campione, una
+	      volta ordinato.
+	      \[
+		      M = \begin{cases}
+			      y_{\frac{n+1}{2}}                                & \text{se } n \text{ è dispari} \\
+			      \frac{1}{2}(y_{\frac{n}{2}} + y_{\frac{n}{2}+1}) & \text{se } n \text{ è pari}
+		      \end{cases}
+	      \]
+\end{itemize}
+
+\subsubsection{Indici di dispersione}
+Forniscono informazioni su quanto i dati si disperdono attorno ad un valore centrale. Sono:
+\begin{itemize}
+	\item \textbf{Range}: differenza tra il massimo e il minimo valore:
+	      \[
+		      r = \underset{j \in \{1, \ldots, n\} }{\max} \tilde{x}_j - \underset{j \in \{1, \ldots, n\} }{\min} \tilde{x}_j
+	      \]
+	\item \textbf{Scarto Quadratico Medio campionario}: misura la dispersione dei dati attorno alla media
+	      \[
+		      s'^2 = \frac{1}{n} \sum_{j=1}^{n} (\tilde{x_j} - \bar{x})^2
+	      \]
+	\item \textbf{Varianza campionaria}: misura la dispersione dei dati attorno alla media
+	      \[
+		      s^2 = \frac{1}{n-1} \sum_{j=1}^{n} (\tilde{x_j} - \bar{x})^2
+	      \]
+	\item \textbf{Deviazione standard campionaria}: misura la distanza dei dati attorno alla media
+	      \[
+		      s = \sqrt{s^2} = \sqrt{\frac{1}{n-1} \sum_{j=1}^{n} (\tilde{x_j} - \bar{x})^2}
+	      \]
+	      Per interpretare la deviazione standard si possono definire
+	      \textbf{valori usuali} di una variabile i valori del campione compresi tra:
+	      \begin{itemize}
+		      \item \textbf{Minimo valore "usuale"}: media campionaria - 2 deviazioni standard
+		      \item \textbf{Massimo valore "usuale"}: media campionaria + 2 deviazioni standard
+	      \end{itemize}
+
+\end{itemize}
+
+\subsubsection{Indici di forma}
+Sia \( \underline{x} = (\tilde{x}_1, \ldots, \tilde{x}_n) \) un campione di dimensione
+\( n \).
+\begin{itemize}
+	\item \textbf{Asimmetria / Skewness}: misura la simmetria della distribuzione
+	      \[
+		      \gamma_1 = \frac{1}{n-1} \sum_{j=1}^{n} \left( \frac{\tilde{x}_j - \bar{x}}{s} \right)^3
+	      \]
+	      \begin{itemize}
+		      \item \( \gamma_1 > 0 \): distribuzione asimmetrica a destra (con coda più lunga
+		            a destra)
+		      \item \( \gamma_1 < 0 \): distribuzione asimmetrica a sinistra (con coda più
+		            lunga a sinistra)
+		      \item \( \gamma_1 = 0 \): distribuzione simmetrica
+	      \end{itemize}
+	\item \textbf{Curtosi}: misura la "appuntitura" della distribuzione
+	      \[
+		      \gamma_2 = \frac{1}{n-1} \sum_{j=1}^{n} \left( \frac{\tilde{x}_j - \bar{x}}{s} \right)^4
+	      \]
+	      \begin{itemize}
+		      \item \( \gamma_2 = 3 \): curtosi della normale standard, (variabile di riferimento)
+		      \item \( \gamma_2 > 3 \): ci sono meno valori agli estremi di quanto aspettato, e
+		            di conseguenza si ha una minore dispersione dei dati. In tal caso la distribuzione
+		            risulta abbastanza appuntita
+		      \item \( \gamma_2 < 3 \): ci sono più valori agli estremi di quanto aspettato, e
+		            di conseguenza si ha una maggiore dispersione dei dati. In tal caso la distribuzione
+		            risulta piatta
+	      \end{itemize}
+\end{itemize}
+
+\subsubsection{Indici di posizione relativi}
+Rappresentano indici di posizione, ma non centrali, bensì indici di posizionamento
+relativo.
+\begin{itemize}
+	\item \textbf{Percentili}: Se \( p \) è un numero tra \( 0 \) e \( 100 \),
+	      il \textbf{percentile di ordine p} (o \( p \)-esimo percentile, se \( p \) è intero)
+	      è il dato che delimita il primo \( p\% \) dei dati (ordinati) dai rimanenti dati.
+	\item \textbf{Quartili}: Valori che separano i dati in quattro parti, una volta ordinati.
+	      \begin{figure}[H]
+		      \centering
+		      \begin{tikzpicture}
+			      \draw[thick, ->] (0,0) -- (12,0);
+			      \foreach \x in {1,2,3,4,5,6,7,8,9,10,11}
+			      \draw (\x cm,3pt) -- (\x cm,-3pt);
+
+			      \draw (0,-0.2) -- ++(0,-0.3) -- ++(2.95,0) node[midway, below]
+			      {Primo Quartile} -- ++(0,0.3);
+
+			      \draw (3,-0.2) -- ++(0,-0.3) -- ++(2.95,0) node[midway, below]
+			      {Secondo Quartile} -- ++(0,0.3);
+
+			      \draw (6,-0.2) -- ++(0,-0.3) -- ++(2.95,0) node[midway, below]
+			      {Terzo Quartile} -- ++(0,0.3);
+
+			      \draw (9,-0.2) -- ++(0,-0.3) -- ++(3,0) node[midway, below]
+			      {Quarto Quartile} -- ++(0,0.3);
+
+		      \end{tikzpicture}
+	      \end{figure}
+	      \[
+		      \underline{x} = (\tilde{x_1}, \ldots, \tilde{x_n}) \quad \text{campione di dimensione } n
+	      \]
+	      \[
+		      \underline{y} = (y_1, \ldots, y_n) \quad \text{campione ordinato}
+	      \]
+	      Il primo quartile è il valore che separa il \( 25\% \) inferiore dal \( 75\% \) superiore
+	      dei dati.
+	      \[
+		      Q_1 = \begin{cases}
+			      \frac{y_\frac{n}{4} + y_\frac{n}{4}+1}{2} & \frac{n}{4} \text{  intero}    \\
+			      y_{\lceil \frac{n}{4} \rceil}             & \frac{n}{4} \text{ non intero}
+		      \end{cases}
+	      \]
+	      Il secondo quartile è il 50-esimo percentile, ovvero la mediana. È il valore che separa
+	      il \( 50\% \) inferiore dal \( 50\% \) superiore dei dati.
+	      \[
+		      Q_2 = M = \begin{cases}
+			      \frac{y_{\frac{n}{2}} + y_{\frac{n}{2}+1}}{2} & \frac{n}{2} \text{  intero}    \\
+			      y_{\lceil \frac{n}{2} \rceil}                 & \frac{n}{2} \text{ non intero}
+		      \end{cases}
+	      \]
+	      Il terzo quartil è il 75-esimo percentile, ovvero il valore che separa il \( 75\% \)
+	      inferiore dal \( 25\% \) superiore dei dati.
+	      \[
+		      Q_3 = \begin{cases}
+			      \frac{y_{\frac{3n}{4}} + y_{\frac{3n}{4}+1}}{2} & \frac{3n}{4} \text{  intero}    \\
+			      y_{\lceil \frac{3n}{4} \rceil}                  & \frac{3n}{4} \text{ non intero}
+		      \end{cases}
+	      \]
+	      Lo scarto (o distanza interquartile) è la differenza tra il terzo e il primo quartile:
+	      \[
+		      IR = Q_3 - Q_1
+	      \]
+\end{itemize}
+
+\subsubsection{Box-Plot}
+Fornisce informazioni sulla forma della distribuzione:
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				y=1.5cm,
+				x=1.5cm,
+				axis lines=left,
+				axis line style={-},
+				xmin=0,
+				xmax=5,
+				ymin=0,
+				ymax=0.001,
+				xtick={1,2,3,4},
+				xticklabels={, \( Q_1 \), \( M \), \( Q_3 \),},
+				ytick=\empty,
+				xlabel={},
+				ylabel={},
+				xlabel style={below right},
+				ylabel style={above left},
+				x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
+				y label style={at={(axis description cs:-0.1,0.5)},anchor=south},
+				title={Box-Plot},
+				title style={at={(axis cs:2.5,1.5)}},
+				clip=false
+			]
+			\addplot[boxplot prepared={
+						lower whisker=0.5,
+						lower quartile=1,
+						median=2.5,
+						upper quartile=3,
+						upper whisker=4
+					}, color=black] coordinates {};
+
+			% Draw dashed lines from whiskers and quartiles to x axis
+			\draw[dashed] (axis cs:0.5,0.6) -- (axis cs:0.5,0) node[below, scale=0.7] {Minimo};
+			\draw[dashed] (axis cs:1,0.6) -- (axis cs:1,0) node[below, scale=0.7] {$Q_1$};
+			\draw[dashed] (axis cs:2.5,0.6) -- (axis cs:2.5,0) node[below, scale=0.7] {Mediana};
+			\draw[dashed] (axis cs:3,0.6) -- (axis cs:3,0) node[below, scale=0.7] {$Q_3$};
+			\draw[dashed] (axis cs:4,0.6) -- (axis cs:4,0) node[below, scale=0.7] {Massimo};
+
+			\draw (axis cs:0.5,-0.3) -- ++(0,-0.15) -- (axis cs:1,-0.45) node[midway, below] {\( 25\% \) } -- ++(0,0.15);
+			\draw (axis cs:1,-0.3) -- ++(0,-0.15) -- (axis cs:2.5,-0.45) node[midway, below] {\( 25\% \) } -- ++(0,0.15);
+			\draw (axis cs:2.5,-0.3) -- ++(0,-0.15) -- (axis cs:3,-0.45) node[midway, below] {\( 25\% \) } -- ++(0,0.15);
+			\draw (axis cs:3,-0.3) -- ++(0,-0.15) -- (axis cs:4,-0.45) node[midway, below] {\( 25\% \) } -- ++(0,0.15);
+		\end{axis}
+	\end{tikzpicture}
+\end{figure}
+
+\subsection{Outliers}
+\begin{figure}[H]
+	\begin{definition}
+		Gli \textbf{Outliers} sono valori estremi, insolitamente grandi o piccoli, rispetto
+		al resto dei dati. La loro presenza potrebbe distorcere i risultati dell'analisi, e
+		richiede pertanto un'analisi più accurata.
+		\[
+			x \le Q_1 - 1.5 \cdot IR \quad \text{oppure} \quad x \ge Q_3 + 1.5 \cdot IR
+		\]
+	\end{definition}
+\end{figure}
+
+\subsubsection{Outliers deboli}
+Si dicono outliers deboli:
+\[
+	Q_1 - 3 \cdot IR < x \le Q_1 - 1.5 \cdot IR
+\]
+\begin{center}
+	oppure
+\end{center}
+\[
+	Q_3 + 1.5 \cdot IR < x \le Q_3 + 3 \cdot IR
+\]
+
+\subsubsection{Outliers forti}
+Si dicono outliers forti:
+\[
+	x \le Q_1 - 3 \cdot IR
+\]
+\begin{center}
+	oppure
+\end{center}
+\[
+	x \ge Q_3 + 3 \cdot IR
+\]
+\section{Statistica descrittiva bivariata}
+La statistica descrittiva bivariata si occupa di studiare la relazione tra due variabili.
+
+\subsection{Relazione tra 2 variabili}
+\begin{itemize}
+	\item \textbf{Correlazione}: Associazione \textbf{lineare} tra 2 variabili. La forza
+	      dell'associazione è data dal \textbf{coefficiente di correlazione}.
+	\item \textbf{Regressione}: dipendenza di una variabile (dipendente) da
+	      un’altra variabile (indipendente)
+\end{itemize}
+
+\subsubsection{Correlazione}
+Sia \( (\underline{x}, \underline{y}) = ((\tilde{x}_1, \tilde{y}_1), \ldots (\tilde{x}_n, \tilde{y}_n)) \)
+un campione di dimensione \( n \) di due misure \( x \) ed \( y \), con medie campionarie
+\( \bar{x} \) e \( \bar{y} \), deviazioni standard campionarie \( (s_x, s_y) \).
+\[
+	\bar{x} = \frac{1}{n} \sum_{i=1}^{n} \tilde{x}_i
+\]
+\[
+	\bar{y} = \frac{1}{n} \sum_{i=1}^{n} \tilde{y}_i
+\]
+\[
+	s_x = \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (\tilde{x}_i - \bar{x})^2}
+\]
+\[
+	s_y = \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (\tilde{y}_i - \bar{y})^2}
+\]
+Il coefficiente di correlazione campionario è definito come:
+\[
+	\rho_n \stackrel{\Delta}{=} \frac{\sum_{i=1}^{n} (\tilde{x}_i - \bar{x})
+		(\tilde{y}_i - \bar{y})}{\sqrt{\sum_{i=1}^{n} (\tilde{x}_i - \bar{x})^2
+			\sum_{i=1}^{n} (\tilde{y}_i - \bar{y})^2}}
+\]
+Il risultato sarà un numero compreso tra \( -1 \) e \( 1 \):
+\[
+	| \rho_n | \le 1
+\]
+Questo indice misura il grado di dipendenza lineare tra le due variabili.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\( | \rho_n | \)      & Grado di correlazione tra \( \underline{x}\;e\;\underline{y} \) \\
+		\hline
+		\( \rho_n = -1 \)     & massima correlazione lineare inversa                            \\
+		\( -1 < \rho_n < 0 \) & correlazione inversa                                            \\
+		\( \rho_n = 0 \)      & assenza di correlazione                                         \\
+		\( 0 < \rho_n < 1 \)  & correlazione diretta                                            \\
+		\( \rho_n = 1 \)      & massima correlazione lineare diretta                            \\
+		\hline
+	\end{tabular}
+\end{table}
+Sono indici qualitativi:
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\( \rho_n \)                    & Grado di correlazione tra \( \underline{x}\;e\;\underline{y} \) \\
+		\hline
+		\( | \rho_n | \le 0.5 \)        & scarsa correlazione                                             \\
+		\( 0.5 < | \rho_n | \le 0.75 \) & correlazione moderata                                           \\
+		\( 0.75 < | \rho_n | \le 0.9 \) & correlazione buona                                              \\
+		\( | \rho_n | > 0.9 \)          & correlazione molto buona                                        \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\subsubsection{Regressione}
+La regressione lineare è un modello matematico che cerca di esprimere una variabile.
+Per ipotesi riteniamo che due variabili siano legate da una relazione del tipo \( y = g(x) \)
+\begin{enumerate}
+	\item I dati accoppiati \( (x,y) \) costituiscono un campione di dati quantitativi
+	\item Dallo scatter plot possiamo ipotizzare che nella \textbf{popolazione} ci sia una
+	      relazione lineare del tipo:
+	      \[
+		      y_i = \beta_0 + \beta_1 x_i + \varepsilon_i
+	      \]
+	      dove \( \varepsilon_i \) è l'errore casuale, con distribuzione a campana
+	      \begin{figure}[H]
+		      \centering
+		      \begin{tikzpicture}[scale=0.7]
+			      \begin{axis}[
+					      xlabel={x},
+					      ylabel={Densità},
+				      ]
+				      \addplot[domain=-3:3, samples=100, color=red]{1/(sqrt(2*pi))*exp(-x^2/2)};
+			      \end{axis}
+		      \end{tikzpicture}
+	      \end{figure}
+	\item Cerchiamo di individuare l'equazione della \textbf{curba di regressione relativa
+		      del campione}:
+	      \[
+		      \hat{y}_i = a + bx_i
+	      \]
+\end{enumerate}
+
+\subsubsection{Determinazione dei coefficienti della retta di regressione}
+L'obiettivo è quello di determinare i coefficienti \( a \) e \( b \) in modo ottimale,
+affinchè la retta di regressione \( \hat{y}_i = a + bx_i \) sia il più possibile vicina
+ai punti \( (x_i, y_i) \) del campione.
+
+\vspace{1em}
+\noindent Si determina quindi l'equazione generica della curva interpolante stimando i parametri in
+modo da rendere \textbf{minima} la distanza al quadrato dei punti osservati dalla curva.
+\[
+	\sum_{i=1}^{n} (y_i - \hat{y}_i)^2 = \sum_{i=1}^{n} (y_i - a - bx_i)^2
+\]
+Equazioni normali:
+\[
+	\begin{cases}
+		\sum_{i=1}^{n} y_i = na + b \sum_{i=1}^{n} x_i \\
+		\sum_{i=1}^{n} x_i y_i = a \sum_{i=1}^{n} x_i + b \sum_{i=1}^{n} x_i^2
+	\end{cases}
+\]
+
+\subsection{Riassunto}
+\begin{itemize}
+	\item Dato \textbf{un campione}: abbiamo determinato una \textbf{stima} di alcuni
+	      parametri (media, deviazione standard, varianza, quartili, ...), una stima della
+	      distribuzione (frequqnze relative) con grafici (istogramma [frequenza relativa],
+	      diagrammi [area = frequenza relativa], boxplot [quartili, outliers])
+	\item Dati \textbf{due campioni}: abbiamo determinato una \textbf{stima} di alcuni
+	      parametri (media, deviazione standard, varianza, quartili, ...) ed una stima della
+	      distribuzione (frequenze relative) con grafici (scatter plot, retta di regressione,
+	      coefficiente di correlazione) e abbiamo fatto un \textbf{confronto}.
+
+	      Abbiamo determinato una stima della \textbf{correlazione} e la retta di regressione lineare.
+	      \[
+		      \rho_n = \text{coeff. di correlazione} \quad \rho_n \approx 1
+	      \]
+\end{itemize}
+
+\noindent Per capire se le informazioni tratte dal campione sono statisticamente significative
+si fa riferimento alla \textbf{statistica inferenziale}. Ma bisogna essere ingrado di
+parlare di probabilità e di distribuzioni teoriche (modelli probabilistici).
+
+\section{Probabilità}
+La probabilità di un evento \( A \in \mathcal{A} \) rappresenta una misura di quanto
+ci si aspetta che si verifichi l'evento \( A \).
+
+\vspace{1em}
+\noindent Calcolare le probabilità non significa "prevedere il futuro", ma trovare come
+distribuire un maggiore o minore \textbf{grado di fiducia} tra i vari possibili modi
+in cui si potrà presentare un certo fenomeno aleatorio.
+
+
+\begin{figure}[H]
+	\begin{define}
+		L'\textbf{ipotesi dei modelli} è lo spazio dei campioni \textbf{finito} \( \Leftrightarrow
+		card(\Omega) = n < \infty\)
+
+		\textbf{Eventi equiprobabili}:
+		\[
+			P(\omega_i) = P(\omega_j), \quad i,j \in \{1, \ldots, n\}
+		\]
+	\end{define}
+\end{figure}
+
+La probabilità di un evento \( A \in \mathcal{A} \) si calcola come:
+\[
+	P(A) = \frac{\text{casi favorevoli ad \( A \) }}{\text{casi possibili}} = \frac{card(A)}{card(\Omega)}
+\]
+
+\subsection{Esperimenti aleatori}
+Un fenomeno \textbf{casuale}, o aleatorio, è un fenomeno \textbf{osservabile}, ma non
+prevedibile. Cioè conoscendo i dati iniziali e le leggi, non possiamo prevederne il
+risultato. Ciò che invece possiamo conoscere è l'insieme di tutti i possibili risultati.
+\begin{itemize}
+	\item \textbf{Fenomeno deterministico}: Dati + Leggi = Conoscenza
+	\item \textbf{Fenomeno non deterministico}: Dati + Leggi = Non Conoscenza
+\end{itemize}
+
+\noindent Alcuni esempi di esperimenti sono:
+\begin{itemize}
+	\item Consideriamo tre figli di una stessa coppia. Controlliamo il sesso dei tre.
+	\item Lancio un dado.
+	      Controllo il numero che esce.
+	\item Lancio 2 dadi.
+	      Controllo i numeri che escono.
+	\item Considero i piselli so che possono avere il baccello verde o giallo e il fiore
+	      bianco o viola.
+	      Ne estraggo uno a caso. Che caratteristiche ha?
+	\item Sono ad un call center.
+	      Conto il numero di telefonate
+	      che arrivano in un intervallo di tempo
+	\item Misuro all’altezza di un uomo
+	      di 40 anni italiano
+\end{itemize}
+
+\subsection{Spazio campionario ed eventi}
+È l'insieme di tutti i possibili risultati di un esperimento casuale:
+\[
+	\Omega = \{\omega_1, \omega_2, \ldots, \omega_n\}
+\]
+Uno dei possibili risultati dell'esperimento si chiama \textbf{Evento elementare}:
+\[
+	\{\omega_i\},\quad i = 1, \ldots, n
+\]
+L'\textbf{Evento} è un sottoinsieme dello spazio campione \( A \subset \Omega \) in cui
+sono contenuti alcuni dei possibili eventi elementari, quelli favorevoli all'evento
+considerato.
+\subsection{Esperimenti}
+\subsubsection{Esperimento 1: Lancio di un dado}
+Prendiamo in considerazione il lancio di un dado:
+\[
+	\text{Lo spazio dei campioni è: } \quad \Omega = \{1, 2, 3, 4, 5, 6\}
+\]
+I possibili eventi sono:
+\begin{enumerate}
+	\item[A =] Il risultato del lancio è 1
+	\item[B =] Il risultato del lancio è dispari
+	\item[C =] Il risultato del lancio è maggiore di 4
+	\item[D =] Il risultato del lancio è dispari non maggiore di 4
+	\item[E =] Il risultato del lancio è pari
+	\item[F =] Il risultato del lancio è 7
+	\item[G =] Il risultato del lancio è tra 1 e 6
+\end{enumerate}
+\[
+	A = \{1\} \quad B = \{1, 3, 5\}
+\]
+\[
+	C = \{1, 2, 3, 4\} \quad D = \{1, 3, 5\} \bigcap \{1, 2, 3, 4\} = B \bigcap C = \{1,3\}
+\]
+\[
+	E = \{2, 4, 6\} = \Omega \setminus B = \overline{\{1, 3, 5\} } = \overline{\tilde{B}}
+\]
+\[
+	F = \{7\} = \overline{\Omega} = \emptyset
+\]
+\[
+	G = \{1, 2, 3, 4, 5, 6\} = \Omega
+\]
+
+\subsubsection{Esperimento 2: Lancio di 2 dadi}
+Prendiamo in considerazione il lancio di 2 dadi:
+\[
+	\Omega_2 = \{1, 2, 3, 4, 5, 6\} \times \{1, 2, 3, 4, 5, 6\} = \{(1,1), (1,2), \ldots, (6,6)\}
+\]
+L'evento: A = Esce almeno un 6 è:
+\[
+	A = \{(6,1), (6,2), \ldots, (6,6), (1,6), (2,6), \ldots, (5,6)\}
+\]
+\subsubsection{Esperimento 3: Sesso dei nascituri}
+Consideriamo 3 figli di una stessa coppia. Controlliamo il sesso dei tre.
+
+Se considero una \textbf{singola nascita} lo spazio dei campioni è:
+\[
+	\Omega = \{M, F\}
+\]
+Quindi si hanno due possibili eventi elementari:
+\[
+	\{\text{M}\}, \{\text{F}\}
+\]
+Se invece considero \textbf{tre nascite} lo spazio dei campioni è:
+\[
+	\Omega_3 = \{(\omega_1, \omega_2, \omega_3) \quad \omega_i \in \Omega\}
+\]
+quindi è costituito da tutte le \textbf{terne} ordinate di maschi e femmine.
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		1° Figlio & 2° Figlio & 3° Figlio \\
+		\hline
+		M         & M         & M         \\
+		M         & M         & F         \\
+		M         & F         & M         \\
+		M         & F         & F         \\
+		F         & M         & M         \\
+		F         & M         & F         \\
+		F         & F         & M         \\
+		F         & F         & F         \\
+		\hline
+	\end{tabular}
+\end{table}
+\noindent Ogni terna rappresenta un \textbf{evento elementare}.
+
+\subsubsection{Caratteristiche degli esperimenti 1-3}
+\begin{itemize}
+	\item Lo spazio dei campioni è finito
+	\item Gli eventi sono tutte le parti di \( \Omega \), cioè tutti i possibili sottoinsiemi
+	      di \( \Omega \)
+\end{itemize}
+
+\subsubsection{Esperimento 4: Tempo di attesa}
+Sono ad un call center e conto il numero di telefonate che arrivano in un intervallo di tempo.
+
+\noindent Lo spazio dei campioni è:
+\[
+	\Omega = \{0, 1, 2, 3, \ldots\}
+\]
+
+\textbf{Caratteristiche}:
+\begin{itemize}
+	\item Lo spazio dei campioni è \textbf{infinito numerabile}
+	\item Gli eventi sono tutte le parti di \( \Omega \), cioè tutti i possibili sottoinsiemi
+	      di \( \Omega \)
+\end{itemize}
+
+\subsubsection{Esperimento 5: Misure}
+Misuro l’altezza di un uomo di 40 anni italiano.
+
+\noindent Lo spazio dei campioni è:
+\[
+	\Omega \subseteq \mathbb{R}
+\]
+
+\textbf{Caratteristiche}:
+\begin{itemize}
+	\item Lo spazio dei campioni è un sottoinsieme di \( \mathbb{R} \), quindi è
+	      \textbf{infinito non numerabile}
+	\item Gli eventi sono tutti i sottointervalli di \( \mathbb{R} \), le loro unioni e le
+	      loro intersezioni
+\end{itemize}
+
+\subsubsection{Tipi di esperimenti}
+Gli esperimenti possono essere di diversi tipi:
+\begin{itemize}
+	\item \textbf{Misure di conteggio}
+	\item \textbf{Misure continue}
+\end{itemize}
+
+\subsubsection{Tipi di eventi}
+\begin{itemize}
+	\item \textbf{Evento aleatorio}:\\
+	      È un sottoinsieme dello spazio campionario, cioè \( A \subset \Omega \),
+	      ad esempio il lancio di un dado un evento aleatorio potrebbe essere:
+	      "esce un numero pari"
+	\item \textbf{Evento elementare}:\\
+	      È un evento che contiene un solo elemento, cioè \( A = \{\omega\} \), ad esempio il
+	      lancio di un dado ha come eventi elementari:
+	      "esce 1", "esce 2", "esce 3", "esce 4", "esce 5", "esce 6"
+	\item \textbf{Eventi complementari}:\\
+	      Sono eventi che si escludono a vicenda, ad esempio nel lancio di un dado:
+	      E = "esce un numero pari" e \( \overline{E} \) = "esce un numero dispari"
+	      sono eventi complementari
+	\item \textbf{Eventi incompatibili}:\\
+	      Sono eventi che non possono verificarsi contemporaneamente, ad esempio nel lancio di un dado:
+	      E = "esce un numero pari" e F = "esce il numero 6" sono eventi incompatibili
+	\item \textbf{Eventi compatibili}:\\
+	      Sono eventi che possono verificarsi contemporaneamente, ad esempio nel lancio di un dado:
+	      E = "esce un numero pari" e F = "esce il numero 2" sono eventi compatibili
+	\item \textbf{Evento certo}:\\
+	      È un evento che si verifica sempre, cioè \( A = \Omega \), ad esempio il lancio di
+	      un dato ha sempre un risultato certo.
+	\item \textbf{Evento impossibile}:\\
+	      È un evento che non si verifica mai, cioè \( A = \emptyset \), ad esempio il lancio di
+	      un dato non può avere come risultato 7.
+\end{itemize}
+
+\subsection{Spazio campionario e insieme degli eventi}
+\begin{figure}[H]
+	\begin{definition}
+		Lo \textbf{spazio dei campioni \( \Omega \) } è l'insieme di tutti i possibili esiti
+		(risultati). La cardinalità di uno spazio dei campioni può esssere finita, infinita
+		numerabile e infinita non numerabile.
+		\[
+			\Omega = \{\omega_1, \omega_2, \ldots, \omega_n\} \quad \text{oppure} \quad
+			\Omega \subseteq \mathbb{R}
+		\]
+	\end{definition}
+\end{figure}
+\begin{figure}[H]
+	\begin{definition}
+		L'\textbf{insieme degli eventi \( \mathcal{A} \) } è un insieme \textbf{finito} di
+		parti di \( \Omega \) tali che sia un'algebra, cioè tale che:
+		\begin{enumerate}
+			\item[$A_1$.] \( \Omega \in \mathcal{A} \)
+			\item[$A_2$.] Unione di eventi è un evento
+			      \[
+				      A,B \in \mathcal{A} \Rightarrow A \cup B \in \mathcal{A}
+			      \]
+			\item[$A_3$.] se \( A,B \in \mathcal{A} \), allora \( A \setminus B \in \mathcal{A}  \)
+			      \[
+				      \Downarrow
+			      \]
+			      \[
+				      A \in \mathcal{A} \Rightarrow A^c = \Omega \setminus A \in \mathcal{A}
+			      \]
+		\end{enumerate}
+		L'insieme degli eventi rappresenta tutti gli eventi che ci \textbf{interessati}
+		rispetto all'esperimento preso in considerazione, e che \textbf{ben descrivono
+			l'esperimento} stesso.
+	\end{definition}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{definition}
+		\( \sigma  \)-algebra \( \mathcal{F} \) è un insieme qualsiasi \( \mathcal{F} \) di
+		parti di \( \Omega \) tali che:
+		\begin{enumerate}
+			\item[$A_1$.] \( \Omega \in \mathcal{F} \)
+			\item[$A_2^\sigma$.] sia \( \{A_n\}_{n \in \mathbb{N}}\) con \(A_n \in \mathcal{F}\),
+			      allora \(\bigcup_{n \in \mathbb{N}} A_n \in \mathcal{F}\)
+			\item[$A_3^\sigma$.] se \( A,B \in \mathcal{F} \), allora \( A \setminus B \in \mathcal{F}\)
+			      Diremo \textbf{evento} ogni sottoinsieme \( A \in \mathcal{F} \).
+			      \[
+				      \Downarrow
+			      \]
+			      \[
+				      A \in \mathcal{F} \Rightarrow A^c = \Omega \setminus A \in \mathcal{F}
+			      \]
+		\end{enumerate}
+	\end{definition}
+\end{figure}
+
+\subsubsection{Esempi}
+\begin{figure}[H]
+	\begin{example}
+		Lancio il dado e controllo che numero esce
+		\[
+			\mathcal{A} = \mathcal{P}(\Omega) =
+		\]
+		\[
+			= \Big\{ \{1\} ,\{2\} ,\{3\}, \{4\}, \{5\}, \{6\},
+		\]
+		\[
+			\{1,2\}, \{1,3\}, \{1,4\}, \{1,5\}, \{1,6\},
+		\]
+		\[
+			\{2,3\}, \{2,4\}, \{2,5\}, \{2,6\},
+		\]
+		\[
+			\ldots
+		\]
+		\[
+			\{1,2,3\}, \{1,2,4\}, \{1,2,5\}, \{1,2,6\},\ldots
+		\]
+		\[
+			\{1,2,3,4\}, \{1,2,3,5\}, \{1,2,3,6\},\ldots
+		\]
+		\[
+			\{1,2,3,4,5\}, \{1,2,3,4,6\},\ldots
+		\]
+		\[
+			\{1,2,3,4,5,6\} = \Omega, \emptyset \Big\}
+		\]
+	\end{example}
+\end{figure}
+
+\subsection{Probabilità degli esperimenti 1-2}
+\subsubsection{Esperimento 1: Lancio di un dado}
+\[
+	\Omega_1 = \{1, 2, 3, 4, 5, 6\}
+\]
+\[
+	A = \; \text{esce almeno un 6}
+\]
+\[
+	P(\{i\} ) = \frac{\text{casi favorevoli}}{\text{casi possibili}} = \frac{card(\{i\} )}
+	{card(\Omega)} = \frac{1}{6}, \quad i = 1, \ldots, 6
+\]
+
+\subsubsection{Esperimento 2: Lancio di 2 dadi}
+\[
+	\Omega_2 = \{1, 2, 3, 4, 5, 6\} \times \{1, 2, 3, 4, 5, 6\} = \{(1,1), (1,2), \ldots, (6,6)\}
+\]
+\[
+	A = \; \text{esce almeno un 6}
+\]
+\[
+	P(A) = \frac{\text{casi favorevoli ad \( A \) }}{\text{casi possibili}} = \frac{card(A)}{card(\Omega)}
+	= \frac{11}{36}
+\]
+\subsection{Definizione frequentista di probabilità}
+\begin{figure}[H]
+	\begin{define}
+		L'ipotesi dei modelli deve essere ripetibile all'esperimento, quindi bisogna avere
+		tante prove ripetute (nelle stesse condizioni) ed indipendenti
+	\end{define}
+\end{figure}
+
+La probabilità di un evento \( A \in \mathcal{A} \), fatte \( n \) prove:
+\[
+	P(A) = \frac{\text{numero di occorrenze di \( A \) }}{n} = f_n(A)
+\]
+Si basa sulla \textbf{legge empirica del caso} che sintetizza una regolarità osservabile
+sperimentalmente.
+
+\subsection{Definizione soggettiva di probabilità}
+È la misura del grado di fiducia che un individuo \textbf{coerente} assegna al verificarsi
+di un dato evento in base alle sue \textbf{conoscenze}
+
+Probabilità di un evento \( A \in \mathcal{A} \):
+\[
+	P(A) = \frac{\text{posta}}{\text{{vincita}}} = \frac{P}{V}
+\]
+In breve, "se ci credo, pago"
+
+\section{Assiomi di Kolmogorov}
+L’impostazione assiomatica permette a Kolmogorov di non esplicitare esattamente come
+valutare la probabilità (lasciando quindi la libertà di seguire l’approccio più adatto al caso in
+esame), ma di limitarsi solo a indicare quali sono le regole formali che una misura di
+probabilità deve soddisfare per poter essere dichiarata tale.
+
+\subsection{Assiomi}
+\subsubsection{Caso finito}
+\begin{figure}[H]
+	\begin{definition}
+		\[
+			(\Omega, \mathcal{A}, P)
+		\]
+		\begin{enumerate}
+			\item[$P_1.$] \( P(\Omega) = 1 \)
+			\item[$P_2.$] sia \( A,B \in \mathcal{A} \) disgiunti, t.c
+			      \[
+				      A \cap B = \emptyset
+			      \]
+			      allora
+			      \[
+				      P(A \cup B) = P(A) + P(B)
+			      \]
+			      (additività finita)
+		\end{enumerate}
+	\end{definition}
+\end{figure}
+
+\subsubsection{Caso generale}
+\begin{figure}[H]
+	\begin{definition}
+		\[
+			(\Omega, \mathcal{A}, P)
+		\]
+		\begin{enumerate}
+			\item[$P_1.$] \( P(\Omega) = 1 \)
+			\item[$P_2^\sigma.$] sia \( \{A_n\}_n, A_n \in \mathcal{F}  \) disgiunti t.c.
+			      \[
+				      A_i \cap A_j = \emptyset, \quad i \neq j
+			      \]
+			      allora
+			      \[
+				      P\left( \bigcup_{i=1}^{\infty} A_i \right) = \sum_{i=1}^{\infty} P(A_i)
+			      \]
+			      (\( \sigma  \)-additività)
+		\end{enumerate}
+	\end{definition}
+\end{figure}
+
+\section{Modelli probabilistici}
+\subsection{Regola per l'unione e l'intersezione di eventi}
+Sia \( (\Omega, \mathcal{A}, P) \) uno spazio di probabilità. Siano \( A,B \in \mathcal{A} \)
+due eventi. Allora:
+\begin{itemize}
+  \item \textbf{L'unione di \( A \) e \( B \)}:
+    \[
+    P(A \cup B) = \begin{cases}
+      P(A) + P(B) & \text{se \( A \) e \( B \) sono disgiunti} \\
+      P(A) + P(B) - P(A \cap B) & \text{caso generale}
+    \end{cases}
+    \] 
+  \item \textbf{L'intersezione di \( A \) e \( B \)}:
+    \[
+    P(A \cap B) = \begin{cases}
+      P(A)P(B) & \text{se \( A \) e \( B \) sono indipendenti} \\
+      P(A|B)P(B) = P(A)P(B|A) & \text{caso generale}
+    \end{cases}
+    \] 
+\end{itemize}
+
+\subsection{Modello equiprobabile}
+L'equiprobabilità è un modello in cui tutti gli eventi elementari hanno la \textbf{stessa
+	probabilità} di verificarsi. Ciò implica che lo spazio dei campioni deve essere \textbf{finito}.
+
+\begin{figure}[H]
+	\begin{definition}[Proprietà della probabilità]
+		\begin{enumerate}
+			\item[$P_1$.] \( P(\Omega) = 1 \)
+			\item[$P_2$.] Se \( A,B \in \mathcal{P}(\Omega) \) tale che:
+			      \[
+				      A \cap B = \emptyset,\; \text{allora}
+			      \]
+			      \[
+				      P(A \cup B) = P(A) + P(B)
+			      \]
+		\end{enumerate}
+	\end{definition}
+\end{figure}
+\[
+	\Downarrow
+\]
+\begin{figure}[H]
+	\begin{definition}[Probabilità uniforme]
+		\[
+			1 = P(\Omega) = P(\{1,2,3,4,5,6\} ) = P(\cup_i \{\omega_i\} ) =
+		\]
+		\[
+			= \sum_i P(\{\omega_i\} ) = card(\Omega) \cdot P(\{\omega_i\} )
+		\]
+		da cui:
+		\[
+			P(\{\omega_i\} ) = \frac{1}{card(\Omega)}, \; \text{per ogni} \; \omega_i \in \Omega
+		\]
+	\end{definition}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{definition}[Modello equiprobabile o uniforme]
+		È lo spazio di probabilità \( (\Omega, \mathcal{A}, P) \) tale che:
+		\begin{enumerate}
+			\item[$M_1$.] \( \Omega \) è finito, cioè la cardinalità di \( \Omega \)
+			      ( \( card(\Omega) \in \mathbb{N} \) ) è tale che:
+			      \[
+				      card(\Omega) < \infty
+			      \]
+			\item[$M_2$.] \( \mathcal{A} = \mathcal{P}(\Omega) \) è l'insieme delle parti
+			      di \( \Omega \)
+			\item[$M_3$.] per ogni \( \omega \in \Omega \)
+			      \[
+				      P(\{\omega\} ) = \text{costante}
+			      \]
+		\end{enumerate}
+	\end{definition}
+\end{figure}
+
+\subsection{Spazio di probabilità}
+\subsubsection{Caso finito}
+\begin{figure}[H]
+	\begin{definition}[Spazio di probabilità]
+		Dato lo spazio dei campioni \( \Omega = \{\omega_1, \ldots, \omega_n\}  \) e
+		l'insieme degli eventi \( \mathcal{A} \), la probabilità \( P \) è definita come:
+		\begin{enumerate}
+			\item[$P_1$.] \( P(\Omega) = 1 \)
+			\item[$P_2$.] Se \( A,B \in \mathcal{A} \), disgiunti, tale che:
+			      \[
+				      A \cap B = \emptyset,\; \text{allora}
+			      \]
+			      \[
+				      P(A \cup B) = P(A) + P(B)
+			      \]
+			      (additività finita)
+		\end{enumerate}
+	\end{definition}
+\end{figure}
+
+\subsubsection{Caso generale}
+\begin{figure}[H]
+	\begin{definition}[Spazio di probabilità]
+		Dato lo spazio dei campioni \( \Omega = \{\omega_1, \ldots, \omega_n\}  \),
+		oppure \( \Omega \subseteq \mathbb{R} \) e
+		la \( \sigma \)-algebra \( \mathcal{F} \), la probabilità \( P \) è definita come:
+		\begin{enumerate}
+			\item[$P_1$.] \( P(\Omega) = 1 \)
+			\item[$P_2^\sigma$.] sia \( \{A_n\}_n, A_n \in \mathcal{F}  \), disgiunti, tale che:
+			      \[
+				      A_i \cap A_j = \emptyset, \quad \text{per}\; i \neq j;\; \text{allora}
+			      \]
+			      \[
+				      P\left( \bigcup_{i=1}^{\infty} A_i \right) = \sum_{i=1}^{\infty} P(A_i)
+			      \]
+			      (\( \sigma  \)-additività)
+		\end{enumerate}
+	\end{definition}
+\end{figure}
+
+\subsection{Indipendenza di eventi}
+Sia \( (\Omega, \mathcal{A}, P) \) uno spazio di probabilità. Siano \( A,B \in \mathcal{A} \)
+due eventi. Allora \( A \) e \( B \) si dicono \textbf{indipendenti} se:
+\[
+	P(A \cap B) = P(A) \cdot P(B)
+\]
+In breve due eventi si dicono indipendenti se l'occorrenza di uno dei due non influenza
+la probabilità di occorrenza dell'altro.
+
+\subsubsection{Proposizione}
+Siano \( A,B \in \mathcal{A} \) due eventi indipendenti. Allora:
+\[
+  P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{P(A) \cdot P(B)}{P(B)} = P(A)
+\] 
+L'intersezione:
+\[
+   P(A \cap B) = \begin{cases}
+    P(A)P(B) & \text{se \( A \) e \( B \) sono indipendenti} \\
+    P(A|B)P(B) = P(A)P(B|A) & \text{caso generale} 
+   \end{cases}
+\] 
+
+\subsection{Probabilità condizionata}
+Sia \( (\Omega, \mathcal{A}, P) \) uno spazio di probabilità \textbf{uniforme}. Siano \( A,B \in \mathcal{A} \)
+due eventi. Prendiamo per ipotesi che \( P(B) > 0 \), quindi \( B \) è accaduto, cioè
+\( B \) diventa un evento certo \( \Rightarrow prob(B) = 1 \). Allora la relazione tra
+la probabilità \( P \) e la probabilità \( P_B \) sullo spazio ristretto a \( B \) è:
+\[
+	P_B(A) = \frac{card_E(A)}{card(\Omega_B)} = \frac{card(A \cap B)}{card(B)} =
+	\frac{card(A \cap B)}{card(B)} \cdot \frac{card(\Omega)}{card(\Omega)} =
+	\frac{P(A \cap B)}{P(B)}
+\]
+Quindi:
+\begin{figure}[H]
+	\begin{definition}
+		La \textbf{Probabilità condizionata a \( B \)} per ogni \( A \in \Omega \) è:
+		\[
+			P(A|B) = \frac{P(A \cap B)}{P(B)}
+		\]
+	\end{definition}
+\end{figure}
+
+\subsubsection{Esempio}
+\begin{example}
+	Consideriamo l'esperimento che consiste nel lancio di un dado equo. Consideriamo i due
+	eventi:
+	\[
+		A = \text{"esce un numero"}\;>3 = \{4,5,6\}
+	\]
+	\[
+		B = \text{"esce un numero pari"} = \{2,4,6\}
+	\]
+	Si lanci il dado una volta:
+	\begin{enumerate}
+		\item[B1.] Calcolare la probabilità dell'evento \( A \)
+		\item[B2.] Lanciato il dado una persona guarda il risultato e afferma che è uscito un
+		      numero pari, cioè è accaduto l'evento \( B \). Sapendo questa informazione, come
+		      diventa la probabilità dell'evento \( A \)?
+	\end{enumerate}
+	Il dado è equo, quindi si utilizza il modello equiprobabile.
+
+	\vspace{1em}
+	\noindent \textbf{B1. Calcolare \( P(A) \) }:\\
+	Lo spazio dei campioni è:
+	\[
+		\Omega = \{1,2,3,4,5,6\}
+	\]
+	La probabilità di \( A \) è:
+	\[
+		P(\{\omega\} ) = \frac{1}{card(\Omega)} = \frac{1}{6}, \quad \omega \in \Omega
+	\]
+	\[
+		P(A) = \frac{card(A)}{card(\Omega)} = \frac{3}{6} = \frac{1}{2}
+	\]
+
+	\vspace{1em}
+	\noindent \textbf{B2. Calcolare \( P(A|B) \) }: probabilità dell'evento \( A \) sapendo che sia
+	occorso \( B \) \\
+	Lo spazio dei campioni è:
+	\[
+		\Omega_B = \{2,4,6\}
+	\]
+	La probabilità di \( A \) sapendo che sia occorso \( B \) è:
+	\[
+		P_B(\{\omega\} ) = \frac{1}{card(\Omega_B)} = \frac{1}{3}, \quad \omega \in \Omega_B
+	\]
+	\[
+		P_B(A) = \frac{card(A)}{card(\Omega_B)} = \frac{2}{3}
+	\]
+	Condizionare ad un evento significa costruire un nuovo spazio di probabilità ristretto
+	all'evento condizionante:
+	\[
+		\text{Spazio dei campioni:}\; \Omega \to \Omega_B = B
+	\]
+	\[
+		\text{Misura di probabilità:}\; P \to P_B:P_B(\Omega_B) = \frac{card(\Omega_B)}{card(\Omega_B)}
+		= 1 = P(\Omega)
+	\]
+	La relazione tra \( P \) e \( P_B \):
+	\[
+		P_B(A) = \frac{card_B(A)}{card(\Omega_B)} = \frac{card(A \cap B)}{card(B)}
+		= \frac{card(A \cap B)}{card(\Omega)}\frac{card(\Omega)}{card(B)} =\frac{P(A \cap B)}{P(B)}
+	\]
+\end{example}
+
+\subsubsection{Proposizione}
+\( P_B(\cdot) = P(\cdot|B) \) è una misura di \textbf{probabilità} su \( (\Omega, \mathcal{A}) \)
+tale che:
+\[
+	P_B(A) = P(A|B) = \frac{P(A \cap B)}{P(B)} \quad A \cap B \neq \emptyset
+\]
+\[
+	P_B(A) = P(A|B) = \frac{P(A \cap B)}{P(B)} = 0 \quad A \cap B = \emptyset
+\]
+\[
+	P_B(\Omega) = P(\Omega|B) = \frac{P(\Omega \cap B)}{P(B)} = 1
+\]
+\[
+	P_B(B) = P(B|B) = \frac{P(B \cap B)}{P(B)} = 1
+\]
+L'ultima proprietà è coerente con l'ipotesi che \( B \) è occorso e quindi è un evento
+certo.
+
+\subsubsection{Come determinare la probabilità condizionata}
+Sia \( (\Omega, \mathcal{A}, P) \) uno spazio di probabilità \textbf{uniforme} e sia
+\( B \subset \Omega \) tale che \( P(B) > 0 \). Condizionare ad un evento \( B \)
+significa costruire un nuovo spazio di probabilità ristretto all'evento condizionante \( B \):
+\( (\Omega_B, \mathcal{F}_B, P_B) \)
+\[
+	\text{Spazio dei campioni:}\; \Omega \to \Omega_B = B
+\]
+\[
+	\text{Misura di probabilità:}\; P \to P_B:P_B(B) = 1
+\]
+Si utilizza lo spazio di partenza \( (\Omega, \mathcal{A}, P) \) su cui definisco la misura
+condizionata, per ogni \( A \subseteq \Omega \):
+\[
+	P_B(A) = P(A|B) = \frac{P(A \cap B)}{P(B)}
+\]
+
+\subsection{Probabilità a Priori e a Posteriori (Formula di Bayes)}
+Sia \( (\Omega, \mathcal{A}, P) \) uno spazio di probabilità. Si dice \textbf{partizione
+di \( \Omega \)} un insieme di eventi \( \{E_j\}_{1 \le j \le n} \) tali che:
+\begin{enumerate}
+  \item sono disgiunti:
+    \[
+      i,j \in I \quad \text{tale che} \quad i \neq j,\; E_i \cap E_j = \emptyset
+    \] 
+  \item per ogni \( i \in I \):
+    \[
+    P(E_i) > 0
+    \] 
+  \item ricoprono tutto lo spazio:
+    \[
+    \bigcup_{j = 1}^n E_j = \Omega
+    \]
+\end{enumerate}
+
+\subsubsection{Teorema delle probabilità totali}
+Sia \( (\Omega, \mathcal{A}, P) \) uno spazio di probabilità e sia \( \{E_j\}_{1 \le j \le n} \)
+una partizione di \( \Omega \). Sia \( B \in \mathcal{A} \) un evento. Allora:
+\[
+  P(B) = \sum_{j = 1}^n P(B|E_j)P(E_j)
+\] 
+\subsubsection{Dimostrazione}
+\[
+  B = B \cap \Omega = B \cap \bigcup_{j=1}^n E_j = \bigcup_{j=1}^n (B \cap E_j)
+\] 
+\[
+  P(B) = P\left( \bigcup_{j=1}^n (B \cap E_j) \right) \sum_{j=1}^n P(B \cap E_j) =
+  \sum_{j=1}^n P(B|E_j)P(E_j)
+\] 
+
+\subsubsection{Teorema di Bayes}
+\begin{figure}[H]
+  \begin{definition}
+    Sia \( \{E_i\}_{i \in I}  \) una partizione di \( \Omega \) (finita o numerabile) e sia
+    \( P(A) > 0 \). Allora per un generico elemento della partizione \( E_n \), con
+    \( n \in I \), si ha:
+    \[
+      P(E_n|A) = \frac{P(A|E_n)P(E_n)}{\sum_{i \in I} P(A|E_i)P(E_i)}
+    \] 
+  \end{definition}
+\end{figure}
+\subsubsection{Dimostrazione}
+\[
+  P(E_n|A) = \frac{P(A \cap E_n)}{P(A)} = \frac{P(A|E_n)P(E_n)}{P(A)} = \frac{P(A|E_n)P(E_n)}{
+  \sum_{i \in I} P(A|E_i)P(E_i)}
+\] 
+
+\subsection{Probabilità a priori e a posteriori}
+\subsubsection{Probabilità a priori}
+\( P(A) \): è una probabilità da determinare senza altre informazioni. Non si hanno
+informaizoni sufficienti per determinarla.
+
+\subsubsection{Probabilità a posteriori}
+\( P(A|E_n) \): si hanno strumenti ed informazioni sufficienti per determinare queste
+probabilità. Se si conoscono delle altre informazioni, quindi se si restringe lo spazio
+campionario, si riescono a determinare.
+
+\subsection{Esercizi}
+\subsubsection{Esercizio 1}
+Una popolazione si compone per un \( 40\% \)  di fumatori \((F)\) e per il restante 
+\( 60\% \) di non fumatori \( (N) \). Si sa che il \( 25\% \)  dei fumatori e il 
+\( 7\% \)  dei non fumatori ha una malattia respiratoria cronica \( (M) \) .
+\begin{enumerate}
+  \item Calcolare la probabilità che un individuo scelto a caso sia effetto dalla malattia
+    respiratoria 
+  \item Se l’individuo scelto è affetto dalla malattia, calcolare la probabilità che
+    sia un fumatore. 
+\end{enumerate}
+
+\[
+\Omega = \{F,F^c\} \quad \text{partizione}
+\] 
+\[
+M = \text{"Malattia respiratoria"}
+\] 
+\[
+P(M|F) = 0.25 \quad P(M|F^c) = 0.07
+\] 
+\[
+P(M) = P(M|F)P(F) + P(M|F^c)P(F^c) = 0.25 \cdot 0.4 + 0.07 \cdot 0.6 = 0.14
+\] 
+\[
+  P(F|M) \stackrel{\text{Bayes}}{=} \frac{P(M|F)P(F)}{P(M)} = \frac{0.25 \cdot 0.4}{0.14} = 0.70
+\] 
+
+\section{Variabili aleatorie discrete}
+Sia \( (\Omega, \mathcal{F}, P) \) uno spazio di probabilità che modellizza un certo
+esperimento. Una \textbf{variabile aleatoria} è una funzione che associa un numero ad
+ogni esito possibile dell'esperimento. Formalmente:
+\[
+X: \Omega \to \mathbb{R}
+\] 
+Sia \( \mathcal{B} \) l'insieme degli eventi su \( \mathbb{R} \) (intervalli, unione ed 
+intersezione di intervalli), per ogni \( A \subset \mathbb{R} \):
+\[
+  X^{-1}(A) \in \mathcal{F}
+\] 
+è l'inversa di \( X \) su \( A \).
+
+\vspace{1em}
+\noindent Le variabili aleatorie possono essere:
+\begin{itemize}
+  \item \textbf{Discrete}: se assumono un numero finito o numerabile di valori. Ad esempio:
+    \[
+    X \leadsto \{0,1,2,3,4,5,6\}
+    \] 
+  \item \textbf{Continue}: se assumono valori in un intervallo reale. Ad esempio:
+    \[
+    X \leadsto \mathbb{R}
+    \]
+\end{itemize}
+
+\subsection{Distribuzione di una variabile aleatoria}
+Sia \( (\Omega, \mathcal{F}, P) \) uno spazio di probabilità che modella un certo
+esperimento e sia \( X: \Omega \to \mathbb{R} \) una variabile aleatoria.
+Sia \( \mathcal{B} \) l'insieme degli eventi su \( \mathbb{R} \) (intervalli, unione ed
+intersezione di intervalli). 
+
+\vspace{1em}
+\noindent La probabilità di un evento nella funzione \( X \) prendendo in considerazione
+il lancio di un dado si indica come:
+\[
+P(1) = P(X = 1) = P(\{\omega \in \Omega: X(\omega) = 1\} ) = \frac{1}{6}
+\] 
+L'insieme \( \{P(1), P(2), \ldots, P(6)\} \) rappresenta le densità di probabilità,
+chiamato anche \textbf{distribuzione di \( X \) }
+
+\subsection{Variabili aleatorie discrete}
+Sia \( (\Omega, \mathcal{B}, P) \) uno spazio di probabillità, si definisce \textbf{
+  variabile aleatoria discreta
+}:
+\[
+X : \Omega \to R_X = \{x_1, x_2, \ldots, x_n\} 
+\] 
+con \( card(R_X) \) al più numerabile.
+
+\begin{figure}[H]
+  \begin{definition}
+    Distribuzione o legge di \( X \) 
+    \[
+      P_X(\{x_i\} ) = P(X^{-1}(\{x_i\} )) = P(X=x_i) \quad \text{per ogni} \; x_i,\; i = 1, \ldots, n
+    \] 
+    La legge di una variabile aleatoria discreta è dunque caratterizzata da una
+    \textbf{funzione di probabilità}
+  \end{definition}
+\end{figure}
+
+\begin{example}
+  Prendiamo in considerazione il lancio di 2 dadi: lancio i 2 dadi e ne sommo i valori.
+  \[
+  \Omega = \{1,2,3,4,5,6\} \times \{1,2,3,4,5,6\}
+  \] 
+  \[
+    \mathcal{F} = \mathcal{P}(\Omega)
+  \] 
+  \[
+  P(\omega) = \frac{1}{36}
+  \] 
+  \[
+  X : \Omega \to \{2,3,4,5,6,7,8,9,10,11,12\} \subset \mathbb{N}
+  \] 
+  \[
+    (x,y) \to x+y
+  \] 
+  La legge di \( X \) è:
+  \begin{table}[H]
+    \centering
+    \begin{tabular}{|c|l|c|}
+      \hline
+      \( x_i \) & \( X^{-1}(x_i) \) & \( P_X(x_i) \) \\
+      \hline
+      2 & \(\{(1,1)\} \) & \( 1/36 \) \\
+      3 & \(\{(1,2), (2,1)\} \) & \( 2/36 \) \\
+      4 & \(\{(1,3), (2,2), (3,1)\} \) & \( 3/36 \) \\
+      5 & \(\{(1,4), (2,3), (3,2), (4,1)\} \) & \( 4/36 \) \\
+      6 & \(\{(1,5), (2,4), (3,3), (4,2), (5,1)\} \) & \( 5/36 \) \\
+      7 & \(\{(1,6), (2,5), (3,4), (4,3), (5,2), (6,1)\} \) & \( 6/36 \) \\
+      8 & \(\{(2,6), (3,5), (4,4), (5,3), (6,2)\} \) & \( 5/36 \) \\
+      9 & \(\{(3,6), (4,5), (5,4), (6,3)\} \) & \( 4/36 \) \\
+      10 & \(\{(4,6), (5,5), (6,4)\} \) & \( 3/36 \) \\
+      11 & \(\{(5,6), (6,5)\} \) & \( 2/36 \) \\
+      12 & \(\{(6,6)\} \) & \( 1/36 \) \\
+      \hline
+    \end{tabular}
+  \end{table}
+
+  \noindent La rappresentazione grafica della distribuzione di \( X \) è:
+  \begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+      \begin{axis}[
+        ybar,
+        enlargelimits=0.15,
+        legend style={at={(0.5,-0.15)},
+        anchor=north,legend columns=-1},
+        ylabel={\( P_X(x_i) \)},
+        xlabel={\( x_i \)},
+        symbolic x coords={2,3,4,5,6,7,8,9,10,11,12},
+        xtick=data,
+        ]
+        \addplot coordinates {(2,0.0278) (3,0.0556) (4,0.0833) (5,0.1111) (6,0.1389) (7,0.1667) (8,0.1389) (9,0.1111) (10,0.0833) (11,0.0556) (12,0.0278)};
+      \end{axis}
+    \end{tikzpicture}
+    \caption{Distribuzione di \( X \)}
+  \end{figure}
+  cioè una distrubuzione triangolare.
+\end{example}
+
+\begin{figure}[H]
+  \begin{definition}
+    Il \textbf{Valore atteso} \( \mathbb{E}[X] \) è definito come:
+    \[
+      \mathbb{E}[X] = \sum_{i=1}^n x_i P_X(x_i)
+    \] 
+    Si tratta di una media pesata dei valori assunti dalla variabile aleatoria con i
+    pesi dati dalle probabilità che la variabile assuma quei valori.
+  \end{definition}
+\end{figure}
+
+\begin{figure}[H]
+  \begin{definition}
+    La \textbf{Varianza} di \( X \) è definita come:
+    \[
+      Var(X) = \mathbb{E}[(X - \mathbb{E}[X])^2] = \sum_{i=1}^n (x_i - \mathbb{E}[X])^2 P_X(x_i)
+    \] 
+  \end{definition}
+\end{figure}
+
+\begin{example}
+  Prendiamo in considerazione il lancio di una moneta:
+  \[
+    \Omega = \{T,C\} \quad \mathcal{F} = \mathcal{P}(\Omega)
+  \] 
+  Si vuole calcolare swe esce testa, quindi \( X \) è la variabile aleatoria che
+  rappresenta il lancio della moneta:
+  \[
+  X : \Omega \to \{0,1\} \quad t.c.\;\; X(T) = 1, \quad X(C) = 0
+  \] 
+  Questa variabile viene chiamata \textbf{variabile aleatoria di Bernoulli} ed è una
+  variabile \textbf{dicotomica} (solo 2 valori).
+  \begin{itemize}
+    \item \textbf{Moneta equa}:
+      \[
+      P_1(\{T\} ) = P_1(\{C\} ) = \frac{1}{2}
+      \] 
+      \[
+      \Downarrow
+      \] 
+      \[
+      P_X(1) = P_1(X=1) = P_1(\{T\} ) = \frac{1}{2}
+      \] 
+      \[
+      P_X(0) = \frac{1}{2}
+      \] 
+    \item \textbf{Moneta non equa}:
+      \[
+      P_2(T) = \frac{1}{3} \quad P_2(C) = \frac{2}{3}
+      \] 
+      \[
+      P_X(1) = P_2(X=1) = P_2(\{T\} ) = \frac{1}{3}
+      \] 
+      \[
+      P_X(0) = 1 - P_X(1) = \frac{2}{3}
+      \] 
+  \end{itemize}
+\end{example}
+
+\section{Schema di Bernoulli}
+\subsection{Prove dicotomiche ripetute ed indipendenti}
+Sia \( (\Omega, \mathcal{L}, P) \) uno spazio di probabilità che modella un certo
+esperimento. Considero \( A \in \mathcal{L} \) un successo e supponendo che
+\[
+P(A) = p \in (0,1)
+\] 
+ripeto un esperimento in modo indipendente
+
+\subsection{Conteggio del successo in ciascuna prova}
+\begin{figure}[H]
+  \begin{definition}[MOLTO IMPORTANTE]
+    \[
+      X \sim \mathcal{B}(p) \quad \text{X è una variabile di Bernoulli}
+    \] 
+    \[
+    p \equiv \text{probabilità di successo}
+    \] 
+
+    \[ X: \Omega \to \{0,1\} \subset \mathbb{N}  \]
+    \[
+    \text{successo} \; \to 1
+    \] 
+    \[
+    \text{insuccesso} \; \to 0
+    \] 
+    La legge di \( X \) è:
+    \[
+    p_x(1) = P(X=1) = P(\text{"successo"}) = p
+    \] 
+    \[
+    p_x(0) = P(X=0) = P(\text{"insuccesso"}) = 1-p_x(1) = 1-p
+    \] 
+
+    \vspace{1em}
+    \noindent Il valore atteso è:
+    \[
+      \mathbb{E}[X] = p
+    \] 
+    cioè il successo.
+
+    \vspace{1em}
+    \noindent La varianza si calcola come:
+    \[
+      Var(X) = p(1-p)
+    \] 
+  \end{definition}
+\end{figure}
+
+\subsection{Conteggio del successo in cuascuna delle n volte }
+Si ripete l'esperimento dicotomico \( n \) volte in condizioni di indipendenza (lancio
+la moneta \( n \)  volte). Chiamo \( X_1, X_2, \ldots, X_n \) i risultati degli \( n \)
+lanci.
+\[
+X_i \sim \mathcal{B}(p) \quad \text{per ogni} \; i = 1, \ldots, n
+\] 
+Si è interessati all'evento:
+\[
+A = \text{"numero di successi ottenuti negli \( n \) lanci"} = \text{"numero di teste"}
+\] 
+La variabile che conta il numero di successi è:
+\[
+X = X_1 + X_2 + \ldots + X_n \equiv \text{"conta il numero di successi"}
+\] 
+\[
+  X \sim \mathcal{B}(n,p) \quad \text{\textbf{variabile binomiale}}
+\] 
+La variabile binomiale conta il numero di successi con:
+\[
+n \equiv \text{numero di prove}
+\] 
+\[
+p \equiv \text{probabilità di successo in ogni prova}
+\] 
+I valori che potrà assumere la variabile binomiale sono:
+\[
+X \leadsto \{0,1,2, \ldots, n\}
+\] 
+
+\subsubsection{Modello per il conteggio del successo}
+\textbf{Esito prova i-esima}:
+\[
+X_1 \sim \mathcal{B}(p) \quad P_X(x_i) = P^x_i(1-p)^{1-x_i}
+\] 
+perchè:
+\[
+P_x(0) = P^0(1-p)^1 = (1-p) \quad \text{"insuccesso"}
+\] 
+\[
+P_x(1) = P^1(1-p)^0 = p \quad \text{"successo"}
+\] 
+
+\vspace{1em}
+\noindent \textbf{Esito delle \( n \) prove}: Vettore aleatorio \( X_1, X_2, \ldots, X_n \) che
+assume valori:
+\[
+  (x_1, x_2, \ldots, x_n) \quad x_j \in \{0,1\}
+\] 
+
+\vspace{1em}
+\noindent \textbf{Prove indipendenti} (Distribuzione della variabile binomiale):
+\[
+P(X_1 = x_1, X_2 = x_2, \ldots, X_n = x_n) = P(X_1 = x_1)P(X_2 = x_2) \ldots P(X_n = x_n)
+\] 
+\[
+= P^{x_1}(1-p)^{1-x_1}P^{x_2}(1-p)^{1-x_2} \ldots P^{x_n}(1-p)^{1-x_n}
+\] 
+\[
+= p^{\sum_{i=1}^n x_i}(1-p)^{n - \sum_{i=1}^n x_i}
+\] 
+dove \( \sum_{i=1}^n x_i = k \) è il numero di successi ottenuti nei \( n \) lanci.
+
+\[
+P_X(X=n)\begin{pmatrix} n \\ k \end{pmatrix} = \frac{n!}{k!(n-k)!} \quad \text{\textbf{coefficiente
+binomiale}}
+\] 
+\[ \begin{pmatrix} n \\ k \end{pmatrix} \cdot p^k(1-p)^{n-k} \] è la probabilità di ottenere
+\( k \) successi in \( n \) prove.
+
+\subsection{Processi stocastici (prove indipendenti ripetute infinite volte)}
+Il \textbf{processo} consiste nel ripetere infinite volte un esperimento dicotomico,
+infatti si dice \textbf{processo di Bernoulli} la variabile \( \{X_n\}_{n \in \mathbb{N}}
+\) che fa riferimento ad una famiglia di variabili aleatorie indipendenti e identicamente
+distribuite:
+\[
+X_i \sim B(p)
+\] 
+Il \textbf{processo binomiale} \( \{Z_n\}_{n \in \mathbb{N}}  \) fa riferimento ad una
+famiglia di variabili aleatorie ad incrementi indipendenti che modella il numero di 
+successi in \( n \) prove all'aumentare del numero:
+\[
+Z_0 = 0 \quad Z_n = \sum_{i=1}^n X_i \sim B(n,p)
+\] 
+
+\subsection{La variabile geometrica}
+\begin{figure}[H]
+  \begin{definition}
+    È il numero della prova in cui si ha il \textbf{primo successo}
+    \[
+      T \sim G(p)
+    \] 
+    Il range, sapendo che a priori non si sa quando accade il primo successo, è:
+    \[
+      \mathcal{R}_T = 1,2,3, \ldots
+    \] 
+    Legge:
+    \[
+      p_T(k) = p(1-p)^{k-1} \quad \text{per ogni} \; k = 1,2,3, \ldots
+    \] 
+    Eventi equivalenti:
+    \[
+      \{T = k\} = \{Z_{k-1}\} \cap \{X_k = 1\}
+    \] 
+    Se il primo successo si ha nella prova \( k \)-esima, allora fino alla prova
+    \( k - 1 \)  non si hanno successi \( \{Z_{k-1} = 0\} \)  e nella prova 
+    \(  k \)-esima si ha un successo \( \{X_k = 1\} \).
+
+
+    \vspace{1em}
+    \noindent Il valore atteso è:
+    \[
+      \mathbb{E}[T] = \frac{1}{p}
+    \] 
+    La varianza si calcola come:
+    \[
+    var(T) = \frac{1-p}{p^2}
+    \] 
+  \end{definition}
+\end{figure}
+Più la variabile è vicina a 1, più è probabile che il successo avvenga al primo tentativo.
+
+\subsection{Eventi rari: conteggio dei successi per un numero infinito di esperimenti}
+Supponiamo che il numero dei successi \( n \) cresca all'infinito e che la probabilità
+\( p_n \) di successa vada a zero, ma in modo tale che:
+\[
+np_n \to \lambda
+\] 
+Sia dunque \( Z_n \sim B(n,p_n) \) 
+
+\begin{figure}[H]
+  \begin{definition}[Poisson]
+    Conta il numero di eventi che avvengono in un intervallo finito di tempo \( [0,t] \) 
+    \textbf{Poisson:}
+    \[
+    Y \sim P(\lambda)
+    \] 
+    \textbf{Range:}
+    \[
+      \mathcal{R} = \mathbb{N}
+    \] 
+    \textbf{Legge:}
+    \[
+      p_y(k) = \frac{\lambda^k}{k!}e^{-\lambda}
+    \] 
+  \end{definition}
+\end{figure}
+
+\begin{figure}[H]
+  \begin{definition}
+    \textbf{Binomiale converge alla Poisson}
+    \[
+    \lim_{n \to \infty, p_n \to 0} B(n,p_n) = P(\lambda)
+    \] 
+  \end{definition}
+\end{figure}
+
+\section{La variabile di Poisson}
+La variabile di Poisson di parametro \( \lambda > 0 \) modella il conteggio di successo
+in tempi continui.
+\begin{figure}[H]
+  \begin{definition}
+    \textbf{Variabile aleatoria di Poisson:}
+    \[
+    Y \sim P(\lambda)
+    \] 
+    \textbf{Range:}
+    \[
+      \mathcal{R} = \mathbb{N}
+    \] 
+    \textbf{Legge:} per ogni \( k = 0, 1, \ldots \) 
+    \[
+      p_y(k) = \frac{\lambda^k}{k!}e^{-\lambda}
+    \] 
+    Il valore atteso è:
+    \[
+      \mathbb{E}[Y] = \lambda
+    \] 
+    La varianza è:
+    \[
+    var(Y) = \lambda
+    \] 
+  \end{definition}
+\end{figure}
+\noindent Poisson approssima la binomiale quando \( n \) è grande e \( p \) è piccolo.
+
+\subsection{Eventi rari: il processo di Poisson}
+Il processo di Poisson modellizza il conteggio dei successi in intervalli di tempi
+sotto l'ipotesi che la probabilità di un successo in uno specifico intervallo di tempo
+piccolo è molto piccola:
+\[
+np_n = \lambda t
+\] 
+Il \textbf{processo di Poisson} \( \{Y_t\}_{t \in \mathbb{R}_+}  \) fa riferimento ad
+una famiglia di variabili aleatorie ad incrementi indipendenti che modella il
+numero di successi in un intervallo \( [0,t] \) tale che \( Y_0 = 0 \) e
+\[
+Y_t \sim P(\lambda t), \; \forall t \ge 0
+\] 
+\( \lambda \) rappresenta un numero medio di successi atteso per unità di tempo:
+\[
+  \mathbb{E}[Y_t] = \lambda t \quad \Rightarrow \quad \frac{\mathbb{E}[Y_t]}{t} = \lambda
+\] 
+
+\subsubsection{Conteggio del tempo del primo successo}
+Osservando un esperimento modellato da un processo di Poisson \( \{Y_t\}_t  \) di 
+parametro \( \lambda \). Si vuole modellare il tempo in cui si ha il primo successo:
+\[
+  \text{Tempo del primo successo:}\; T \;\text{con}\; \mathcal{R}_T = \mathbb{R}_+
+\] 
+Legge di \( T \):
+\[
+  F_T(t)= 1-e^{-\lambda t}, \quad f_T(t) = \lambda e^{-\lambda t}, \quad t \in \mathbb{R}_+
+\] 
+Esponenziale di parametro \( \lambda \quad \) \( T \sim exp(\lambda) \) 
+
+\section{Variabili aleatorie continue}
+Sia \( (\Omega, \mathcal{F}, P) \) uno spazio di probabilità, la variabile aleatoria
+continua viene indicata come:
+\[
+X: \Omega \to R_X \subset \mathbb{R}
+\] 
+La legge di \( X \) (o distribuzione):
+\[
+  P_X(A) = P(X^{-1}(A)) = P(X \in A) \quad \text{per ogni} \; A \subset \mathcal{B}
+\] 
+dove \( \mathcal{B} \) è l'insieme degli eventi su \( \mathbb{R} \) (intervalli, unione
+ed intersezione di intervalli).
+
+\vspace{1em}
+\noindent La legge di una variabile aleatoria continua è caratterizzata da una
+\textbf{densità di probabilità}:
+\[
+f_X: \mathbb{R} \to \mathbb{R}
+\] 
+\[
+P_X(A) = \int_A f_X(x)dx
+\] 
+
+\textbf{Proprietà di \( f_X \) }:
+\[
+0 \le f_X(x) \le 1 \quad x \in \mathbb{R}
+\] 
+\[
+\int_{-\infty}^{+\infty} f_X(x)dx = 1
+\] 
+
+\section{Statistica inferenziale}
+La probabilità e la statistica sono due approcci complementari allo stesso problema che
+descrive fenomeni non deterministici. La statistica inferenziale introduce un modello
+probabilistico per descrivere la popolazione tramite una variabile aleatoria:
+\[
+X \sim \mathcal{N}(\mu, \sigma^2) \quad \mu, \sigma^2 \; \text{incogniti}
+\] 
+Gli individui sono le "realizzazioni" della \( X \).
+
+\begin{example}
+  \( X =\) "altezze degli italiani maschi di 40 anni"
+  \[
+  X \sim \mathcal{N}(\mu, \sigma^2)
+  \] 
+  Prendo \( X_1 \sim X \leadsto\) Mario, \( X_1(10) = x_1 \) (altezza di mario)
+  \[
+    \text{Campione: } \underline{X} = (X_1, X_2, \ldots, X_n) \quad X_i \sim X \sim \text{ Popolazione}
+  \] 
+  Le \( X_i \) sono indipendenti
+  \[
+  \text{Dati: } X_1(\omega) = x_1, X_2(\omega) = x_2, \ldots, X_n(\omega) = x_n
+  \] 
+  \[
+    \text{Dati: } \underline{x} = (x_1, x_2, \ldots, x_n)
+  \] 
+  una possibile realizzazione del campione aleatorio \( (X_1, X_2, \ldots, X_n) \)
+\end{example}
+
+Si parte da una teoria, cioè un modello con \textbf{parametri liberi} e si aggiungono dei
+dati sperimentali. Ci si chiede se si può fare delle inferenze su parametri.
+\begin{itemize}
+  \item \textbf{Design}: stabilire gli esperimenti
+  \item \textbf{Analisi}: analizzare i dati
+\end{itemize}
+
+\subsection{Distribuzione esponenziale}
+È una variabile aleatoria continua:
+\[
+f_X(x) = \begin{cases}
+  \lambda e^{-\lambda x} & x \ge 0 \\
+  0 & x < 0
+\end{cases}
+\] 
+\[
+  P(X \in [a,b]) = \int_a^b f_X(x) dx
+\] 
+\[
+f_X(x) = P(x \le x) = \begin{cases}
+  1-e^{-\lambda x} & x \ge 0 \\
+  0 & x < 0
+\end{cases}
+\] 
+\[
+  P(X \le x) = \int_{0}^x f_X(t) dt
+\] 
+\[
+  \mathbb{E}[X] = \frac{1}{\lambda} \quad \mathbb{E}[X] = \int_{0}^{\infty} x f_X(x) dx
+\] 
+\[
+  Var(X) = \frac{1}{\lambda^2}
+\] 
+La successiva è una \textbf{funzione di soppravivenza}, cioè fornisce la probabilità che
+un certo evento non si verifichi entro un certo tempo \( x \) :
+\[
+  S(x) = 1-f(x) = e^{-\lambda x}
+\] 
+La seguente è la "perdita di memoria" della variabile aleatoria esponenziale:
+\[
+ P(X > x+x' | X>x) = P(X > x')
+\] 
+
+\begin{example}
+  Il tempo (in ore) necessario per riparare un macchinario è una variabile aleatoria
+  esponenziale di parametro \( \lambda = 1 \) 
+  \[
+  X = \text{ Tempo necessario per la riparazione } \;\; X \sim \mathcal{E}(\lambda)
+  \] 
+  \[
+  f_X(x) = \begin{cases}
+    e^{-x} & x \ge 0 \\
+    0 & x < 0
+  \end{cases}
+  \] 
+  \[
+  \mathbb{E}[X] = \frac{1}{\lambda} = 1
+  \] 
+  \[
+  Var(X) = \frac{1}{\lambda^2} = 1
+  \] 
+  \begin{enumerate}
+    \item Qual'è la probabilità che la riparazione superi le 2 ore?
+      \[
+        P(X >2) = \int_2^{+\infty} e^{-x} dx = e^{-2} \approx 0.135
+      \] 
+    \item Qual'è la probabilità che la riparazione richieda almeno 3 ore, sapendo che
+      ne richiede più di 2?
+      \[
+        P(X \ge 3 \;|\; X> \ge 2) \underset{\text{assenza di memoria}}{=} P(X \ge 1)
+      \] 
+  \end{enumerate}
+\end{example}
+
+% Inizia il Luigione
+
+\section{Tipi di stima}
+Esistono 2 tipi di stima:
+\begin{itemize}
+  \item \textbf{Stima puntuale}
+  \item \textbf{Stima intervallare}
+\end{itemize}
+
+\subsection{Stima intervallare}
+Si ottiene un intervallo di valori plausibili per il parametro \( \theta \) e a
+ciascuno di questi intervalli si associa un livello di confidenza che \( \theta \) vi
+appartenga.
+
+\subsection{Stima puntuale}
+Si ottiene un singolo valore come stima per il valore di \( \theta \)
+
+\subsubsection{Definizione}
+\begin{figure}[H]
+  \begin{definition}
+    Un \textbf{campione} (o campione casuele/aleatorio) di ampiezza \( n \) è una
+    collezione di \( n \) variabili aleatorie \( X_1, \ldots, X_n \) \textbf{indipendenti}
+    e tutte con la stessa distribuzione \( f(x; \theta) \), dove \( \theta \) è un
+    parametro incognito.
+    
+    \vspace{1em}
+    \noindent Una \textbf{statistica} è una variabile aleatoria ottenuta come funzione
+    del campione, cioè:
+    \[
+    T = T(X_1, \ldots, X_n)
+    \] 
+  \end{definition}
+\end{figure}
+
+\begin{example}
+  Sia \( X_1, \ldots, X_n \) un campione casuale. Le variabili aleatorie:
+  \begin{itemize}
+    \item \( \overline{X} = \frac{1}{n} \sum_{i=1}^n X_i \) (media campionaria)
+
+    \item \( S^2 = \frac{1}{n-1} \sum_{i=1}^n (X_i - \hat{X})^2 \) (varianza campionaria)
+
+    \item \( V = \min\{X_1, \ldots, X_n\} \) (minimo del campione)
+
+    \item \( W = \max\{X_1, \ldots, X_n\} \) (massimo del campione)
+  \end{itemize}
+  sono tutte statistiche.
+\end{example}
+
+\subsubsection{Stimatori}
+Uno \textbf{stimatore} (o statistica sufficienta) è una qualunque statistica
+\( T \) che non dipende dal parametro
+\( \theta \) e viene usata per stimare \( \theta \).
+
+\begin{example}
+  La media campionaria \( \overline{X} \) viene tipicamente usata come stimatore del valor
+  medio di una popolazione. La varianza campionaria \( S^2 \) viene tipicamente usata
+  come stimatore della varianza di una popolazione.
+\end{example}
+
+\noindent Una \textbf{Stima} è il \textbf{valore numerico} assunto dallo stimatore sui dati
+osservati \( x_1, \ldots, x_n \), cioè \( \hat{\theta} = T(x_1,\ldots,x_n) \) 
+
+\vspace{1em}
+\noindent \( T \) si chiama stimatore quando:
+\[
+  \mathbb{P}_{\theta}(x_1, \ldots, x_n \; | \; T(x_1, \ldots, x_n) = \theta)
+\] 
+
+\subsubsection{Stimatori di massima verosomiglianza}
+Sia \( X_1, \ldots, X_n \) un campione casuale estratto da una popolazione con densità
+\( f(x;\theta) \) (discreta o continua), che dipende dal parametro incognito \( \theta \).
+
+\noindent Se interpretiamo:
+\[
+f(x_1, \ldots, x_n; \theta)
+\] 
+come la verosomiglianza (o plausibilità) che si realizzi la n-upla di dati
+\( x_1, \ldots, x_n \) quando \( \theta \) è il vero valore del parametro, sempra
+ragionevole adottare come stima di \( \theta \) il valore che rende massima la la
+verosomiglianza per i dati osservati. In altri termini la stima di massima verosomiglianza
+\( \overline{\theta}_{mv} \) è definita come il valore di \( \theta \) che rende
+massima la funzione \( f(x_1, \ldots, x_n; \theta) \) quando i dati osservati sono
+\( x_1, \ldots, x_n \) 
+
+\vspace{1em}
+\noindent In breve si "sposta" \( \theta \) in modo che sia sul massimo dei valori possibili.
+Si salva questo valore di \( \theta \) e si chiama \( \overline{\theta} \):
+\[
+\overline{\theta} = \text{argmax}_{\theta} f(x_1, \ldots, x_n; \theta)
+\] 
+
+\begin{example}
+  Consideriamo gli esperimenti \( X_1, \ldots, X_n \) distribuiti indipendentemente
+  \[
+  X_i \quad f(x,\theta)
+  \] 
+  \[
+  f(x_1, \ldots, x_n; \theta) = \prod_{i=1}^n f(x_i; \theta)
+  \] 
+  \[
+    f'(\theta) = \frac{d}{d\theta} f(\hat{x}_1, \ldots, \hat{x}_n; \theta) = 0
+  \] 
+  \[
+    f'(\theta) = 0 \quad \hat{\theta} \text{ t.c.}
+  \] 
+  \[
+    \frac{d}{d\theta} f(x_1, \ldots, x_n; \theta) = f'(x) \text{ (è una statistica)}
+  \] 
+  \[
+    \hat{\theta} \text{ t.c. } \frac{d}{d \theta} f(x_1, \ldots, x_n; \hat{\theta}) = 0
+  \] 
+  \[
+    \Theta = g(X_1, \ldots, X_n) \text{ stimatore}
+  \] 
+\end{example}
+
+\begin{exercise}
+  Stimatore di massima verosomiglianza per il parametro di una Bernoulli:
+
+  \vspace{1em}
+  \noindent Sia \( X_1, \ldots, X_n \) un campione casuela estratto da una popolazione
+  con densità (discreta) di Bernoulli di parametro \( q \), dove \( q \in (0,1) \) è
+  incognito. Dal momento che la densità marginale delle \( X_i \) è data da
+  \[
+  f(x;q) = q^x(1-q)^{1-x} \quad x \in \{0,1\}
+  \] 
+  la densità congiunta (e quindi la verosomiglianza) è data da:
+  \[
+  f(x_1, \ldots, x_n; q) = q^{\sum_{i=1}^n x_i}(1-q)^{n - \sum_{i=1}^n x_i}
+  \] 
+  La verosomiglianza corrispondente risulta quindi pari a:
+  \[
+  log(f(x_1, \ldots, x_n; q)) = \left( \sum_{i=1}^n x_i \right) log(q) + \left( n - \sum_{i=1}^n x_i \right) log(1-q)
+  \] 
+  Derivando rispetto a \( q \) otteniamo:
+  \[
+  \frac{d}{dq} log(f(x_1, \ldots, x_n; q)) = \frac{\sum_{i=1}^n x_i}{q} - \frac{n - \sum_{i=1}^n x_i}{1-q}
+  \] 
+  Risolvendo \( \frac{d}{dq} log(f(x_1, \ldots, x_n; q)) = 0 \) rispetto alla variabile \( q \),
+  si ottiene \[ \hat{q} = \frac{1}{n} \sum_{i=1}^n x_i \] che è un punto di massimo
+  dal momento che:
+  \[
+  \frac{d^2}{dq^2} log(f(x_1, \ldots, x_n; q)) \le 0
+  \] 
+  Pertanto lo stimatore di massima verosomiglianza per il parametro \( q \) di una
+  distribuzione di Bernoulli è \( Q_{mv} = \overline{X} \) (stimatore di massima verosomiglianza).
+
+  \vspace{1em}
+  Supponiamo di aver osservato il seguente campione di dati:
+  \[
+  1\;0\;0\;0\;0\;0\;1\;0\;0\;1
+  \] 
+  Allora otteniamo la stima di massima verosomiglianza
+  \[
+    \hat{q} = \frac{1}{10}(1+0+0+0+0+0+1+0+0+1) = \frac{3}{10} = 0.3
+  \] 
+  (i dati sono stati generati con \(\mathcal{B}(0.25))\) che sarebbe il calore vero di \( q \))
+\end{exercise}
+
+\subsubsection{Bontà di uno stimatore}
+Sia \( X_1, \ldots, X_n \) un campione casuale estratto da una popolazione nota eccetto
+che per un parametro ignoto \( \theta \).
+
+\noindent Come scegliamo uno stimatore \( T = T(X_1, \ldots, X_n) \) per \( \theta \)?
+
+\noindent Come ne valutiamo la bontà?
+
+\vspace{1em}
+\noindent Vogliamo minimizzare la deviazione dal valore reale del parametro e per farlo ci
+basiamo sui valori di \( \mathbb{E}(T) \) e \( Var(T) \).
+
+\begin{figure}[H]
+  \begin{definition}[Bias]
+    Sia \( T = T(X_1, \ldots, X_n) \) uno stimatore del parametro \( \theta \). Allora
+    \( b(T) = \mathbb{E}(T) - \theta \) è detto \textbf{bias} (o distorsione) di \( T \)
+    come stimatore di \( \theta \).
+
+    \noindent Se esso è nullo, diciamo che \( T \) è uno stimatore corretto (o non distorto)
+    di \( \theta \).
+  \end{definition}
+\end{figure}
+
+\begin{example}
+  Sia \( X_1, \ldots, X_n \) un campione casuale estratto da una popolazione con media
+  \( \mu \). La media campionaria \( \overline{X} \) è uno stimatore corretto per il valor
+  medio \( \mu \). Infatti, calcoliamo:
+  \[
+    b(\overline{X}) = \mathbb{E}(\overline{X}) - \mu = \frac{1}{n} \sum_{i=1}^n \underbrace{\mathbb{E}(X_i)}_{\text{\( \mu \) per ogni \( i \) }} - \mu =
+    \frac{1}{n} \cdot n \mu - \mu = \mu - \mu = 0
+  \] 
+\end{example}
+
+\begin{definition}[Errore quadratico medio]
+  Sia \( T = T(X_1, \ldots, X_n) \) uno stimatore del parametro \( \theta \). Allora
+  \( MSE(T) = \mathbb{E}[(T- \theta)^2] \) è detto errore quadratico medio dello
+  stimatore \( T \).
+
+  \vspace{1em}
+  \noindent Possiamo esplicitare:
+  \[
+    MSE(T) = \mathbb{E}[(T-\theta)^2] = \mathbb{E}(T^2) - 2\theta \mathbb{E}(T) + \theta^2 =
+  \] 
+  \[
+    = \underbrace{\mathbb{E}(T^2) - \mathbb{E}(T)^2}_{= Var(T)} + \underbrace{\mathbb{E}(T)^2 - 2 \theta \mathbb{E}(T) + \theta^2}_{= (\mathbb{E}(T)-\theta)^2} =
+  \] 
+  \[
+    = Var(T) + b(T)^2
+  \] 
+  \begin{itemize}
+    \item \( Var(T) \) Misura la dispersione/variabilità dello stimatore e quindi la sua
+      \textbf{precisione}.
+    \item \( b(T)^2 \) Misura l'\textbf{accuratezza} dello stimatore.
+  \end{itemize}
+
+  \noindent Uno stimatore buono (o \textbf{efficiente}) controlla sia la varianza che la distorsione.
+  Se \( T \) è corretto, allora \( MSE(T) = Var(T) \).
+
+  \vspace{1em}
+  \noindent Uno stimatore corretto, ma con varianza molto elevata può avere un errore
+  quadratico medio maggiore di uno stimatore distorto, ma con varianza inferiore
+\end{definition}
+
+\begin{example}
+  Lo stimatore di massima verosomiglianza \( S^2_{mv} \) per la varianza di una popolazione
+  normale \textbf{non} è corretto, mentre la varianza campionaria lo è.
+
+  \vspace{1em}
+  \noindent Risulta però: \( MSE(S^2_{mv}) \le MSE(S^2) \).
+\end{example}
+
+\noindent Lo scopo della statistica è quello di trovare tra gli stimatori corretti (o
+asintoticamente corretti) quelli che hanno errore quadratico medio minore.
+
+
+\subsection{Stima intervallare}
+Sia \( X_1, \ldots, X_n \) un campione casuale estratto da una popolazione della quale
+ci interessa stimare un parametro \( \theta \). Di solito non ci si può aspettare che la
+stima puntuale ottenuta valutando lo stimatore sui dati osservati sia il valore reale
+di \( \theta \), ma che ci sia vicino. Perciò, rispetto ad un valore puntuale, è
+preferibile produrre produrre un intervallo per il quale abbiamo una certa fiducia che il
+parametro ci appartenga.
+
+\begin{definition}
+  Sia \( X_1, \ldots, X_n \) un campione casuale estratto da una popolazione della quale
+  ci interessa stimare un parametro \( \theta \). Siano:
+  \[
+  L_1 = L_1(X_1, \ldots, X_2) \quad \text{e} \quad L_2 = L_2(X_1, \ldots, X_n)
+  \] 
+  due statistiche, che non dipendono da \( \theta \), tali che:
+  \[
+  \mathbb{P}(L_1 \le \theta \le L_2) = 1 - \alpha
+  \] 
+  dove \( \alpha \in (0,1) \). L'intervallo \( (L_1, L_2) \) si chiama \textbf{stimatore
+  intervallare} del parametro \( \theta \). Siano:
+  \[
+    \hat{l}_1 = L_1(x_1, \ldots, x_n) \quad \text{e} \quad \hat{l}_2 = L_2(x_1, \ldots, x_n)
+  \] 
+  i valori assunti dalle statistiche \( L_1 \) e \( L_2 \) sui dati osservati \( x_1, \ldots, x_n \).
+  Allora \( \hat{l}_1, \hat{l}_2 \) è l'\textbf{intervallo di confidenza} di livello \( 1- \alpha \) 
+  (oppure, al \( (1-\alpha)100\% \)) per il parametro \( \theta \).
+\end{definition}
+
+\end{document}

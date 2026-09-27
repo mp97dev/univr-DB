@@ -1,0 +1,51 @@
+db.museo_ref.insertOne(
+{
+  nome: 'Museo Castelvecchio',
+  citta: 'Verona',
+  indirizzo: 'Corso Castelvecchio, 27',
+  numeroTelefono: '045 8003204',
+  giornoChiusura: 'Lunedì',
+  prezzo: 10,
+  opere: [
+    ObjectId('68341688844cf798c0a4f3ef'),
+    ObjectId('68341688844cf798c0a4f3f0'),
+    ObjectId('68341688844cf798c0a4f3f1'),
+  ],
+  mostre: [
+    ObjectId('683416d3844cf798c0a4f3f2'),
+    ObjectId('683416d3844cf798c0a4f3f3'),
+  ],
+  orari: [
+	{
+    giorno: 'Martedì',
+    orarioApertura: '9:00',
+    orarioChiusura: '18:00',
+	},
+  {
+    giorno: 'Mercoledì',
+    orarioApertura: '9:00',
+    orarioChiusura: '18:00',
+	},
+  {
+    giorno: 'Giovedì',
+    orarioApertura: '9:00',
+    orarioChiusura: '18:00',
+	},
+  {
+    giorno: 'Venerdì',
+    orarioApertura: '9:00',
+    orarioChiusura: '18:00',
+	},
+  {
+    giorno: 'Sabato',
+    orarioApertura: '9:00',
+    orarioChiusura: '22:00',
+	},
+  {
+    giorno: 'Domenica',
+    orarioApertura: '9:00',
+    orarioChiusura: '20:00',
+	},
+  ]
+}
+);

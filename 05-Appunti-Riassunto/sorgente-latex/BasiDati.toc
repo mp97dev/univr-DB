@@ -1,0 +1,88 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {section}{\numberline {1}Introduzione}{4}{section.1}%
+\contentsline {section}{\numberline {2}Sistema informativo}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Base di dati}{4}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Modello dei dati}{4}{subsubsection.2.1.1}%
+\contentsline {section}{\numberline {3}Progettazione di una base di dati}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Progettazione dei dati}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Requisiti}{6}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Progettazione concettuale}{6}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Progettazione logica}{6}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Progettazione fisica}{6}{subsubsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.3}Strategie di progettazione}{6}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Analisi di qualità dello shema}{6}{subsubsection.3.3.1}%
+\contentsline {section}{\numberline {4}Progettazione Concettuale}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Entità}{7}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Istanza}{8}{subsubsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.2}Relazione}{8}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Istanza}{8}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Relazione ricorsiva}{9}{subsubsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.3}Attributo}{9}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Attributo opzionale e multivalore}{9}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Attributo composto}{10}{subsubsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.4}Identificatore}{10}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Cardinalità}{11}{subsection.4.5}%
+\contentsline {subsubsection}{\numberline {4.5.1}Valori possibili per \( \text {MIN}_i \)}{11}{subsubsection.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.2}Valori possibili per \( \text {MAX}_i \)}{11}{subsubsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.6}Generalizzazione di entità}{12}{subsection.4.6}%
+\contentsline {subsubsection}{\numberline {4.6.1}Proprietà delle istanze generalizzate}{12}{subsubsection.4.6.1}%
+\contentsline {subsubsection}{\numberline {4.6.2}Classificazione delle generalizzazioni}{13}{subsubsection.4.6.2}%
+\contentsline {subsubsection}{\numberline {4.6.3}Relazioni ternarie}{13}{subsubsection.4.6.3}%
+\contentsline {section}{\numberline {5}Progettazione logica}{13}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Modello relazionale}{13}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Domini di base}{14}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Relazione}{14}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}Accesso ai valori di una ennupla}{15}{subsubsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.4}Progettazione nel modello relazionale}{16}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}Progettazione dei dati}{16}{subsubsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.2}Relazione unica}{16}{subsubsection.5.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.3}Anomalie}{16}{subsubsection.5.4.3}%
+\contentsline {subsubsection}{\numberline {5.4.4}Decomposizione della relazione unica}{17}{subsubsection.5.4.4}%
+\contentsline {subsubsection}{\numberline {5.4.5}Proprietà del modello relazionale}{20}{subsubsection.5.4.5}%
+\contentsline {subsubsection}{\numberline {5.4.6}Terminologia}{20}{subsubsection.5.4.6}%
+\contentsline {subsection}{\numberline {5.5}Valori nulli}{20}{subsection.5.5}%
+\contentsline {subsubsection}{\numberline {5.5.1}Osservazioni}{21}{subsubsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.6}Vincoli di integrità}{21}{subsection.5.6}%
+\contentsline {subsubsection}{\numberline {5.6.1}Classificazione}{22}{subsubsection.5.6.1}%
+\contentsline {subsubsection}{\numberline {5.6.2}Vincoli di dominio}{22}{subsubsection.5.6.2}%
+\contentsline {subsubsection}{\numberline {5.6.3}Vincoli di tupla}{22}{subsubsection.5.6.3}%
+\contentsline {subsubsection}{\numberline {5.6.4}Vincoli di intrarelazionali}{22}{subsubsection.5.6.4}%
+\contentsline {subsubsection}{\numberline {5.6.5}Vincoli interrelazionali}{23}{subsubsection.5.6.5}%
+\contentsline {subsubsection}{\numberline {5.6.6}Notazione per indicare i vincoli strutturali}{23}{subsubsection.5.6.6}%
+\contentsline {subsection}{\numberline {5.7}Progettazione logica dallo schema concettuale}{24}{subsection.5.7}%
+\contentsline {subsubsection}{\numberline {5.7.1}Ristrutturazione dello schema concettuale}{24}{subsubsection.5.7.1}%
+\contentsline {subsubsection}{\numberline {5.7.2}Traduzione nel modello logico}{28}{subsubsection.5.7.2}%
+\contentsline {section}{\numberline {6}Tecnologie NoSQL: sistemi document based}{34}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Modello dei dati dei sistemi document-store}{34}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}Progettazione dei dati come documenti}{35}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.2}Rappresentazione di un documento}{36}{subsubsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.2}Traduzione di uno schema ER in collezioni di documenti}{37}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}Regole di traduzione}{37}{subsubsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2}Etichettatura dello schema ER}{38}{subsubsection.6.2.2}%
+\contentsline {section}{\numberline {7}Operazioni su una base di dati relazionale}{50}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Algebra relazionale}{50}{subsection.7.1}%
+\contentsline {subsubsection}{\numberline {7.1.1}Operatori dell'algebra relazionale}{50}{subsubsection.7.1.1}%
+\contentsline {subsubsection}{\numberline {7.1.2}Operatori insiemistici}{51}{subsubsection.7.1.2}%
+\contentsline {subsubsection}{\numberline {7.1.3}Operatori specifici}{52}{subsubsection.7.1.3}%
+\contentsline {subsubsection}{\numberline {7.1.4}Operatori di giunzione}{53}{subsubsection.7.1.4}%
+\contentsline {subsection}{\numberline {7.2}Algebra con valori nulli}{55}{subsection.7.2}%
+\contentsline {subsubsection}{\numberline {7.2.1}Join esterni}{55}{subsubsection.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.2}Ottimizzazione di espressioni DML}{56}{subsubsection.7.2.2}%
+\contentsline {subsubsection}{\numberline {7.2.3}Trasformazioni di equivalenza}{56}{subsubsection.7.2.3}%
+\contentsline {subsubsection}{\numberline {7.2.4}Ulteriori trasformazioni di equivalenza}{57}{subsubsection.7.2.4}%
+\contentsline {subsection}{\numberline {7.3}Calcolo relazionale}{58}{subsection.7.3}%
+\contentsline {subsubsection}{\numberline {7.3.1}Caratteristiche del linguaggio}{58}{subsubsection.7.3.1}%
+\contentsline {subsubsection}{\numberline {7.3.2}Sintassi del calcolo relazionale sulle tuple}{59}{subsubsection.7.3.2}%
+\contentsline {subsubsection}{\numberline {7.3.3}Semantica del calcolo relazionale sulle tuple}{60}{subsubsection.7.3.3}%
+\contentsline {subsubsection}{\numberline {7.3.4}Semantica di una interrogazione}{60}{subsubsection.7.3.4}%
+\contentsline {subsubsection}{\numberline {7.3.5}Operatori insiemistici nel calcolo relazionale sulle tuple}{61}{subsubsection.7.3.5}%
+\contentsline {subsubsection}{\numberline {7.3.6}Semantica dei quantificatori}{61}{subsubsection.7.3.6}%
+\contentsline {subsubsection}{\numberline {7.3.7}Quando il quantificatore non è eliminabile}{62}{subsubsection.7.3.7}%
+\contentsline {subsection}{\numberline {7.4}Interrogazioni nei sistemi document based}{63}{subsection.7.4}%
+\contentsline {subsubsection}{\numberline {7.4.1}Operatori logici e di confronto in MongoDB}{65}{subsubsection.7.4.1}%
+\contentsline {subsubsection}{\numberline {7.4.2}Interrogazione di dati incapsulati}{66}{subsubsection.7.4.2}%
+\contentsline {subsubsection}{\numberline {7.4.3}Interrogazioni con proiezione}{66}{subsubsection.7.4.3}%
+\contentsline {subsubsection}{\numberline {7.4.4}Interrogazioni con join}{66}{subsubsection.7.4.4}%
+\contentsline {subsubsection}{\numberline {7.4.5}Interrogazioni su dati incapsulati con condizioni multiple}{68}{subsubsection.7.4.5}%
+\contentsline {subsubsection}{\numberline {7.4.6}Aggregation pipeline}{68}{subsubsection.7.4.6}%

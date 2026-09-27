@@ -1,0 +1,2856 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.9.16)  16 SEP 2026 23:01
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**./BasiDati.tex
+(BasiDati.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-12-24>
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
+File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count275
+\c@section=\count276
+\c@subsection=\count277
+\c@subsubsection=\count278
+\c@paragraph=\count279
+\c@subparagraph=\count280
+\c@figure=\count281
+\c@table=\count282
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen148
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/import\import.sty
+Package: import 2020/04/01  v 6.2
+)
+(../preamble.sty
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
+Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2025/12/11 v25.17 The multilingual framework for LuaLaTeX, pdfLa
+TeX and XeLaTeX
+\babel@savecnt=\count283
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input li
+ne 2068.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input li
+ne 2070.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input lin
+e 2072.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input lin
+e 2073.
+LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) 
+on input line 2074.
+LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) 
+on input line 2076.
+LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) 
+on input line 2101.
+\U@D=\dimen149
+\l@unhyphenated=\language79
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count284
+Package babel Info: Configuration files are deprecated, as
+(babel)             they can break document portability.
+(babel)             Reported on input line 4196.
+
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/it\babel
+-italian.tex)
+Package babel Info: Importing font and identification data for italian
+(babel)             from babel-it.ini. Reported on input line 4320.
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/babel-italian\italian.l
+df
+Language: italian 2026/01/13 v.1.5.02 Italian support for the babel system
+\it@lettering=\count285
+\it@doublequoteactive=\count286
+\it@ISOcompliance=\count287
+))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count288
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2025/07/09 v2.17z AMS math features
+\@mathmargin=\skip51
+
+For additional information on amsmath, use the `?' option.
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2024/11/17 v2.01 AMS text
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks19
+\ex@=\dimen150
+))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen151
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count289
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count290
+\leftroot@=\count291
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count292
+\DOTSCASE@=\count293
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box53
+\strutbox@=\box54
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen152
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count294
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count295
+\dotsspace@=\muskip17
+\c@parentequation=\count296
+\dspbrk@lvl=\count297
+\tag@help=\toks20
+\row@=\count298
+\column@=\count299
+\maxfields@=\count300
+\andhelp@=\toks21
+\eqnshift@=\dimen153
+\alignsep@=\dimen154
+\tagshift@=\dimen155
+\tagwidth@=\dimen156
+\totwidth@=\dimen157
+\lineht@=\dimen158
+\@envbody=\toks22
+\multlinegap=\skip52
+\multlinetaggap=\skip53
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2950.
+LaTeX Info: Redefining \] on input line 2951.
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.st
+y
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen159
+\lightrulewidth=\dimen160
+\cmidrulewidth=\dimen161
+\belowrulesep=\dimen162
+\belowbottomsep=\dimen163
+\aboverulesep=\dimen164
+\abovetopsep=\dimen165
+\cmidrulesep=\dimen166
+\cmidrulekern=\dimen167
+\defaultaddspace=\dimen168
+\@cmidla=\count301
+\@cmidlb=\count302
+\@aboverulesep=\dimen169
+\@belowrulesep=\dimen170
+\@thisruleclass=\count303
+\@lastruleclass=\count304
+\@thisrulewidth=\dimen171
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/xltabular\xltabular.sty
+Package: xltabular 2025/02/28 v0.2i `xltabular' package (hv,RN)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
+\col@sep=\dimen172
+\ar@mcellbox=\box55
+\extrarowheight=\dimen173
+\NC@list=\toks24
+\extratabsurround=\skip54
+\backup@length=\skip55
+\ar@cellbox=\box56
+)
+\TX@col@width=\dimen174
+\TX@old@table=\dimen175
+\TX@old@col=\dimen176
+\TX@target=\dimen177
+\TX@delta=\dimen178
+\TX@cols=\count305
+\TX@ftn=\toks25
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/ltablex\ltablex.sty
+Package: ltablex 2014/08/13 v1.1 Modified tabularx
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty
+Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
+\LTleft=\skip56
+\LTright=\skip57
+\LTpre=\skip58
+\LTpost=\skip59
+\LTchunksize=\count306
+\LTcapwidth=\dimen179
+\LT@head=\box57
+\LT@firsthead=\box58
+\LT@foot=\box59
+\LT@lastfoot=\box60
+\LT@gbox=\box61
+\LT@cols=\count307
+\LT@rows=\count308
+\c@LT@tables=\count309
+\c@LT@chunks=\count310
+\LT@p@ftn=\toks26
+)))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks27
+)
+\caption@tempdima=\dimen180
+\captionmargin=\dimen181
+\caption@leftmargin=\dimen182
+\caption@rightmargin=\dimen183
+\caption@width=\dimen184
+\caption@indent=\dimen185
+\caption@parindent=\dimen186
+\caption@hangindent=\dimen187
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count311
+\c@continuedfloat=\count312
+Package caption Info: longtable package is loaded.
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/caption\ltcaption.sty
+Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
+))
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count313
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count314
+) (C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks28
+\thm@bodyfont=\toks29
+\thm@headfont=\toks30
+\thm@notefont=\toks31
+\thm@headpunct=\toks32
+\thm@preskip=\skip60
+\thm@postskip=\skip61
+\thm@headsep=\skip62
+\dth@everypar=\toks33
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/cancel\cancel.sty
+Package: cancel 2013/04/12 v2.2 Cancel math terms
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/mdframed\mdframed.sty
+Package: mdframed 2013/07/01 1.9b: mdframed
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpars
+e.sty
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2025-12-24 L3 programming layer (loader) 
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
+tex.def
+File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count315
+))
+Package: xparse 2025-10-09 L3 Experimental document command parser
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-abspage.sty
+Package: zref-abspage 2026-03-07 v2.37 Module abspage for zref (HO)
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-base.sty
+Package: zref-base 2026-03-07 v2.37 Module base for zref (HO)
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.s
+ty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefine
+keys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds
+.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+ (C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+) (C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+Package zref Info: New property list: main on input line 767.
+Package zref Info: New property: default on input line 768.
+Package zref Info: New property: page on input line 769.
+)
+\c@abspage=\count316
+Package zref Info: New property: abspage on input line 67.
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/needspace\needspace.sty
+Package: needspace 2025/03/13 v1.3e reserve vertical space
+) (C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
+Package: color 2025/01/14 v1.3e Standard LaTeX Color (DPC)
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 149.
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+)
+\mdf@templength=\skip63
+\c@mdf@globalstyle@cnt=\count317
+\mdf@skipabove@length=\skip64
+\mdf@skipbelow@length=\skip65
+\mdf@leftmargin@length=\skip66
+\mdf@rightmargin@length=\skip67
+\mdf@innerleftmargin@length=\skip68
+\mdf@innerrightmargin@length=\skip69
+\mdf@innertopmargin@length=\skip70
+\mdf@innerbottommargin@length=\skip71
+\mdf@splittopskip@length=\skip72
+\mdf@splitbottomskip@length=\skip73
+\mdf@outermargin@length=\skip74
+\mdf@innermargin@length=\skip75
+\mdf@linewidth@length=\skip76
+\mdf@innerlinewidth@length=\skip77
+\mdf@middlelinewidth@length=\skip78
+\mdf@outerlinewidth@length=\skip79
+\mdf@roundcorner@length=\skip80
+\mdf@footenotedistance@length=\skip81
+\mdf@userdefinedwidth@length=\skip82
+\mdf@needspace@length=\skip83
+\mdf@frametitleaboveskip@length=\skip84
+\mdf@frametitlebelowskip@length=\skip85
+\mdf@frametitlerulewidth@length=\skip86
+\mdf@frametitleleftmargin@length=\skip87
+\mdf@frametitlerightmargin@length=\skip88
+\mdf@shadowsize@length=\skip89
+\mdf@extratopheight@length=\skip90
+\mdf@subtitleabovelinewidth@length=\skip91
+\mdf@subtitlebelowlinewidth@length=\skip92
+\mdf@subtitleaboveskip@length=\skip93
+\mdf@subtitlebelowskip@length=\skip94
+\mdf@subtitleinneraboveskip@length=\skip95
+\mdf@subtitleinnerbelowskip@length=\skip96
+\mdf@subsubtitleabovelinewidth@length=\skip97
+\mdf@subsubtitlebelowlinewidth@length=\skip98
+\mdf@subsubtitleaboveskip@length=\skip99
+\mdf@subsubtitlebelowskip@length=\skip100
+\mdf@subsubtitleinneraboveskip@length=\skip101
+\mdf@subsubtitleinnerbelowskip@length=\skip102
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/mdframed\md-frame-0.mdf
+File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
+)
+\mdf@frametitlebox=\box62
+\mdf@footnotebox=\box63
+\mdf@splitbox@one=\box64
+\mdf@splitbox@two=\box65
+\mdf@splitbox@save=\box66
+\mdfsplitboxwidth=\skip103
+\mdfsplitboxtotalwidth=\skip104
+\mdfsplitboxheight=\skip105
+\mdfsplitboxdepth=\skip106
+\mdfsplitboxtotalheight=\skip107
+\mdfframetitleboxwidth=\skip108
+\mdfframetitleboxtotalwidth=\skip109
+\mdfframetitleboxheight=\skip110
+\mdfframetitleboxdepth=\skip111
+\mdfframetitleboxtotalheight=\skip112
+\mdffootnoteboxwidth=\skip113
+\mdffootnoteboxtotalwidth=\skip114
+\mdffootnoteboxheight=\skip115
+\mdffootnoteboxdepth=\skip116
+\mdffootnoteboxtotalheight=\skip117
+\mdftotallinewidth=\skip118
+\mdfboundingboxwidth=\skip119
+\mdfboundingboxtotalwidth=\skip120
+\mdfboundingboxheight=\skip121
+\mdfboundingboxdepth=\skip122
+\mdfboundingboxtotalheight=\skip123
+\mdf@freevspace@length=\skip124
+\mdf@horizontalwidthofbox@length=\skip125
+\mdf@verticalmarginwhole@length=\skip126
+\mdf@horizontalspaceofbox=\skip127
+\mdfsubtitleheight=\skip128
+\mdfsubsubtitleheight=\skip129
+\c@mdfcountframes=\count318
+
+****** mdframed patching \endmdf@trivlist
+
+****** -- success******
+
+\mdf@envdepth=\count319
+\c@mdf@env@i=\count320
+\c@mdf@env@ii=\count321
+\c@mdf@zref@counter=\count322
+Package zref Info: New property: mdf@pagevalue on input line 895.
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/makecell\makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen188
+\c@nlinenum=\count323
+\TeXr@lab=\toks34
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count324
+\float@exts=\toks35
+\float@box=\box67
+\@float@everytoks=\toks36
+\@floatcapt=\box68
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+LaTeX Info: Redefining \color on input line 762.
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+) (C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/graphics\dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+) (C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+\lst@mode=\count325
+\lst@gtempboxa=\box69
+\lst@token=\toks37
+\lst@length=\count326
+\lst@currlwidth=\dimen189
+\lst@column=\count327
+\lst@pos=\count328
+\lst@lostspace=\dimen190
+\lst@width=\dimen191
+\lst@newlines=\count329
+\lst@lineno=\count330
+\lst@maxwidth=\dimen192
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
+File: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
+\c@lstnumber=\count331
+\lst@skipnumbers=\count332
+\lst@framebox=\box70
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
+File: listings.cfg 2025/11/14 1.11b listings configuration
+))
+Package: listings 2025/11/14 1.11b (Carsten Heinz)
+==> First Aid for listings.sty no longer applied!
+    Expected:
+        2024/09/23 1.10c (Carsten Heinz)
+    but found:
+        2025/11/14 1.11b (Carsten Heinz)
+    so I'm assuming it got fixed.
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/gensymb\gensymb.sty
+Package: gensymb 2022/10/17 v1.0.2 (KJH)
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
+fg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+)
+\Gin@req@height=\dimen193
+\Gin@req@width=\dimen194
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/ebproof\ebproof.sty
+Package: ebproof 2021/01/28 v2.1.1 EB's proof trees
+\l__ebproof_separation_dim=\dimen195
+\l__ebproof_rule_margin_dim=\dimen196
+\l__ebproof_rule_thickness_dim=\dimen197
+\l__ebproof_rule_separation_dim=\dimen198
+\l__ebproof_rule_dash_length_dim=\dimen199
+\l__ebproof_rule_dash_space_dim=\dimen256
+\l__ebproof_label_separation_dim=\dimen257
+\l__ebproof_label_axis_dim=\dimen258
+\g__ebproof_register_int=\count333
+\l__ebproof_transit_dim=\dimen259
+\g__ebproof_level_int=\count334
+\g__ebproof_stack_box=\box71
+\l__ebproof_1_box=\box72
+\l__ebproof_2_box=\box73
+\l__ebproof_3_box=\box74
+\l__ebproof_4_box=\box75
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/bodeplot\bodeplot.sty
+Package: bodeplot 2026/05/18 v3.1 Generate Bode, Nichols, Nyquist, and pole-zer
+o plots
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/ifplatform\ifplatform.s
+ty
+Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
+ (C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/tools\shellesc.sty
+Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 77.
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/catchfile\catchfile.s
+ty
+Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+)
+
+Package ifplatform Warning: 
+    shell escape is disabled, so I can only detect \ifwindows.
+
+) (C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/pgfplots\pgfplots.sty
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.rev
+ision.tex)
+Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.
+sty
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.st
+y
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
+-common.tex
+\pgfutil@everybye=\toks38
+\pgfutil@tempdima=\dimen260
+\pgfutil@tempdimb=\dimen261
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
+-latex.def
+\pgfutil@abb=\box76
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.
+code.tex
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
+Package: pgfrcs 2025-08-29 v3.1.11a (3.1.11a)
+))
+Package: pgf 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.
+sty
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.
+sty
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s.code.tex
+Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+.code.tex
+\pgfkeys@pathtoks=\toks39
+\pgfkeys@temptoks=\toks40
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+libraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks41
+))
+\pgf@x=\dimen262
+\pgf@y=\dimen263
+\pgf@xa=\dimen264
+\pgf@ya=\dimen265
+\pgf@xb=\dimen266
+\pgf@yb=\dimen267
+\pgf@xc=\dimen268
+\pgf@yc=\dimen269
+\pgf@xd=\dimen270
+\pgf@yd=\dimen271
+\w@pgf@writea=\write3
+\r@pgf@reada=\read3
+\c@pgf@counta=\count335
+\c@pgf@countb=\count336
+\c@pgf@countc=\count337
+\c@pgf@countd=\count338
+\t@pgf@toka=\toks42
+\t@pgf@tokb=\toks43
+\t@pgf@tokc=\toks44
+\pgf@sys@id@count=\count339
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.c
+fg
+File: pgf.cfg 2025-08-29 v3.1.11a (3.1.11a)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s-pdftex.def
+File: pgfsys-pdftex.def 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s-common-pdf.def
+File: pgfsys-common-pdf.def 2025-08-29 v3.1.11a (3.1.11a)
+)))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+ssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfsyssoftpath@smallbuffer@items=\count340
+\pgfsyssoftpath@bigbuffer@items=\count341
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+sprotocol.code.tex
+File: pgfsysprotocol.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+e.code.tex
+Package: pgfcore 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
+.tex
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.
+code.tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparse
+r.code.tex
+\pgfmath@dimen=\dimen272
+\pgfmath@count=\count342
+\pgfmath@box=\box77
+\pgfmath@toks=\toks45
+\pgfmath@stack@operand=\toks46
+\pgfmath@stack@operation=\toks47
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.code.tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.basic.code.tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.trigonometric.code.tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.random.code.tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.comparison.code.tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.base.code.tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.round.code.tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.misc.code.tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.integerarithmetics.code.tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.
+code.tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat
+.code.tex
+\c@pgfmathroundto@lastzeros=\count343
+))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.
+tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epoints.code.tex
+File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@picminx=\dimen273
+\pgf@picmaxx=\dimen274
+\pgf@picminy=\dimen275
+\pgf@picmaxy=\dimen276
+\pgf@pathminx=\dimen277
+\pgf@pathmaxx=\dimen278
+\pgf@pathminy=\dimen279
+\pgf@pathmaxy=\dimen280
+\pgf@xx=\dimen281
+\pgf@xy=\dimen282
+\pgf@yx=\dimen283
+\pgf@yy=\dimen284
+\pgf@zx=\dimen285
+\pgf@zy=\dimen286
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@path@lastx=\dimen287
+\pgf@path@lasty=\dimen288
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathusage.code.tex
+File: pgfcorepathusage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@shorten@end@additional=\dimen289
+\pgf@shorten@start@additional=\dimen290
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+escopes.code.tex
+File: pgfcorescopes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfpic=\box78
+\pgf@hbox=\box79
+\pgf@layerbox@main=\box80
+\pgf@picture@serial@count=\count344
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+egraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgflinewidth=\dimen291
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+etransformations.code.tex
+File: pgfcoretransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@pt@x=\dimen292
+\pgf@pt@y=\dimen293
+\pgf@pt@temp=\dimen294
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+equick.code.tex
+File: pgfcorequick.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eobjects.code.tex
+File: pgfcoreobjects.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+earrows.code.tex
+File: pgfcorearrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfarrowsep=\dimen295
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eshade.code.tex
+File: pgfcoreshade.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@max=\dimen296
+\pgf@sys@shading@range@num=\count345
+\pgf@shadingcount=\count346
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eimage.code.tex
+File: pgfcoreimage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eexternal.code.tex
+File: pgfcoreexternal.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfexternal@startupbox=\box81
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+elayers.code.tex
+File: pgfcorelayers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+etransparency.code.tex
+File: pgfcoretransparency.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epatterns.code.tex
+File: pgfcorepatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+erdf.code.tex
+File: pgfcorerdf.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+shapes.code.tex
+File: pgfmoduleshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfnodeparttextbox=\box82
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+plot.code.tex
+File: pgfmoduleplot.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
+mp-version-0-65.sty
+Package: pgfcomp-version-0-65 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@nodesepstart=\dimen297
+\pgf@nodesepend=\dimen298
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
+mp-version-1-18.sty
+Package: pgfcomp-version-1-18 2025-08-29 v3.1.11a (3.1.11a)
+))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.st
+y
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.s
+ty
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+.code.tex))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
+.tex))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.
+code.tex
+Package: pgffor 2025-08-29 v3.1.11a (3.1.11a)
+\pgffor@iter=\dimen299
+\pgffor@skip=\dimen300
+\pgffor@stack=\toks48
+\pgffor@toks=\toks49
+))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z\tikz.code.tex
+Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+aryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@plot@mark@count=\count347
+\pgfplotmarksize=\dimen301
+)
+\tikz@lastx=\dimen302
+\tikz@lasty=\dimen303
+\tikz@lastxsaved=\dimen304
+\tikz@lastysaved=\dimen305
+\tikz@lastmovetox=\dimen306
+\tikz@lastmovetoy=\dimen307
+\tikzleveldistance=\dimen308
+\tikzsiblingdistance=\dimen309
+\tikz@figbox=\box83
+\tikz@figbox@bg=\box84
+\tikz@tempbox=\box85
+\tikz@tempbox@bg=\box86
+\tikztreelevel=\count348
+\tikznumberofchildren=\count349
+\tikznumberofcurrentchild=\count350
+\tikz@fig@count=\count351
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+matrix.code.tex
+File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfmatrixcurrentrow=\count352
+\pgfmatrixcurrentcolumn=\count353
+\pgf@matrix@numberofcolumns=\count354
+)
+\tikz@expandcount=\count355
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.cod
+e.tex
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotscore
+.code.tex
+\t@pgfplots@toka=\toks50
+\t@pgfplots@tokb=\toks51
+\t@pgfplots@tokc=\toks52
+\pgfplots@tmpa=\dimen310
+\c@pgfplots@coordindex=\count356
+\c@pgfplots@scanlineindex=\count357
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgfplots
+sysgeneric.code.tex))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgfplot
+slibrary.code.tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/oldpgfcompat
+ib\pgfplotsoldpgfsupp_loader.code.tex
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+aryfpu.code.tex)
+Package pgfplots: loading complementary utilities for your pgf version...
+\t@pgf@toka=\toks53
+\t@pgf@tokb=\toks54
+\t@pgf@tokc=\toks55
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/oldpgfcompat
+ib\pgfplotsoldpgfsupp_pgfutil-common-lists.tex))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplot
+sutil.code.tex
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructur
+e\pgfplotsliststructure.code.tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructur
+e\pgfplotsliststructureext.code.tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructur
+e\pgfplotsarray.code.tex
+\c@pgfplotsarray@tmp=\count358
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructur
+e\pgfplotsmatrix.code.tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/numtable\pgf
+plotstableshared.code.tex
+\c@pgfplotstable@counta=\count359
+\t@pgfplotstable@a=\toks56
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructur
+e\pgfplotsdeque.code.tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplot
+sbinary.code.tex
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplot
+sbinary.data.code.tex))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplot
+sutil.verb.code.tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgflibr
+arypgfplots.surfshading.code.tex
+\c@pgfplotslibrarysurf@no=\count360
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgflibra
+rypgfplots.surfshading.pgfsys-pdftex.def)))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplot
+scolormap.code.tex
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplot
+scolor.code.tex))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsstac
+kedplots.code.tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsplot
+handlers.code.tex
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsmesh
+plothandler.code.tex
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsmesh
+plotimage.code.tex)))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.sca
+ling.code.tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotscoor
+dprocessing.code.tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.err
+orbars.code.tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.mar
+kers.code.tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotstick
+s.code.tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.pat
+hs.code.tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarydecorations.code.tex
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+decorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen311
+\pgfdecoratedremainingdistance=\dimen312
+\pgfdecoratedinputsegmentcompleteddistance=\dimen313
+\pgfdecoratedinputsegmentremainingdistance=\dimen314
+\pgf@decorate@distancetomove=\dimen315
+\pgf@decorate@repeatstate=\count361
+\pgfdecorationsegmentamplitude=\dimen316
+\pgfdecorationsegmentlength=\dimen317
+)
+\tikz@lib@dec@box=\box87
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarydecorations.pathmorphing.code.tex
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorat
+ions\pgflibrarydecorations.pathmorphing.code.tex))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarydecorations.pathreplacing.code.tex
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorat
+ions\pgflibrarydecorations.pathreplacing.code.tex))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\tikzlib
+rarypgfplots.contourlua.code.tex)
+\pgfplots@numplots=\count362
+\pgfplots@xmin@reg=\dimen318
+\pgfplots@xmax@reg=\dimen319
+\pgfplots@ymin@reg=\dimen320
+\pgfplots@ymax@reg=\dimen321
+\pgfplots@zmin@reg=\dimen322
+\pgfplots@zmax@reg=\dimen323
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibraryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+aryplotmarks.code.tex
+File: pgflibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\tikzlib
+rarypgfplots.groupplots.code.tex
+\pgfplots@group@current@plot=\count363
+\pgfplots@group@current@row=\count364
+\pgfplots@group@current@column=\count365
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))
+\c@bp@gnuplot@id=\count366
+\l__bp_pos_int=\count367
+\l__bp_seppos_int=\count368
+\l__bp_paren_int=\count369
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/physics\physics.sty
+Package: physics 
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibraryshapes.code.tex
+File: tikzlibraryshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\
+pgflibraryshapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\
+pgflibraryshapes.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\
+pgflibraryshapes.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\
+pgflibraryshapes.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibraryshapes.callouts.code.tex
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\
+pgflibraryshapes.callouts.code.tex))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\
+pgflibraryshapes.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfnodepartlowerbox=\box88
+\pgfnodeparttwobox=\box89
+\pgfnodepartthreebox=\box90
+\pgfnodepartfourbox=\box91
+\pgfnodeparttwentybox=\box92
+\pgfnodepartnineteenbox=\box93
+\pgfnodeparteighteenbox=\box94
+\pgfnodepartseventeenbox=\box95
+\pgfnodepartsixteenbox=\box96
+\pgfnodepartfifteenbox=\box97
+\pgfnodepartfourteenbox=\box98
+\pgfnodepartthirteenbox=\box99
+\pgfnodeparttwelvebox=\box100
+\pgfnodepartelevenbox=\box101
+\pgfnodeparttenbox=\box102
+\pgfnodepartninebox=\box103
+\pgfnodeparteightbox=\box104
+\pgfnodepartsevenbox=\box105
+\pgfnodepartsixbox=\box106
+\pgfnodepartfivebox=\box107
+)))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+aryarrows.code.tex
+File: pgflibraryarrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\arrowsize=\dimen324
+))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibraryautomata.code.tex
+File: tikzlibraryautomata.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarypetri.code.tex
+File: tikzlibrarypetri.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarydecorations.markings.code.tex
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorat
+ions\pgflibrarydecorations.markings.code.tex))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibraryquotes.code.tex
+File: tikzlibraryquotes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/circuitikz\circuitikz.s
+ty
+Package: circuitikz 2026/05/24{} The CircuiTikz circuit drawing package version
+ 1.8.6
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+aryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfarrowinset=\dimen325
+\pgfarrowlength=\dimen326
+\pgfarrowwidth=\dimen327
+\pgfarrowlinewidth=\dimen328
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarybending.code.tex
+File: tikzlibrarybending.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+bending.code.tex
+File: pgfmodulebending.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+nonlineartransformations.code.tex
+File: pgfmodulenonlineartransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgftransformnonlinearflatness=\dimen329
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+arycurvilinear.code.tex
+File: pgflibrarycurvilinear.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@curvilinear@time@a=\dimen330
+\pgf@curvilinear@length@a=\dimen331
+\pgf@curvilinear@length@b=\dimen332
+\pgf@curvilinear@length@c=\dimen333
+\pgf@curvilinear@length@d=\dimen334
+)
+\pgf@arrows@the@rigidity=\dimen335
+))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibraryfpu.code.tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcirc.de
+fines.tex
+\pgf@circ@count@a=\count370
+\pgf@circ@count@b=\count371
+\pgf@circ@count@c=\count372
+\pgf@circ@res@up=\dimen336
+\pgf@circ@res@down=\dimen337
+\pgf@circ@res@zero=\dimen338
+\pgf@circ@res@left=\dimen339
+\pgf@circ@res@right=\dimen340
+\pgf@circ@res@other=\dimen341
+\pgf@circ@res@step=\dimen342
+\pgf@circ@res@temp=\dimen343
+\pgf@circ@Rlen=\dimen344
+\pgf@circ@scaled@Rlen=\dimen345
+\pgfstartlinewidth=\dimen346
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircuti
+ls.tex
+\ctikz@scratchbox=\box108
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircpat
+h.tex
+\ctikz@vif@count=\count373
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircsha
+pes.tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircmon
+opoles.tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircbip
+oles.tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcirctri
+poles.tex
+\pgf@circ@res@count=\count374
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircqua
+dpoles.tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircmul
+tipoles.tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcirclab
+el.tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircvol
+tage.tex
+\pgfcirc@labelshift=\dimen347
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcirccur
+rent.tex)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircflo
+w.tex))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/karnaugh-map\karnaugh-m
+ap.sty
+Package: karnaugh-map 2022/01/15 v2.0 Draw Karnaugh Maps
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/xstring\xstring.sty
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/xstring\xstring.tex
+\xs_counta=\count375
+\xs_countb=\count376
+)
+Package: xstring 2023/08/22 v1.86 String manipulations (CT)
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarymatrix.code.tex
+File: tikzlibrarymatrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+\@karnaughmap@var@colorindex@=\count377
+\@karnaughmap@var@colorindexnext@=\count378
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/eulervm\eulervm.sty
+Package: eulervm 2005/01/11 v4.0 (WaS)
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/forest\forest.sty
+Package: forest 2017/07/14 v2.1.5 Drawing (linguistic) trees
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibraryfit.code.tex
+File: tikzlibraryfit.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+aryintersections.code.tex
+\pgf@intersect@solutions=\count379
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/pgfopts\pgfopts.sty
+Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
+\pgfopts@list@add@a@toks=\toks57
+\pgfopts@list@add@b@toks=\toks58
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/elocalloc\elocalloc.sty
+Package: elocalloc 2016/12/15 v0.03 local allocation for LaTeX 2015+ (DPC)
+) (C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/environ\environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/trimspaces\trimspaces.s
+ty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/inlinedef\inlinedef.sty
+Package: inlinedef 2008/07/10 v1.0 Inlined expansions within definitions
+\ID@toks=\toks59
+\ID@count=\count380
+)
+\ID@usercommands=\toks60
+\safeloop@depth=\count381
+\safeRKloop@depth=\count382
+\forest@temp@dimen=\dimen348
+\forest@temp@count=\count383
+\forest@n=\count384
+\forest@temp@global@count=\count385
+\forest@temp@toks=\toks61
+\forest@temparray@M=\count386
+\forest@temparray@N=\count387
+\forest@global@temparray@M=\count388
+\forest@global@temparray@N=\count389
+\forest@isnum@count=\count390
+\forest@isdim@nonintpart=\count391
+\forest@isdim@dimen=\dimen349
+\forest@sort@m=\count392
+\forest@sort@k=\count393
+\forest@sort@p=\count394
+\bracket@content=\toks62
+\bracket@afterthought=\toks63
+\forest@node@maxid=\count395
+\forest@process@left@M=\count396
+\forest@process@left@N=\count397
+\forest@process@right@M=\count398
+\forest@process@right@N=\count399
+\forest@process@saved@M=\count400
+\forest@process@saved@N=\count401
+\forest@process@result@M=\count402
+\forest@process@result@N=\count403
+\forest@process@n=\count404
+\forest@nodewalk@branch@toks=\toks64
+\forest@nodewalk@shortsteps@resolution=\toks65
+\forest@do@dynamics=\toks66
+\forest@box=\box109
+\forest@xg=\dimen350
+\forest@yg=\dimen351
+\forest@xs=\dimen352
+\forest@ys=\dimen353
+\forest@pi@toks=\toks67
+\forest@segment@toks=\toks68
+\forest@PIi@toks=\toks69
+\forest@PIii@toks=\toks70
+\forest@copy@in=\read4
+\forest@copy@out=\write4
+\forest@externalize@max@outer@n=\count405
+\forest@externalize@inner@n=\count406
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mathtools.sty
+Package: mathtools 2024/10/04 v1.31 mathematical typesetting tools
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
+\calc@Acount=\count407
+\calc@Bcount=\count408
+\calc@Adimen=\dimen354
+\calc@Bdimen=\dimen355
+\calc@Askip=\skip130
+\calc@Bskip=\skip131
+LaTeX Info: Redefining \setlength on input line 86.
+LaTeX Info: Redefining \addtolength on input line 87.
+\calc@Ccount=\count409
+\calc@Cskip=\skip132
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mhsetup.sty
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
+)
+\g_MT_multlinerow_int=\count410
+\l_MT_multwidth_dim=\dimen356
+\origjot=\skip133
+\l_MT_shortvdotswithinadjustabove_dim=\dimen357
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen358
+\l_MT_above_intertext_sep=\dimen359
+\l_MT_below_intertext_sep=\dimen360
+\l_MT_above_shortintertext_sep=\dimen361
+\l_MT_below_shortintertext_sep=\dimen362
+\xmathstrut@box=\box110
+\xmathstrut@dim=\dimen363
+) (C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pdfpages.sty
+Package: pdfpages 2026/03/30 v0.6h Insert pages of external PDF documents (AM)
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
+Package: eso-pic 2026/05/31 v3.0e eso-pic (RN)
+\ESO@tempdima=\dimen364
+\ESO@tempdimb=\dimen365
+)
+\AM@pagewidth=\dimen366
+\AM@pageheight=\dimen367
+\AM@fboxrule=\dimen368
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pppdftex.def
+File: pppdftex.def 2026/03/30 v0.6h Pdfpages driver for pdfTeX (AM)
+)
+\pdfpages@includegraphics@status=\count411
+\AM@pagebox=\box111
+\AM@global@opts=\toks71
+\AM@pagecnt=\count412
+\AM@toc@title=\toks72
+\AM@lof@heading=\toks73
+\c@AM@survey=\count413
+\AM@templatesizebox=\box112
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/transparent\transparent
+.sty
+Package: transparent 2025-06-23 v1.6 Transparency with color stacks
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/transparent\transparent
+-nometadata.sty
+Package: transparent-nometadata 2025-06-23 v1.6 Transparency via pdfTeX's color
+ stack (HO)
+))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.s
+ty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+Package: nameref 2025-06-21 v2.57 Cross-referencing by name of section
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettit
+lestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count414
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.s
+ty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\@linkdim=\dimen369
+\Hy@linkcounter=\count415
+\Hy@pagecounter=\count416
+ (C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count417
+ (C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4195.
+Package hyperref Info: Link nesting OFF on input line 4200.
+Package hyperref Info: Hyper index ON on input line 4203.
+Package hyperref Info: Plain pages OFF on input line 4210.
+Package hyperref Info: Backreferencing OFF on input line 4215.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4462.
+\c@Hy@tempcnt=\count418
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip18
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4801.
+\XeTeXLinkMargin=\dimen370
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc
+.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count419
+\Field@Width=\dimen371
+\Fld@charsize=\dimen372
+Package hyperref Info: Hyper figures OFF on input line 6078.
+Package hyperref Info: Link nesting OFF on input line 6083.
+Package hyperref Info: Hyper index ON on input line 6086.
+Package hyperref Info: backreferencing OFF on input line 6093.
+Package hyperref Info: Link coloring OFF on input line 6098.
+Package hyperref Info: Link coloring with OCG OFF on input line 6103.
+Package hyperref Info: PDF/A mode OFF on input line 6108.
+\Hy@abspage=\count420
+\c@Item=\count421
+\c@Hfootnote=\count422
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2025-07-12 v7.01o Hyperref driver for pdfTeX
+\HyAnn@Count=\count423
+\Fld@listcount=\count424
+\c@bookmark@seq@number=\count425
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
+echeck.sty
+Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquec
+ounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+84.
+)
+\Hy@SectionHShift=\skip134
+)
+Package hyperref Info: Option `colorlinks' set `false' on input line 50.
+\c@example=\count426
+\c@definition=\count427
+\c@exercise=\count428
+\c@theorem=\count429
+\c@define=\count430
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/xifthen\xifthen.sty
+Package: xifthen 2015/11/05 v1.4.0 Extended ifthen features
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/ifmtarg\ifmtarg.sty
+Package: ifmtarg 2018/04/16 v1.2b check for an empty argument
+))
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer/libra
+ries\tikzlibraryexternal.code.tex
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzexternalshared.code.tex)))
+\openout3 = `BasiDati.auxlock'.
+
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2026/03/07 v6.0 Page Geometry
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count431
+\Gm@cntv=\count432
+\c@Gm@tempcnt=\count433
+\Gm@bindingoffset=\dimen373
+\Gm@wd@mp=\dimen374
+\Gm@odd@mp=\dimen375
+\Gm@even@mp=\dimen376
+\Gm@layoutwidth=\dimen377
+\Gm@layoutheight=\dimen378
+\Gm@layouthoffset=\dimen379
+\Gm@layoutvoffset=\dimen380
+\Gm@dimlist=\toks74
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
+(BasiDati.aux)
+\openout1 = `BasiDati.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Info: Redefining \it@ocap on input line 14.
+LaTeX Info: Redefining \it@ccap on input line 14.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
+ii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count434
+\scratchdimen=\dimen381
+\scratchbox=\box113
+\nofMPsegments=\count435
+\nofMParguments=\count436
+\everyMPshowfont=\toks75
+\MPscratchCnt=\count437
+\MPscratchDim=\dimen382
+\MPnumerator=\count438
+\makeMPintoPDFobject=\count439
+\everyMPtoPDFconversion=\toks76
+)
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
+ase.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
+fg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+\c@lstlisting=\count440
+\symgns@font=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
+(Font)                  TS1/cmss/m/n --> TS1/cmss/b/n on input line 14.
+Package gensymb Info: Math companion symbols declared on input line 14.
+LaTeX Info: Redefining \degree on input line 14.
+LaTeX Info: Redefining \celsius on input line 14.
+Package gensymb Info: Using text companion symbols for \degree, \celsius and \p
+erthousand on input line 14.
+LaTeX Info: Redefining \ohm on input line 14.
+Package gensymb Info: Using \textohm for \ohm on input line 14.
+Package gensymb Info: Using \textmu for \micro on input line 14.
+
+Package pgfplots notification 'compat/show suggested version=true': document ha
+s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
+
+\bp@tztpk@file=\write5
+\openout5 = `BasiDati-tf2zpk.py'.
+
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape.sty
+Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape-nom
+etadata.sty
+Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PD
+F (HO)
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/graphics\lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+))
+Package hyperref Info: Link coloring OFF on input line 14.
+
+(BasiDati.out) (BasiDati.out)
+\@outlinefile=\write6
+\openout6 = `BasiDati.out'.
+
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* bindingoffset: 22.76219pt
+* modes: twoside 
+* h-part:(L,W,R)=(42.67912pt, 492.23288pt, 39.83368pt)
+* v-part:(T,H,B)=(45.52458pt, 748.30722pt, 51.21504pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=492.23288pt
+* \textheight=748.30722pt
+* \oddsidemargin=-6.82867pt
+* \evensidemargin=-32.43631pt
+* \topmargin=-63.7454pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=111.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(title.tex [1
+
+{C:/Users/michi/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]) (BasiDati.t
+oc
+LaTeX Font Info:    Trying to load font information for U+zeur on input line 4.
+
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/eulervm\uzeur.fd
+File: uzeur.fd 2005/01/11 v4.0 (WaS)
+)
+LaTeX Font Info:    Trying to load font information for U+zeus on input line 4.
+
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/eulervm\uzeus.fd
+File: uzeus.fd 2005/01/11 v4.0 (WaS)
+)
+LaTeX Font Info:    Trying to load font information for U+zeuex on input line 4
+.
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/eulervm\uzeuex.fd
+File: uzeuex.fd 2005/01/11 v4.0 (WaS)
+)
+[2] [3])
+\tf@toc=\write7
+\openout7 = `BasiDati.toc'.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4]
+<./figures/architettura_3_livelli.png, id=646, 1285.80376pt x 334.24875pt>
+File: ./figures/architettura_3_livelli.png Graphic file (type png)
+<use ./figures/architettura_3_livelli.png>
+Package pdftex.def Info: ./figures/architettura_3_livelli.png  used on input li
+ne 48.
+(pdftex.def)             Requested size: 393.7878pt x 102.36649pt.
+<./figures/architettura_transazionale.png, id=648, 990.70125pt x 327.2225pt>
+File: ./figures/architettura_transazionale.png Graphic file (type png)
+<use ./figures/architettura_transazionale.png>
+Package pdftex.def Info: ./figures/architettura_transazionale.png  used on inpu
+t line 57.
+(pdftex.def)             Requested size: 393.7878pt x 130.06282pt.
+Package mdframed Info: mdframed works in twoside mode on input line 62.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 62.
+
+[5 <./figures/architettura_3_livelli.png> <./figures/architettura_transazionale
+.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 97.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 97.
+ [6]
+<./figures/architettura_alto_livello.png, id=683, 1673.25125pt x 593.21625pt>
+File: ./figures/architettura_alto_livello.png Graphic file (type png)
+<use ./figures/architettura_alto_livello.png>
+Package pdftex.def Info: ./figures/architettura_alto_livello.png  used on input
+ line 189.
+(pdftex.def)             Requested size: 393.7878pt x 139.60497pt.
+<./figures/modulo_gestione_transazioni.png, id=684, 1636.1125pt x 605.26125pt>
+File: ./figures/modulo_gestione_transazioni.png Graphic file (type png)
+<use ./figures/modulo_gestione_transazioni.png>
+Package pdftex.def Info: ./figures/modulo_gestione_transazioni.png  used on inp
+ut line 198.
+(pdftex.def)             Requested size: 393.7878pt x 145.67203pt.
+<./figures/gestore_interrogazioni.png, id=685, 1214.5375pt x 585.18625pt>
+File: ./figures/gestore_interrogazioni.png Graphic file (type png)
+<use ./figures/gestore_interrogazioni.png>
+Package pdftex.def Info: ./figures/gestore_interrogazioni.png  used on input li
+ne 208.
+(pdftex.def)             Requested size: 393.7878pt x 189.72787pt.
+ [7 <./figures/architettura_alto_livello.png> <./figures/modulo_gestione_transa
+zioni.png>]
+<./figures/gestore_metodi_accesso.png, id=695, 1102.1175pt x 608.2725pt>
+File: ./figures/gestore_metodi_accesso.png Graphic file (type png)
+<use ./figures/gestore_metodi_accesso.png>
+Package pdftex.def Info: ./figures/gestore_metodi_accesso.png  used on input li
+ne 217.
+(pdftex.def)             Requested size: 393.7878pt x 217.33511pt.
+<./figures/gestore_affidabilita.png, id=696, 1407.2575pt x 619.31375pt>
+File: ./figures/gestore_affidabilita.png Graphic file (type png)
+<use ./figures/gestore_affidabilita.png>
+Package pdftex.def Info: ./figures/gestore_affidabilita.png  used on input line
+ 227.
+(pdftex.def)             Requested size: 393.7878pt x 173.29326pt.
+ [8 <./figures/gestore_interrogazioni.png> <./figures/gestore_metodi_accesso.pn
+g> <./figures/gestore_affidabilita.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 249.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 249.
+
+(C:\Users\michi\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+)
+[9] [10]
+Package mdframed Info: mdframed works in twoside mode on input line 436.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 436.
+ [11] [12]
+Package mdframed Info: mdframed works in twoside mode on input line 633.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 633.
+Package mdframed Info: mdframed works in twoside mode on input line 666.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 666.
+Package mdframed Info: Not enough space on this page on input line 682.
+ [13]
+Package mdframed Info: Not enough space on this page on input line 682.
+ [14] [15]
+Package mdframed Info: mdframed works in twoside mode on input line 849.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 849.
+<./figures/esempio_db.png, id=906, 914.41624pt x 351.3125pt>
+File: ./figures/esempio_db.png Graphic file (type png)
+<use ./figures/esempio_db.png>
+Package pdftex.def Info: ./figures/esempio_db.png  used on input line 853.
+(pdftex.def)             Requested size: 377.14775pt x 144.89674pt.
+<./figures/esempio_select.png, id=907, 159.59625pt x 167.62625pt>
+File: ./figures/esempio_select.png Graphic file (type png)
+<use ./figures/esempio_select.png>
+Package pdftex.def Info: ./figures/esempio_select.png  used on input line 869.
+(pdftex.def)             Requested size: 94.28513pt x 99.02907pt.
+ [16 <./figures/esempio_db.png> <./figures/esempio_select.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 912.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 912.
+<./figures/esempio_db_from_1.png, id=931, 623.32875pt x 191.71625pt>
+File: ./figures/esempio_db_from_1.png Graphic file (type png)
+<use ./figures/esempio_db_from_1.png>
+Package pdftex.def Info: ./figures/esempio_db_from_1.png  used on input line 91
+6.
+(pdftex.def)             Requested size: 377.14775pt x 115.99892pt.
+<./figures/esempio_db_from_2.png, id=932, 884.30376pt x 335.2525pt>
+File: ./figures/esempio_db_from_2.png Graphic file (type png)
+<use ./figures/esempio_db_from_2.png>
+Package pdftex.def Info: ./figures/esempio_db_from_2.png  used on input line 92
+0.
+(pdftex.def)             Requested size: 377.14775pt x 142.9843pt.
+<./figures/esempio_select_from.png, id=933, 710.655pt x 302.12875pt>
+File: ./figures/esempio_select_from.png Graphic file (type png)
+<use ./figures/esempio_select_from.png>
+Package pdftex.def Info: ./figures/esempio_select_from.png  used on input line 
+934.
+(pdftex.def)             Requested size: 377.14775pt x 160.34415pt.
+ [17 <./figures/esempio_db_from_1.png> <./figures/esempio_db_from_2.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 956.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 956.
+File: ./figures/esempio_db_from_1.png Graphic file (type png)
+<use ./figures/esempio_db_from_1.png>
+Package pdftex.def Info: ./figures/esempio_db_from_1.png  used on input line 96
+0.
+(pdftex.def)             Requested size: 377.14775pt x 115.99892pt.
+File: ./figures/esempio_db_from_2.png Graphic file (type png)
+<use ./figures/esempio_db_from_2.png>
+Package pdftex.def Info: ./figures/esempio_db_from_2.png  used on input line 96
+4.
+(pdftex.def)             Requested size: 377.14775pt x 142.9843pt.
+<./figures/esempio_select_where.png, id=953, 346.29375pt x 143.53625pt>
+File: ./figures/esempio_select_where.png Graphic file (type png)
+<use ./figures/esempio_select_where.png>
+Package pdftex.def Info: ./figures/esempio_select_where.png  used on input line
+ 979.
+(pdftex.def)             Requested size: 141.4313pt x 58.62245pt.
+ [18 <./figures/esempio_select_from.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 984.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 984.
+<./figures/esempio_select_where_or.png, id=967, 393.47pt x 307.1475pt>
+File: ./figures/esempio_select_where_or.png Graphic file (type png)
+<use ./figures/esempio_select_where_or.png>
+Package pdftex.def Info: ./figures/esempio_select_where_or.png  used on input l
+ine 998.
+(pdftex.def)             Requested size: 141.4313pt x 110.3996pt.
+Package mdframed Info: mdframed works in twoside mode on input line 1003.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1003.
+<./figures/esempio_select_where_and_or.png, id=968, 180.675pt x 159.59625pt>
+File: ./figures/esempio_select_where_and_or.png Graphic file (type png)
+<use ./figures/esempio_select_where_and_or.png>
+Package pdftex.def Info: ./figures/esempio_select_where_and_or.png  used on inp
+ut line 1018.
+(pdftex.def)             Requested size: 94.28513pt x 83.28517pt.
+ [19 <./figures/esempio_select_where.png> <./figures/esempio_select_where_or.pn
+g> <./figures/esempio_select_where_and_or.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 1033.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1033.
+Package mdframed Info: mdframed works in twoside mode on input line 1042.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1042.
+<./figures/esempio_select_where_like.png, id=998, 842.14626pt x 170.6375pt>
+File: ./figures/esempio_select_where_like.png Graphic file (type png)
+<use ./figures/esempio_select_where_like.png>
+Package pdftex.def Info: ./figures/esempio_select_where_like.png  used on input
+ line 1056.
+(pdftex.def)             Requested size: 330.00157pt x 66.866pt.
+Package mdframed Info: mdframed works in twoside mode on input line 1076.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1076.
+<./figures/esempio_db_similar_to.png, id=999, 979.66pt x 314.17375pt>
+File: ./figures/esempio_db_similar_to.png Graphic file (type png)
+<use ./figures/esempio_db_similar_to.png>
+Package pdftex.def Info: ./figures/esempio_db_similar_to.png  used on input lin
+e 1080.
+(pdftex.def)             Requested size: 377.14775pt x 120.95007pt.
+ [20 <./figures/esempio_select_where_like.png> <./figures/esempio_db_similar_to
+.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 1098.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1098.
+<./figures/esempio_db_between.png, id=1019, 982.67125pt x 318.18875pt>
+File: ./figures/esempio_db_between.png Graphic file (type png)
+<use ./figures/esempio_db_between.png>
+Package pdftex.def Info: ./figures/esempio_db_between.png  used on input line 1
+102.
+(pdftex.def)             Requested size: 377.14775pt x 122.1219pt.
+<./figures/esempio_select_where_between.png, id=1020, 487.8225pt x 233.87375pt>
+
+File: ./figures/esempio_select_where_between.png Graphic file (type png)
+<use ./figures/esempio_select_where_between.png>
+Package pdftex.def Info: ./figures/esempio_select_where_between.png  used on in
+put line 1113.
+(pdftex.def)             Requested size: 141.4313pt x 67.80379pt.
+ [21 <./figures/esempio_db_between.png> <./figures/esempio_select_where_between
+.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 1148.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1148.
+<./figures/esempio_db_distinct.png, id=1040, 671.50874pt x 161.60374pt>
+File: ./figures/esempio_db_distinct.png Graphic file (type png)
+<use ./figures/esempio_db_distinct.png>
+Package pdftex.def Info: ./figures/esempio_db_distinct.png  used on input line 
+1152.
+(pdftex.def)             Requested size: 377.14775pt x 90.7638pt.
+ [22 <./figures/esempio_db_distinct.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 1237.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1237.
+<./figures/esempio_db_join.png, id=1066, 1181.41376pt x 387.4475pt>
+File: ./figures/esempio_db_join.png Graphic file (type png)
+<use ./figures/esempio_db_join.png>
+Package pdftex.def Info: ./figures/esempio_db_join.png  used on input line 1240
+.
+(pdftex.def)             Requested size: 377.14775pt x 123.68422pt.
+Package mdframed Info: mdframed works in twoside mode on input line 1245.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1245.
+<./figures/esempio_db_join_2.png, id=1067, 847.165pt x 570.13pt>
+File: ./figures/esempio_db_join_2.png Graphic file (type png)
+<use ./figures/esempio_db_join_2.png>
+Package pdftex.def Info: ./figures/esempio_db_join_2.png  used on input line 12
+49.
+(pdftex.def)             Requested size: 377.14775pt x 253.8158pt.
+Package mdframed Info: mdframed works in twoside mode on input line 1269.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1269.
+
+[23 <./figures/esempio_db_join.png> <./figures/esempio_db_join_2.png>]
+Package mdframed Info: Not enough space on this page on input line 1275.
+Package mdframed Info: mdframed works in twoside mode on input line 1277.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1277.
+File: ./figures/esempio_db_distinct.png Graphic file (type png)
+<use ./figures/esempio_db_distinct.png>
+Package pdftex.def Info: ./figures/esempio_db_distinct.png  used on input line 
+1281.
+(pdftex.def)             Requested size: 377.14775pt x 90.7638pt.
+Package mdframed Info: mdframed works in twoside mode on input line 1301.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1301.
+<./figures/esempio_db_inner_join.png, id=1088, 1201.48875pt x 236.885pt>
+File: ./figures/esempio_db_inner_join.png Graphic file (type png)
+<use ./figures/esempio_db_inner_join.png>
+Package pdftex.def Info: ./figures/esempio_db_inner_join.png  used on input lin
+e 1304.
+(pdftex.def)             Requested size: 377.14775pt x 74.35892pt.
+Package mdframed Info: mdframed works in twoside mode on input line 1318.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1318.
+<./figures/esempio_db_left_outer_join.png, id=1089, 1131.22626pt x 352.31625pt>
+
+File: ./figures/esempio_db_left_outer_join.png Graphic file (type png)
+<use ./figures/esempio_db_left_outer_join.png>
+Package pdftex.def Info: ./figures/esempio_db_left_outer_join.png  used on inpu
+t line 1321.
+(pdftex.def)             Requested size: 377.14775pt x 117.45816pt.
+Package mdframed Info: You first box width is to small
+ mdframed fixed it
+(mdframed)              on input line 1324.
+ [24 <./figures/esempio_db_inner_join.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 1338.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1338.
+<./figures/esempio_db_right_outer_join.png, id=1112, 1177.39874pt x 228.855pt>
+File: ./figures/esempio_db_right_outer_join.png Graphic file (type png)
+<use ./figures/esempio_db_right_outer_join.png>
+Package pdftex.def Info: ./figures/esempio_db_right_outer_join.png  used on inp
+ut line 1341.
+(pdftex.def)             Requested size: 377.14775pt x 73.30843pt.
+Package mdframed Info: mdframed works in twoside mode on input line 1362.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1362.
+<./figures/esempio_db_alias.png, id=1113, 708.6475pt x 273.02pt>
+File: ./figures/esempio_db_alias.png Graphic file (type png)
+<use ./figures/esempio_db_alias.png>
+Package pdftex.def Info: ./figures/esempio_db_alias.png  used on input line 136
+6.
+(pdftex.def)             Requested size: 377.14775pt x 145.30397pt.
+<./figures/rappresentazione_alias.png, id=1114, 542.025pt x 472.76625pt>
+File: ./figures/rappresentazione_alias.png Graphic file (type png)
+<use ./figures/rappresentazione_alias.png>
+Package pdftex.def Info: ./figures/rappresentazione_alias.png  used on input li
+ne 1387.
+(pdftex.def)             Requested size: 377.14775pt x 328.96474pt.
+ [25 <./figures/esempio_db_left_outer_join.png> <./figures/esempio_db_right_out
+er_join.png>] [26 <./figures/esempio_db_alias.png> <./figures/rappresentazione_
+alias.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 1403.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1403.
+<./figures/esempio_db_order_by.png, id=1147, 981.6675pt x 203.76125pt>
+File: ./figures/esempio_db_order_by.png Graphic file (type png)
+<use ./figures/esempio_db_order_by.png>
+Package pdftex.def Info: ./figures/esempio_db_order_by.png  used on input line 
+1407.
+(pdftex.def)             Requested size: 377.14775pt x 78.28197pt.
+Package mdframed Info: mdframed works in twoside mode on input line 1420.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1420.
+<./figures/esempio_db_order_by_2.png, id=1148, 820.06375pt x 449.68pt>
+File: ./figures/esempio_db_order_by_2.png Graphic file (type png)
+<use ./figures/esempio_db_order_by_2.png>
+Package pdftex.def Info: ./figures/esempio_db_order_by_2.png  used on input lin
+e 1424.
+(pdftex.def)             Requested size: 377.14775pt x 206.81413pt.
+ [27 <./figures/esempio_db_order_by.png> <./figures/esempio_db_order_by_2.png>]
+ [28]
+Package mdframed Info: mdframed works in twoside mode on input line 1591.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1591.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 1606.
+ [29]
+Package mdframed Info: mdframed works in twoside mode on input line 1607.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1607.
+Package mdframed Info: mdframed works in twoside mode on input line 1641.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1641.
+Package mdframed Info: mdframed works in twoside mode on input line 1670.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1670.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 1683.
+ [30]
+Package mdframed Info: mdframed works in twoside mode on input line 1687.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1687.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 1798.
+ [31]
+Package mdframed Info: mdframed works in twoside mode on input line 1801.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1801.
+ [32]
+Package mdframed Info: mdframed works in twoside mode on input line 1880.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1880.
+ [33]
+Package mdframed Info: mdframed works in twoside mode on input line 1991.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1991.
+
+[34]
+<./figures/gestione_pagine.png, id=1410, 1159.33125pt x 385.44pt>
+File: ./figures/gestione_pagine.png Graphic file (type png)
+<use ./figures/gestione_pagine.png>
+Package pdftex.def Info: ./figures/gestione_pagine.png  used on input line 2085
+.
+(pdftex.def)             Requested size: 492.23288pt x 163.64809pt.
+ [35 <./figures/gestione_pagine.png>] [36]
+<./figures/gestore_affidabilita_2.png, id=1429, 1417.295pt x 518.93875pt>
+File: ./figures/gestore_affidabilita_2.png Graphic file (type png)
+<use ./figures/gestore_affidabilita_2.png>
+Package pdftex.def Info: ./figures/gestore_affidabilita_2.png  used on input li
+ne 2215.
+(pdftex.def)             Requested size: 443.00658pt x 162.19963pt.
+ [37 <./figures/gestore_affidabilita_2.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 2377.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2377.
+Package mdframed Info: Not enough space on this page on input line 2432.
+ [38]
+Package mdframed Info: Not enough space on this page on input line 2432.
+Package mdframed Info: mdframed works in twoside mode on input line 2434.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2434.
+ [39]
+<./figures/richieste_metodi_accesso.png, id=1472, 693.59125pt x 587.19376pt>
+File: ./figures/richieste_metodi_accesso.png Graphic file (type png)
+<use ./figures/richieste_metodi_accesso.png>
+Package pdftex.def Info: ./figures/richieste_metodi_accesso.png  used on input 
+line 2497.
+(pdftex.def)             Requested size: 295.34273pt x 250.04236pt.
+Package mdframed Info: mdframed works in twoside mode on input line 2504.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2504.
+ [40 <./figures/richieste_metodi_accesso.png>]
+<./figures/organizzazione_pagina.png, id=1482, 761.84625pt x 378.41376pt>
+File: ./figures/organizzazione_pagina.png Graphic file (type png)
+<use ./figures/organizzazione_pagina.png>
+Package pdftex.def Info: ./figures/organizzazione_pagina.png  used on input lin
+e 2535.
+(pdftex.def)             Requested size: 443.00658pt x 220.0402pt.
+<./figures/block_header_trailer.png, id=1483, 720.6925pt x 347.2975pt>
+File: ./figures/block_header_trailer.png Graphic file (type png)
+<use ./figures/block_header_trailer.png>
+Package pdftex.def Info: ./figures/block_header_trailer.png  used on input line
+ 2548.
+(pdftex.def)             Requested size: 344.56151pt x 166.03848pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [41 <./figures/organizzazione_pagina.png>]
+<./figures/page_header_trailer.png, id=1490, 720.6925pt x 347.2975pt>
+File: ./figures/page_header_trailer.png Graphic file (type png)
+<use ./figures/page_header_trailer.png>
+Package pdftex.def Info: ./figures/page_header_trailer.png  used on input line 
+2563.
+(pdftex.def)             Requested size: 344.56151pt x 166.03848pt.
+Package mdframed Info: mdframed works in twoside mode on input line 2583.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2583.
+<./figures/dati_utili.png, id=1491, 720.6925pt x 347.2975pt>
+File: ./figures/dati_utili.png Graphic file (type png)
+<use ./figures/dati_utili.png>
+Package pdftex.def Info: ./figures/dati_utili.png  used on input line 2602.
+(pdftex.def)             Requested size: 344.56151pt x 166.03848pt.
+ [42 <./figures/block_header_trailer.png> <./figures/page_header_trailer.png>]
+<./figures/strutture_primarie.png, id=1501, 1202.4925pt x 296.10625pt>
+File: ./figures/strutture_primarie.png Graphic file (type png)
+<use ./figures/strutture_primarie.png>
+Package pdftex.def Info: ./figures/strutture_primarie.png  used on input line 2
+652.
+(pdftex.def)             Requested size: 443.00658pt x 109.08769pt.
+ [43 <./figures/dati_utili.png> <./figures/strutture_primarie.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 2748.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2748.
+<./figures/struttura_sequenziale_ordinata.png, id=1511, 940.51375pt x 549.05125
+pt>
+File: ./figures/struttura_sequenziale_ordinata.png Graphic file (type png)
+<use ./figures/struttura_sequenziale_ordinata.png>
+Package pdftex.def Info: ./figures/struttura_sequenziale_ordinata.png  used on 
+input line 2753.
+(pdftex.def)             Requested size: 401.78685pt x 234.55429pt.
+ [44]
+Package mdframed Info: mdframed works in twoside mode on input line 2797.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2797.
+<./figures/ricerca_indice_primario_denso.png, id=1522, 1172.38pt x 489.83pt>
+File: ./figures/ricerca_indice_primario_denso.png Graphic file (type png)
+<use ./figures/ricerca_indice_primario_denso.png>
+Package pdftex.def Info: ./figures/ricerca_indice_primario_denso.png  used on i
+nput line 2802.
+(pdftex.def)             Requested size: 365.15712pt x 152.56325pt.
+ [45 <./figures/struttura_sequenziale_ordinata.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 2819.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2819.
+<./figures/ricerca_indice_primario_sparso.png, id=1533, 1190.4475pt x 480.79625
+pt>
+File: ./figures/ricerca_indice_primario_sparso.png Graphic file (type png)
+<use ./figures/ricerca_indice_primario_sparso.png>
+Package pdftex.def Info: ./figures/ricerca_indice_primario_sparso.png  used on 
+input line 2824.
+(pdftex.def)             Requested size: 365.15712pt x 147.47531pt.
+
+[46 <./figures/ricerca_indice_primario_denso.png> <./figures/ricerca_indice_pri
+mario_sparso.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 2890.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2890.
+<./figures/ricerca_indice_secondario.png, id=1548, 1179.40625pt x 517.935pt>
+File: ./figures/ricerca_indice_secondario.png Graphic file (type png)
+<use ./figures/ricerca_indice_secondario.png>
+Package pdftex.def Info: ./figures/ricerca_indice_secondario.png  used on input
+ line 2895.
+(pdftex.def)             Requested size: 381.98698pt x 167.74995pt.
+<./figures/b_plus_tree.png, id=1549, 1084.05pt x 261.97874pt>
+File: ./figures/b_plus_tree.png Graphic file (type png)
+<use ./figures/b_plus_tree.png>
+Package pdftex.def Info: ./figures/b_plus_tree.png  used on input line 2932.
+(pdftex.def)             Requested size: 443.00658pt x 107.0602pt.
+ [47 <./figures/ricerca_indice_secondario.png> <./figures/b_plus_tree.png>]
+<./figures/puntatore_foglia.png, id=1563, 1196.47pt x 259.97125pt>
+File: ./figures/puntatore_foglia.png Graphic file (type png)
+<use ./figures/puntatore_foglia.png>
+Package pdftex.def Info: ./figures/puntatore_foglia.png  used on input line 294
+9.
+(pdftex.def)             Requested size: 443.00658pt x 96.25925pt.
+<./figures/b_plus_tree_nodo_intermedio.png, id=1564, 1151.30125pt x 291.0875pt>
+
+File: ./figures/b_plus_tree_nodo_intermedio.png Graphic file (type png)
+<use ./figures/b_plus_tree_nodo_intermedio.png>
+Package pdftex.def Info: ./figures/b_plus_tree_nodo_intermedio.png  used on inp
+ut line 2961.
+(pdftex.def)             Requested size: 443.00658pt x 112.00462pt.
+Package mdframed Info: mdframed works in twoside mode on input line 2982.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2982.
+<./figures/b_plus_tree_esempio.png, id=1565, 1599.9775pt x 671.50874pt>
+File: ./figures/b_plus_tree_esempio.png Graphic file (type png)
+<use ./figures/b_plus_tree_esempio.png>
+Package pdftex.def Info: ./figures/b_plus_tree_esempio.png  used on input line 
+3004.
+(pdftex.def)             Requested size: 471.43289pt x 197.8577pt.
+<./figures/b_plus_tree_esempio_2.png, id=1566, 1599.9775pt x 671.50874pt>
+File: ./figures/b_plus_tree_esempio_2.png Graphic file (type png)
+<use ./figures/b_plus_tree_esempio_2.png>
+Package pdftex.def Info: ./figures/b_plus_tree_esempio_2.png  used on input lin
+e 3019.
+(pdftex.def)             Requested size: 471.43289pt x 197.8577pt.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 3028.
+ [48 <./figures/puntatore_foglia.png> <./figures/b_plus_tree_nodo_intermedio.pn
+g>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [49 <./figures/b_plus_tree_esempio.png> <./figures/b_plus_tree_esempio_2.png>]
+<./figures/ricerca_b_plus_tree.png, id=1587, 921.4425pt x 199.74625pt>
+File: ./figures/ricerca_b_plus_tree.png Graphic file (type png)
+<use ./figures/ricerca_b_plus_tree.png>
+Package pdftex.def Info: ./figures/ricerca_b_plus_tree.png  used on input line 
+3042.
+(pdftex.def)             Requested size: 393.7878pt x 85.36192pt.
+<./figures/ricerca_b_plus_tree_2.png, id=1588, 242.1045pt x 54.2025pt>
+File: ./figures/ricerca_b_plus_tree_2.png Graphic file (type png)
+<use ./figures/ricerca_b_plus_tree_2.png>
+Package pdftex.def Info: ./figures/ricerca_b_plus_tree_2.png  used on input lin
+e 3049.
+(pdftex.def)             Requested size: 393.7878pt x 88.16484pt.
+<./figures/ricerca_b_plus_tree_3.png, id=1590, 924.45375pt x 331.2375pt>
+File: ./figures/ricerca_b_plus_tree_3.png Graphic file (type png)
+<use ./figures/ricerca_b_plus_tree_3.png>
+Package pdftex.def Info: ./figures/ricerca_b_plus_tree_3.png  used on input lin
+e 3059.
+(pdftex.def)             Requested size: 393.7878pt x 141.09502pt.
+Package mdframed Info: mdframed works in twoside mode on input line 3064.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3064.
+<./figures/ricerca_b_plus_tree_esempio.png, id=1591, 1527.7075pt x 444.66125pt>
+
+File: ./figures/ricerca_b_plus_tree_esempio.png Graphic file (type png)
+<use ./figures/ricerca_b_plus_tree_esempio.png>
+Package pdftex.def Info: ./figures/ricerca_b_plus_tree_esempio.png  used on inp
+ut line 3068.
+(pdftex.def)             Requested size: 471.43289pt x 137.21255pt.
+ [50 <./figures/ricerca_b_plus_tree.png> <./figures/ricerca_b_plus_tree_2.png> 
+<./figures/ricerca_b_plus_tree_3.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 3127.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3127.
+<./figures/split_b_plus_tree.png, id=1606, 1389.19pt x 548.0475pt>
+File: ./figures/split_b_plus_tree.png Graphic file (type png)
+<use ./figures/split_b_plus_tree.png>
+Package pdftex.def Info: ./figures/split_b_plus_tree.png  used on input line 31
+31.
+(pdftex.def)             Requested size: 471.43289pt x 185.98245pt.
+ [51 <./figures/ricerca_b_plus_tree_esempio.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 3163.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3163.
+<./figures/merge_b_plus_tree.png, id=1622, 1237.62375pt x 614.295pt>
+File: ./figures/merge_b_plus_tree.png Graphic file (type png)
+<use ./figures/merge_b_plus_tree.png>
+Package pdftex.def Info: ./figures/merge_b_plus_tree.png  used on input line 31
+68.
+(pdftex.def)             Requested size: 471.43289pt x 233.99692pt.
+
+[52 <./figures/split_b_plus_tree.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 3225.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3225.
+<./figures/hash_table_esempio.png, id=1636, 1405.25pt x 690.58pt>
+File: ./figures/hash_table_esempio.png Graphic file (type png)
+<use ./figures/hash_table_esempio.png>
+Package pdftex.def Info: ./figures/hash_table_esempio.png  used on input line 3
+229.
+(pdftex.def)             Requested size: 471.43289pt x 231.67502pt.
+ [53 <./figures/merge_b_plus_tree.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 3250.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3250.
+<./figures/bucket_overflow.png, id=1643, 437.635pt x 374.39874pt>
+File: ./figures/bucket_overflow.png Graphic file (type png)
+<use ./figures/bucket_overflow.png>
+Package pdftex.def Info: ./figures/bucket_overflow.png  used on input line 3279
+.
+(pdftex.def)             Requested size: 295.34273pt x 252.66826pt.
+
+[54 <./figures/hash_table_esempio.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 3324.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3324.
+<./figures/gestore_concorrenza.png, id=1657, 1448.41125pt x 546.04pt>
+File: ./figures/gestore_concorrenza.png Graphic file (type png)
+<use ./figures/gestore_concorrenza.png>
+Package pdftex.def Info: ./figures/gestore_concorrenza.png  used on input line 
+3338.
+(pdftex.def)             Requested size: 443.00658pt x 167.00438pt.
+
+Underfull \vbox (badness 1043) has occurred while \output is active []
+
+ [55 <./figures/bucket_overflow.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 3353.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3353.
+<./figures/perdita_aggiornamento.png, id=1669, 1256.695pt x 561.09625pt>
+File: ./figures/perdita_aggiornamento.png Graphic file (type png)
+<use ./figures/perdita_aggiornamento.png>
+Package pdftex.def Info: ./figures/perdita_aggiornamento.png  used on input lin
+e 3382.
+(pdftex.def)             Requested size: 492.23288pt x 219.76843pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [56 <./figures/gestore_concorrenza.png>]
+<./figures/lettura_inconsistente.png, id=1677, 1177.39874pt x 565.11125pt>
+File: ./figures/lettura_inconsistente.png Graphic file (type png)
+<use ./figures/lettura_inconsistente.png>
+Package pdftex.def Info: ./figures/lettura_inconsistente.png  used on input lin
+e 3399.
+(pdftex.def)             Requested size: 492.23288pt x 236.25862pt.
+<./figures/lettura_sporca.png, id=1678, 1184.425pt x 536.0025pt>
+File: ./figures/lettura_sporca.png Graphic file (type png)
+<use ./figures/lettura_sporca.png>
+Package pdftex.def Info: ./figures/lettura_sporca.png  used on input line 3416.
+
+(pdftex.def)             Requested size: 492.23288pt x 222.75586pt.
+ [57 <./figures/perdita_aggiornamento.png> <./figures/lettura_inconsistente.png
+>]
+<./figures/aggiornamento_fantasma.png, id=1687, 1347.0325pt x 567.11874pt>
+File: ./figures/aggiornamento_fantasma.png Graphic file (type png)
+<use ./figures/aggiornamento_fantasma.png>
+Package pdftex.def Info: ./figures/aggiornamento_fantasma.png  used on input li
+ne 3440.
+(pdftex.def)             Requested size: 492.23288pt x 207.23459pt.
+ [58 <./figures/lettura_sporca.png> <./figures/aggiornamento_fantasma.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 3470.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3470.
+Package mdframed Info: mdframed works in twoside mode on input line 3481.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3481.
+Package mdframed Info: mdframed works in twoside mode on input line 3494.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3494.
+Package mdframed Info: mdframed works in twoside mode on input line 3500.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3500.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 3512.
+Package mdframed Info: mdframed works in twoside mode on input line 3515.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3515.
+Package mdframed Info: mdframed works in twoside mode on input line 3520.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3520.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 3529.
+Package mdframed Info: mdframed works in twoside mode on input line 3532.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3532.
+Package mdframed Info: Not enough space on this page on input line 3535.
+ [59]
+Package mdframed Info: Not enough space on this page on input line 3535.
+Package mdframed Info: mdframed works in twoside mode on input line 3537.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3537.
+Package mdframed Info: mdframed works in twoside mode on input line 3567.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3567.
+Package mdframed Info: mdframed works in twoside mode on input line 3613.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3613.
+ [60]
+Package mdframed Info: mdframed works in twoside mode on input line 3659.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3659.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 3710.
+ [61]
+Package mdframed Info: mdframed works in twoside mode on input line 3712.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3712.
+Package mdframed Info: mdframed works in twoside mode on input line 3769.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3769.
+ [62]
+Package mdframed Info: mdframed works in twoside mode on input line 3837.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3837.
+Package mdframed Info: mdframed works in twoside mode on input line 3852.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3852.
+Package mdframed Info: mdframed works in twoside mode on input line 3858.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3858.
+ [63]
+Package mdframed Info: mdframed works in twoside mode on input line 3918.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3918.
+\openout3 = `BasiDati.auxlock'.
+
+
+===== 'mode=convert with system call': Invoking 'pdflatex -halt-on-error -inter
+action=batchmode -jobname "figures/tikz/BasiDati-figure0" "\def\tikzexternalrea
+ljob{BasiDati}\input{BasiDati}"' ========
+runsystem(pdflatex -halt-on-error -interaction=batchmode -jobname "figures/tikz
+/BasiDati-figure0" "\def\tikzexternalrealjob{BasiDati}\input{BasiDati}")...disa
+bled (restricted).
+
+\openout3 = `BasiDati.auxlock'.
+
+
+BasiDati.tex:3943: Package tikz Error: Sorry, the system call 'pdflatex -halt-o
+n-error -interaction=batchmode -jobname "figures/tikz/BasiDati-figure0" "\def\t
+ikzexternalrealjob{BasiDati}\input{BasiDati}"' did NOT result in a usable outpu
+t file 'figures/tikz/BasiDati-figure0' (expected one of .pdf:.jpg:.jpeg:.png:).
+ Please verify that you have enabled system calls. For pdflatex, this is 'pdfla
+tex -shell-escape'. Sometimes it is also named 'write 18' or something like tha
+t. Or maybe the command simply failed? Error messages can be found in 'figures/
+tikz/BasiDati-figure0.log'. If you continue now, I'll try to typeset the pictur
+e.
+
+See the tikz package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3943     \end{tikzpicture}
+                            
+This error message was generated by an \errmessage
+command, so I can't give any explicit help.
+Pretend that you're Hercule Poirot: Examine all clues,
+and deduce the truth by order and method.
+
+Package mdframed Info: mdframed works in twoside mode on input line 3949.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3949.
+\openout3 = `BasiDati.auxlock'.
+
+===== 'mode=convert with system call': Invoking 'pdflatex -halt-on-error -inter
+action=batchmode -jobname "figures/tikz/BasiDati-figure1" "\def\tikzexternalrea
+ljob{BasiDati}\input{BasiDati}"' ========
+runsystem(pdflatex -halt-on-error -interaction=batchmode -jobname "figures/tikz
+/BasiDati-figure1" "\def\tikzexternalrealjob{BasiDati}\input{BasiDati}")...disa
+bled (restricted).
+
+\openout3 = `BasiDati.auxlock'.
+
+
+BasiDati.tex:3974: Package tikz Error: Sorry, the system call 'pdflatex -halt-o
+n-error -interaction=batchmode -jobname "figures/tikz/BasiDati-figure1" "\def\t
+ikzexternalrealjob{BasiDati}\input{BasiDati}"' did NOT result in a usable outpu
+t file 'figures/tikz/BasiDati-figure1' (expected one of .pdf:.jpg:.jpeg:.png:).
+ Please verify that you have enabled system calls. For pdflatex, this is 'pdfla
+tex -shell-escape'. Sometimes it is also named 'write 18' or something like tha
+t. Or maybe the command simply failed? Error messages can be found in 'figures/
+tikz/BasiDati-figure1.log'. If you continue now, I'll try to typeset the pictur
+e.
+
+See the tikz package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3974     \end{tikzpicture}
+                            
+(That was another \errmessage.)
+
+[64]
+Package mdframed Info: mdframed works in twoside mode on input line 3978.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3978.
+<./figures/csr_vsr.png, id=1740, 652.4375pt x 349.305pt>
+File: ./figures/csr_vsr.png Graphic file (type png)
+<use ./figures/csr_vsr.png>
+Package pdftex.def Info: ./figures/csr_vsr.png  used on input line 3983.
+(pdftex.def)             Requested size: 282.86261pt x 151.44542pt.
+\openout3 = `BasiDati.auxlock'.
+
+
+===== 'mode=convert with system call': Invoking 'pdflatex -halt-on-error -inter
+action=batchmode -jobname "figures/tikz/BasiDati-figure2" "\def\tikzexternalrea
+ljob{BasiDati}\input{BasiDati}"' ========
+runsystem(pdflatex -halt-on-error -interaction=batchmode -jobname "figures/tikz
+/BasiDati-figure2" "\def\tikzexternalrealjob{BasiDati}\input{BasiDati}")...disa
+bled (restricted).
+
+\openout3 = `BasiDati.auxlock'.
+
+
+BasiDati.tex:4036: Package tikz Error: Sorry, the system call 'pdflatex -halt-o
+n-error -interaction=batchmode -jobname "figures/tikz/BasiDati-figure2" "\def\t
+ikzexternalrealjob{BasiDati}\input{BasiDati}"' did NOT result in a usable outpu
+t file 'figures/tikz/BasiDati-figure2' (expected one of .pdf:.jpg:.jpeg:.png:).
+ Please verify that you have enabled system calls. For pdflatex, this is 'pdfla
+tex -shell-escape'. Sometimes it is also named 'write 18' or something like tha
+t. Or maybe the command simply failed? Error messages can be found in 'figures/
+tikz/BasiDati-figure2.log'. If you continue now, I'll try to typeset the pictur
+e.
+
+See the tikz package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4036           \end{tikzpicture}
+                                  
+(That was another \errmessage.)
+
+[65 <./figures/csr_vsr.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 4062.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4062.
+\openout3 = `BasiDati.auxlock'.
+
+
+===== 'mode=convert with system call': Invoking 'pdflatex -halt-on-error -inter
+action=batchmode -jobname "figures/tikz/BasiDati-figure3" "\def\tikzexternalrea
+ljob{BasiDati}\input{BasiDati}"' ========
+runsystem(pdflatex -halt-on-error -interaction=batchmode -jobname "figures/tikz
+/BasiDati-figure3" "\def\tikzexternalrealjob{BasiDati}\input{BasiDati}")...disa
+bled (restricted).
+
+\openout3 = `BasiDati.auxlock'.
+
+
+BasiDati.tex:4083: Package tikz Error: Sorry, the system call 'pdflatex -halt-o
+n-error -interaction=batchmode -jobname "figures/tikz/BasiDati-figure3" "\def\t
+ikzexternalrealjob{BasiDati}\input{BasiDati}"' did NOT result in a usable outpu
+t file 'figures/tikz/BasiDati-figure3' (expected one of .pdf:.jpg:.jpeg:.png:).
+ Please verify that you have enabled system calls. For pdflatex, this is 'pdfla
+tex -shell-escape'. Sometimes it is also named 'write 18' or something like tha
+t. Or maybe the command simply failed? Error messages can be found in 'figures/
+tikz/BasiDati-figure3.log'. If you continue now, I'll try to typeset the pictur
+e.
+
+See the tikz package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4083     \end{tikzpicture}
+                            
+(That was another \errmessage.)
+
+Package mdframed Info: mdframed works in twoside mode on input line 4089.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4089.
+\openout3 = `BasiDati.auxlock'.
+
+===== 'mode=convert with system call': Invoking 'pdflatex -halt-on-error -inter
+action=batchmode -jobname "figures/tikz/BasiDati-figure4" "\def\tikzexternalrea
+ljob{BasiDati}\input{BasiDati}"' ========
+runsystem(pdflatex -halt-on-error -interaction=batchmode -jobname "figures/tikz
+/BasiDati-figure4" "\def\tikzexternalrealjob{BasiDati}\input{BasiDati}")...disa
+bled (restricted).
+
+\openout3 = `BasiDati.auxlock'.
+
+
+BasiDati.tex:4126: Package tikz Error: Sorry, the system call 'pdflatex -halt-o
+n-error -interaction=batchmode -jobname "figures/tikz/BasiDati-figure4" "\def\t
+ikzexternalrealjob{BasiDati}\input{BasiDati}"' did NOT result in a usable outpu
+t file 'figures/tikz/BasiDati-figure4' (expected one of .pdf:.jpg:.jpeg:.png:).
+ Please verify that you have enabled system calls. For pdflatex, this is 'pdfla
+tex -shell-escape'. Sometimes it is also named 'write 18' or something like tha
+t. Or maybe the command simply failed? Error messages can be found in 'figures/
+tikz/BasiDati-figure4.log'. If you continue now, I'll try to typeset the pictur
+e.
+
+See the tikz package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4126     \end{tikzpicture}
+                            
+(That was another \errmessage.)
+
+Package mdframed Info: mdframed works in twoside mode on input line 4149.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4149.
+Package mdframed Info: Not enough space on this page on input line 4195.
+[66]
+Package mdframed Info: Not enough space on this page on input line 4195.
+Package mdframed Info: mdframed works in twoside mode on input line 4197.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4197.
+ [67]
+<./figures/gestore_lock.png, id=1771, 1140.26pt x 557.08125pt>
+File: ./figures/gestore_lock.png Graphic file (type png)
+<use ./figures/gestore_lock.png>
+Package pdftex.def Info: ./figures/gestore_lock.png  used on input line 4261.
+(pdftex.def)             Requested size: 443.00658pt x 216.42778pt.
+<./figures/grafico_locking_due_fasi.png, id=1772, 924.45375pt x 368.37625pt>
+File: ./figures/grafico_locking_due_fasi.png Graphic file (type png)
+<use ./figures/grafico_locking_due_fasi.png>
+Package pdftex.def Info: ./figures/grafico_locking_due_fasi.png  used on input 
+line 4270.
+(pdftex.def)             Requested size: 443.00658pt x 176.52629pt.
+Package mdframed Info: mdframed works in twoside mode on input line 4275.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4275.
+ [68 <./figures/gestore_lock.png> <./figures/grafico_locking_due_fasi.png>]
+<./figures/grafico_locking_due_fasi_stretto.png, id=1784, 924.45375pt x 368.376
+25pt>
+File: ./figures/grafico_locking_due_fasi_stretto.png Graphic file (type png)
+<use ./figures/grafico_locking_due_fasi_stretto.png>
+Package pdftex.def Info: ./figures/grafico_locking_due_fasi_stretto.png  used o
+n input line 4309.
+(pdftex.def)             Requested size: 443.00658pt x 176.52629pt.
+Package mdframed Info: mdframed works in twoside mode on input line 4318.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4318.
+Package mdframed Info: mdframed works in twoside mode on input line 4331.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4331.
+ [69 <./figures/grafico_locking_due_fasi_stretto.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 4378.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4378.
+<./figures/deadlock_locking_due_fasi_stretto.png, id=1794, 1257.69875pt x 589.2
+0125pt>
+File: ./figures/deadlock_locking_due_fasi_stretto.png Graphic file (type png)
+<use ./figures/deadlock_locking_due_fasi_stretto.png>
+Package pdftex.def Info: ./figures/deadlock_locking_due_fasi_stretto.png  used 
+on input line 4382.
+(pdftex.def)             Requested size: 424.28671pt x 198.76143pt.
+Package mdframed Info: mdframed works in twoside mode on input line 4417.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4417.
+<./figures/starvation.png, id=1795, 1026.83624pt x 230.8625pt>
+File: ./figures/starvation.png Graphic file (type png)
+<use ./figures/starvation.png>
+Package pdftex.def Info: ./figures/starvation.png  used on input line 4424.
+(pdftex.def)             Requested size: 424.28671pt x 95.39047pt.
+ [70 <./figures/deadlock_locking_due_fasi_stretto.png>]
+<./figures/anomalie_tollerate.png, id=1804, 1198.4775pt x 360.34625pt>
+File: ./figures/anomalie_tollerate.png Graphic file (type png)
+<use ./figures/anomalie_tollerate.png>
+Package pdftex.def Info: ./figures/anomalie_tollerate.png  used on input line 4
+438.
+(pdftex.def)             Requested size: 443.00658pt x 133.19406pt.
+ [71 <./figures/starvation.png> <./figures/anomalie_tollerate.png>]
+<./figures/ottimizzazione_query.png, id=1815, 1235.61626pt x 356.33125pt>
+File: ./figures/ottimizzazione_query.png Graphic file (type png)
+<use ./figures/ottimizzazione_query.png>
+Package pdftex.def Info: ./figures/ottimizzazione_query.png  used on input line
+ 4545.
+(pdftex.def)             Requested size: 443.00658pt x 127.75717pt.
+ [72 <./figures/ottimizzazione_query.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 4610.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4610.
+<./figures/esempio_z_way_sort_merge.png, id=1841, 996.72375pt x 598.235pt>
+File: ./figures/esempio_z_way_sort_merge.png Graphic file (type png)
+<use ./figures/esempio_z_way_sort_merge.png>
+Package pdftex.def Info: ./figures/esempio_z_way_sort_merge.png  used on input 
+line 4625.
+(pdftex.def)             Requested size: 424.28671pt x 254.65271pt.
+<./figures/esempio_z_way_sort_merge_2.png, id=1842, 1151.30125pt x 582.175pt>
+File: ./figures/esempio_z_way_sort_merge_2.png Graphic file (type png)
+<use ./figures/esempio_z_way_sort_merge_2.png>
+Package pdftex.def Info: ./figures/esempio_z_way_sort_merge_2.png  used on inpu
+t line 4642.
+(pdftex.def)             Requested size: 424.28671pt x 214.54858pt.
+ [73] [74 <./figures/esempio_z_way_sort_merge.png> <./figures/esempio_z_way_sor
+t_merge_2.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 4698.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4698.
+<./figures/esempio_nested_loop_join.png, id=1859, 1046.91125pt x 482.80376pt>
+File: ./figures/esempio_nested_loop_join.png Graphic file (type png)
+<use ./figures/esempio_nested_loop_join.png>
+Package pdftex.def Info: ./figures/esempio_nested_loop_join.png  used on input 
+line 4702.
+(pdftex.def)             Requested size: 424.28671pt x 195.66705pt.
+ [75 <./figures/esempio_nested_loop_join.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 4728.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4728.
+<./figures/esempio_nested_loop_join_indice.png, id=1877, 845.1575pt x 408.52625
+pt>
+File: ./figures/esempio_nested_loop_join_indice.png Graphic file (type png)
+<use ./figures/esempio_nested_loop_join_indice.png>
+Package pdftex.def Info: ./figures/esempio_nested_loop_join_indice.png  used on
+ input line 4733.
+(pdftex.def)             Requested size: 424.28671pt x 205.09169pt.
+Package mdframed Info: mdframed works in twoside mode on input line 4763.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4763.
+ [76 <./figures/esempio_nested_loop_join_indice.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 4816.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4816.
+<./figures/esempio_block_nested_loop_join.png, id=1887, 1034.86626pt x 454.6987
+5pt>
+File: ./figures/esempio_block_nested_loop_join.png Graphic file (type png)
+<use ./figures/esempio_block_nested_loop_join.png>
+Package pdftex.def Info: ./figures/esempio_block_nested_loop_join.png  used on 
+input line 4821.
+(pdftex.def)             Requested size: 424.28671pt x 186.42075pt.
+ [77 <./figures/esempio_block_nested_loop_join.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 4861.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4861.
+<./figures/esempio_merge_scan_join.png, id=1908, 1019.81pt x 425.59pt>
+File: ./figures/esempio_merge_scan_join.png Graphic file (type png)
+<use ./figures/esempio_merge_scan_join.png>
+Package pdftex.def Info: ./figures/esempio_merge_scan_join.png  used on input l
+ine 4865.
+(pdftex.def)             Requested size: 424.28671pt x 177.06464pt.
+
+[78 <./figures/esempio_merge_scan_join.png>] [79]
+Package mdframed Info: mdframed works in twoside mode on input line 5019.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 5019.
+ [80]
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 5215.
+ [81]
+Package mdframed Info: mdframed works in twoside mode on input line 5217.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 5217.
+ [82]
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 5365.
+ [83]
+Package mdframed Info: mdframed works in twoside mode on input line 5380.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 5380.
+<./figures/replica_set.png, id=1975, 776.9025pt x 282.05376pt>
+File: ./figures/replica_set.png Graphic file (type png)
+<use ./figures/replica_set.png>
+Package pdftex.def Info: ./figures/replica_set.png  used on input line 5402.
+(pdftex.def)             Requested size: 443.00658pt x 160.83685pt.
+
+Underfull \vbox (badness 7504) has occurred while \output is active []
+
+ [84]
+[85 <./figures/replica_set.png>]
+<./figures/sharding.png, id=1988, 1386.17876pt x 539.01375pt>
+File: ./figures/sharding.png Graphic file (type png)
+<use ./figures/sharding.png>
+Package pdftex.def Info: ./figures/sharding.png  used on input line 5561.
+(pdftex.def)             Requested size: 443.00658pt x 172.25763pt.
+ [86] [87 <./figures/sharding.png>] [88]
+[89] [90] (BasiDati.aux)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-12-24>
+ ***********
+Package rerunfilecheck Info: File `BasiDati.out' has not changed.
+(rerunfilecheck)             Checksum: 4BF27793F267025E6BE19E6C84A57A01;20540.
+ ) 
+Here is how much of TeX's memory you used:
+ 72617 strings out of 467871
+ 1850001 string characters out of 5418376
+ 3327028 words of memory out of 5000000
+ 99476 multiletter control sequences out of 15000+600000
+ 656634 words of font info for 112 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 119i,18n,125p,1610b,2110s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\michi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm
+1000.pk> <C:\Users\michi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
+0\ectt0900.pk> <C:\Users\michi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
+/dpi450\ecss0800.pk> <C:\Users\michi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
+pen/ec/dpi600\ecss0900.pk> <C:\Users\michi\AppData\Local\MiKTeX\fonts/pk/ljfour
+/jknappen/ec/dpi600\ecsx0900.pk> <C:\Users\michi\AppData\Local\MiKTeX\fonts/pk/
+ljfour/jknappen/ec/dpi525\ecss0800.pk> <C:\Users\michi\AppData\Local\MiKTeX\fon
+ts/pk/ljfour/jknappen/ec/dpi600\ecsi1000.pk> <C:\Users\michi\AppData\Local\MiKT
+eX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1000.pk> <C:\Users\michi\AppData\Loca
+l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt0800.pk> <C:\Users\michi\AppDat
+a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi375\ecss0800.pk> <C:\Users\michi\
+AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1200.pk> <C:\Users\
+michi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss1000.pk> <C:\
+Users\michi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1000.pk
+> <C:\Users\michi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1
+000.pk> <C:\Users\michi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600
+\ecsx1440.pk> <C:\Users\michi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/
+dpi600\tcss1728.pk> <C:\Users\michi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknapp
+en/ec/dpi600\ecsx1728.pk> <C:\Users\michi\AppData\Local\MiKTeX\fonts/pk/ljfour/
+jknappen/ec/dpi600\ecss1728.pk> <C:\Users\michi\AppData\Local\MiKTeX\fonts/pk/l
+jfour/jknappen/ec/dpi600\ecsx2488.pk><C:/Users/michi/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/michi/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/michi/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/michi
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Use
+rs/michi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/euex10
+.pfb><C:/Users/michi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+euler/eufm10.pfb><C:/Users/michi/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/euler/eufm7.pfb><C:/Users/michi/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/euler/eurm10.pfb><C:/Users/michi/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/amsfonts/euler/eurm5.pfb><C:/Users/michi/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eurm7.pfb><C:/Users/michi/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eusm10.pfb><C:/U
+sers/michi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/l
+ine10.pfb><C:/Users/michi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/symbols/msam10.pfb><C:/Users/michi/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/amsfonts/symbols/msbm10.pfb>
+Output written on BasiDati.pdf (90 pages, 4291030 bytes).
+PDF statistics:
+ 3088 PDF objects out of 3580 (max. 8388607)
+ 1098 named destinations out of 1200 (max. 500000)
+ 1372 words of extra memory for PDF output out of 10000 (max. 10000000)
+

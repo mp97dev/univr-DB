@@ -1,0 +1,2538 @@
+\documentclass[a4paper]{article}
+\usepackage{import}
+\input{../../../preamble.sty}
+
+\begin{document}
+
+\input{title.tex}
+
+\tableofcontents
+\pagebreak
+
+\section{Grafi}
+I grafi permettono di risolvere problemi particolarmente complessi, ma la parte difficile
+è la conversione di un problema in un grafo. I grafi sono costituiti da nodi e archi:
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \node[draw,circle] (1) at (0,0) {1};
+    \node[draw,circle] (3) [below left=of 1] {3};
+    \node[draw,circle] (4) [below right=of 1] {4};
+    \node[draw,circle] (2) [right=of 1] {2};
+
+    \draw (1) -- (3);
+    \draw (1) -- (4);
+    \draw (1) -- (2);
+    \draw (4) -- (2);
+  \end{tikzpicture}
+  \caption{Esempio di grafo}
+  \label{fig:grafo1}
+\end{figure}
+\begin{itemize}
+  \item \textbf{Nodi}: rappresentano gli elementi del problema.
+  \item \textbf{Archi}: rappresentano le relazioni tra i nodi.
+\end{itemize}
+I grafi in cui gli archi hanno un valore (o peso) vengono chiamati \textbf{grafi pesati}.
+Si possono anche aggiungere delle direzioni agli archi, ottenendo così un 
+\textbf{grafo orientato}, in cui un arco si può attraversare in un solo verso.
+\begin{definition}[Cammino]
+  Un \textbf{cammino} è una sequenza di nodi per cui esiste un arco tra ogni coppia di nodi adiacenti.
+\end{definition}
+In un cammino, la ripetizione di un nodo rappresenta un \textbf{loop} e questo cammino
+viene detto \textbf{cammino ciclico}. (un cammino senza cicli si dice \textbf{cammino
+semplice})
+
+Il \textbf{grado} di un nodo è il numero di archi che incidono sul nodo. Ha senso parlare
+di grado di un nodo solo quando il grafo non è orientato perchè così ogni arco viene
+contato una sola volta.
+\begin{itemize}
+  \item \textbf{Grado entrante}: numero di archi entranti in un nodo.
+  \item \textbf{Grado uscente}: numero di archi uscenti da un nodo.
+\end{itemize}
+
+\vspace{1em}
+\noindent
+La definizione formale di un grafo è la seguente:
+\begin{definition}
+  Un grafo è definito come una coppia $G = (V, E)$ dove:
+  \begin{itemize}
+    \item $V$ è un insieme di nodi.
+    \item $E$ è un insieme di archi:
+      \[
+        E \subseteq V \times V
+      \] 
+  \end{itemize}
+\end{definition}
+Dallla figura \ref{fig:grafo1} si ha che:
+\begin{itemize}
+  \item $V = \{1, 2, 3, 4\}$.
+  \item $E = \left\{(1, 3), (3,1), (1,1), (1,4), (4,1), (1,2), (2,4), (4,2)\right\}$.
+\end{itemize}
+La definizione formale dei concetti precedenti è:
+\begin{definition}
+  Il \textbf{grado uscente} di un nodo $v$ in un grafo orientato $G = (V, E)$ è il numero
+  di archi uscenti da $v$ (\( |\ldots| \) è la cardinalità di un insieme):
+  \[
+    \text{grado\_uscente}(v) = \left|\{u \;|\; (v, u) \in E\}\right|
+  \]
+\end{definition}
+\begin{definition}
+  Il \textbf{grado entrante} di un nodo $v$ in un grafo orientato $G = (V, E)$ è il numero
+  di archi entranti in $v$:
+  \[
+    \text{grado\_entrante}(v) = \left|\{u \;|\; (u, v) \in E\}\right|
+  \]
+\end{definition}
+\begin{definition}
+  Un cammino è una sequenza di nodi in cui per ogni coppia di nodi consecutivi esiste un arco:
+  \[
+    \forall i \in \{0 \ldots n-1\} \quad (v_i, v_{i+1}) \in E
+  \] 
+\end{definition}
+
+\subsection{Rappresentazione di un grafo}
+Per rappresentare un grafo ci sono due modi:
+\begin{itemize}
+  \item \textbf{Rappresentazione per liste di adiacenza}:
+    Si crea una lista in cui si rappresentano i nodi e
+    ad ogni nodo si associa la lista di tutti i nodi raggiungibili tramite un arco.
+    Prendiamo in considerazione la figura \ref{fig:grafo1}:
+    \begin{figure}[H]
+      \centering
+      \begin{tikzpicture}[
+        node distance=0cm and 0.5cm
+        ]
+        \node[draw,rectangle,minimum width=1cm,minimum height=0.5cm] (1) at (0,0) {1};
+        \node[draw,rectangle,minimum width=1cm,minimum height=0.5cm] (2) [below=of 1] {2};
+        \node[draw,rectangle,minimum width=1cm,minimum height=0.5cm] (3) [below=of 2] {3};
+        \node[draw,rectangle,minimum width=1cm,minimum height=0.5cm] (4) [below=of 3] {4};
+
+        \node[draw,rectangle,minimum size=0.5cm] (1-1-1) [right=of 1] {3};
+        \node[draw,rectangle,minimum size=0.5cm] (1-1-2) [right=0cm of 1-1-1] {p};
+        \node[draw,rectangle,minimum size=0.5cm] (1-1-3) [right=0cm of 1-1-2] {};
+        \draw[->] (1) -- (1-1-1);
+        \node[draw,rectangle,minimum size=0.5cm] (1-2-1) [right=of 1-1-3] {1};
+        \node[draw,rectangle,minimum size=0.5cm] (1-2-2) [right=0cm of 1-2-1] {p};
+        \node[draw,rectangle,minimum size=0.5cm] (1-2-3) [right=0cm of 1-2-2] {};
+        \draw[->] (1-1-3.center) -- (1-2-1);
+        \node[draw,rectangle,minimum size=0.5cm] (1-3-1) [right=of 1-2-3] {4};
+        \node[draw,rectangle,minimum size=0.5cm] (1-3-2) [right=0cm of 1-3-1] {p};
+        \node[draw,rectangle,minimum size=0.5cm] (1-3-3) [right=0cm of 1-3-2] {};
+        \draw[->] (1-2-3.center) -- (1-3-1);
+        \node[draw,rectangle,minimum size=0.5cm] (1-4-1) [right=of 1-3-3] {2};
+        \node[draw,rectangle,minimum size=0.5cm] (1-4-2) [right=0cm of 1-4-1] {p};
+        \node[draw,rectangle,minimum size=0.5cm] (1-4-3) [right=0cm of 1-4-2] {\footnotesize/};
+        \draw[->] (1-3-3.center) -- (1-4-1);
+
+
+        \node[draw,rectangle,minimum size=0.5cm] (2-1-1) [right=of 2] {4};
+        \node[draw,rectangle,minimum size=0.5cm] (2-1-2) [right=0cm of 2-1-1] {p};
+        \node[draw,rectangle,minimum size=0.5cm] (2-1-3) [right=0cm of 2-1-2] {\footnotesize/};
+        \draw[->] (2) -- (2-1-1);
+
+
+        \node[draw,rectangle,minimum size=0.5cm] (3-1-1) [right=of 3] {1};
+        \node[draw,rectangle,minimum size=0.5cm] (3-1-2) [right=0cm of 3-1-1] {p};
+        \node[draw,rectangle,minimum size=0.5cm] (3-1-3) [right=0cm of 3-1-2] {\footnotesize/};
+        \draw[->] (3) -- (3-1-1);
+
+
+        \node[draw,rectangle,minimum size=0.5cm] (4-1-1) [right=of 4] {1};
+        \node[draw,rectangle,minimum size=0.5cm] (4-1-2) [right=0cm of 4-1-1] {p};
+        \node[draw,rectangle,minimum size=0.5cm] (4-1-3) [right=0cm of 4-1-2] {};
+        \draw[->] (4) -- (4-1-1);
+        \node[draw,rectangle,minimum size=0.5cm] (4-2-1) [right=of 4-1-3] {2};
+        \node[draw,rectangle,minimum size=0.5cm] (4-2-2) [right=0cm of 4-2-1] {p};
+        \node[draw,rectangle,minimum size=0.5cm] (4-2-3) [right=0cm of 4-2-2] {\footnotesize/};
+        \draw[->] (4-1-3.center) -- (4-2-1);
+      \end{tikzpicture}
+      \caption{Rappresentazione per liste di adiacenza}
+    \end{figure}
+    \noindent
+    Lo spazio in memoria occupato è \(\Theta(|V| + |E|)\).
+
+  \item \textbf{Rappresentazione per matrice di adiacenza}:
+    Si crea una matrice \(A\) di dimensione \(|V| \times |V|\) in cui \(A_{ij} = 1\) se esiste
+    un arco tra i nodi \(i\) e \(j\), altrimenti \(A_{ij} = 0\).
+    Prendiamo in considerazione la figura \ref{fig:grafo1}, dove \( p \) è il peso dell'arco:
+    \begin{table}[H]
+      \centering
+      \begin{tabular}{c|cccc}
+        / & 1 & 2 & 3 & 4 \\
+        \hline
+        1 & 1 & 1 & 1 & 1 \\
+        2 & 0 & 0 & 0 & 1 \\
+        3 & 1 & 0 & 0 & 0 \\
+        4 & 1 & 1 & 0 & 0 \\
+      \end{tabular}
+      \caption{Rappresentazione per matrice di adiacenza}
+    \end{table}
+    \noindent
+    Lo spazio in memoria occupato è \(\Theta(|V|^2)\).
+\end{itemize}
+
+\noindent
+\begin{itemize}
+  \item Un \textbf{grafo trasposto} è un grafo in cui tutti gli archi sono invertiti.
+
+  \item
+    La \textbf{chiusura transitiva di un grafo} è un grafo in cui se esiste un cammino tra due nodi
+    allora esiste un arco diretto tra i due nodi:
+    \begin{figure}[H]
+      \centering
+      \begin{tikzpicture}
+        \node[draw,circle] (a) at (0,0) {a};
+        \node[draw,circle] (b) [right=of a] {b};
+        \node[draw,circle] (c) [right=of b] {c};
+
+        \draw[->] (a) -- (b);
+        \draw[->] (b) -- (c);
+        \draw[->] (a) to [bend left=45] (c);
+      \end{tikzpicture}
+      \caption{Grafo con chiusura transitiva}
+    \end{figure}
+
+  \item Il \textbf{diametro} è il percorso più lungo fra i percorsi minimi
+\end{itemize}
+
+\subsection{Esplorazione di un grafo}
+\subsubsection{Visita in ampiezza (BFS: Breath First Search)}
+La visita in ampiezza (o a ventaglio) è un algoritmo che permette di visitare tutti i nodi
+di un grafo partendo da un nodo iniziale. L'algoritmo è il seguente:
+\begin{lstlisting}[language=Scala]
+// G e' un grafo composto da un insieme di nodi V e un insieme di archi E
+// s e' un nodo dell'arco
+bfs(G, s)
+  for u in G.V
+    u.color <- white // non esplorato
+    u.distance <- +inf // distanza dal nodo s
+    u.parent <- NIL // nodo da cui si arriva a u
+
+  s.color <- gray // scoperto, ma non esplorato
+  s.distance <- 0
+  s.parent <- NIL
+  Q <- {s} // coda FIFO che contiene i nodi scoperti non esplorati
+
+  while Q != empty
+    u <- q.head
+
+    for v in G.adj(u) // lista di nodi adiacenti a u
+      if v.color == white
+        v.color <- gray
+        v.distance <- u.distance + 1
+        v.parent <- u
+        Q.enqueue(v)
+
+  Q.dequeue()
+  u.color <- black // esplorato
+\end{lstlisting}
+La complessità di questo algoritmo è \(O(|V| + |E|)\).
+\begin{example}
+  L'algoritmo passo per passo è il seguente, dove i colori rappresentano:
+  \begin{itemize}
+    \item Nero: non esplorato,
+    \item \textcolor{blue}{Blu}: scoperto, ma non esplorato,
+    \item \textcolor{red}{Rosso}: esplorato,
+  \end{itemize}
+  \begin{enumerate}
+    \item Primo passo:
+      \begin{table}[H]
+        \centering
+        \begin{tabular}{c|c}
+          Distanza & 0 \\
+          Coda & s 
+        \end{tabular}
+      \end{table}
+      \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[
+          every node/.style={minimum size=0.7cm},
+          ]
+          \node[draw,circle] (r) {} node[above] at (r.north) {r};
+          \node[draw,circle,blue] (s) [right=of r] {0} node[above] at (s.north) {s};
+          \node[draw,circle] (t) [right=of s] {} node[above] at (t.north) {t};
+          \node[draw,circle] (u) [right=of t] {} node[above] at (u.north) {u};
+
+          \node[draw,circle] (v) [below=of r] {} node[below] at (v.south) {v};
+          \node[draw,circle] (w) [below=of s] {} node[below] at (w.south) {w};
+          \node[draw,circle] (x) [below=of t] {} node[below] at (x.south) {x};
+          \node[draw,circle] (y) [below=of u] {} node[below] at (y.south) {y};
+
+          \draw (r) -- (s);
+          \draw (r) -- (v);
+          \draw (s) -- (w);
+          \draw (t) -- (w);
+          \draw (t) -- (x);
+          \draw (t) -- (u);
+          \draw (w) -- (x);
+          \draw (u) -- (y);
+          \draw (x) -- (y);
+        \end{tikzpicture}
+      \end{figure}
+
+    \item Secondo passo:
+      \begin{table}[H]
+        \centering
+        \begin{tabular}{c|ccc}
+          Distanza & 0 & 1 & 1\\
+          Coda & s & w & r
+        \end{tabular}
+      \end{table}
+      \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[
+          every node/.style={minimum size=0.7cm},
+          ]
+          \node[draw,circle,blue] (r) {1} node[above] at (r.north) {r};
+          \node[draw,circle,red] (s) [right=of r] {0} node[above] at (s.north) {s};
+          \node[draw,circle] (t) [right=of s] {} node[above] at (t.north) {t};
+          \node[draw,circle] (u) [right=of t] {} node[above] at (u.north) {u};
+
+          \node[draw,circle] (v) [below=of r] {} node[below] at (v.south) {v};
+          \node[draw,circle,blue] (w) [below=of s] {1} node[below] at (w.south) {w};
+          \node[draw,circle] (x) [below=of t] {} node[below] at (x.south) {x};
+          \node[draw,circle] (y) [below=of u] {} node[below] at (y.south) {y};
+
+          \draw[->,thick] (r) -- (s);
+          \draw (r) -- (v);
+          \draw[<-,thick] (s) -- (w);
+          \draw (t) -- (w);
+          \draw (t) -- (x);
+          \draw (t) -- (u);
+          \draw (w) -- (x);
+          \draw (u) -- (y);
+          \draw (x) -- (y);
+        \end{tikzpicture}
+      \end{figure}
+
+    \item Terzo passo:
+      \begin{table}[H]
+        \centering
+        \begin{tabular}{c|cccccc}
+          Distanza & 0 & 1 & 1 & 2 & 2 & 2\\
+          Coda & $\cancel{\text{s}}$ & $\cancel{\text{w}}$ & $\cancel{\text{r}}$
+               & t & x & v
+        \end{tabular}
+      \end{table}
+      \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[
+          every node/.style={minimum size=0.7cm},
+          ]
+          \node[draw,circle,red] (r) {1} node[above] at (r.north) {r};
+          \node[draw,circle,red] (s) [right=of r] {0} node[above] at (s.north) {s};
+          \node[draw,circle,blue] (t) [right=of s] {2} node[above] at (t.north) {t};
+          \node[draw,circle] (u) [right=of t] {} node[above] at (u.north) {u};
+
+          \node[draw,circle,blue] (v) [below=of r] {2} node[below] at (v.south) {v};
+          \node[draw,circle,red] (w) [below=of s] {1} node[below] at (w.south) {w};
+          \node[draw,circle,blue] (x) [below=of t] {2} node[below] at (x.south) {x};
+          \node[draw,circle] (y) [below=of u] {} node[below] at (y.south) {y};
+
+          \draw[->,thick] (r) -- (s);
+          \draw[<-,thick] (r) -- (v);
+          \draw[<-,thick] (s) -- (w);
+          \draw[->,thick] (t) -- (w);
+          \draw (t) -- (x);
+          \draw (t) -- (u);
+          \draw[<-,thick] (w) -- (x);
+          \draw (u) -- (y);
+          \draw (x) -- (y);
+        \end{tikzpicture}
+      \end{figure}
+
+    \item Quarto passo:
+      \begin{table}[H]
+        \centering
+        \begin{tabular}{c|cccccccc}
+          Distanza & 0 & 1 & 1 & 2 & 2 & 2 & 3 & 3\\
+          Coda & $\cancel{\text{s}}$ & $\cancel{\text{w}}$ & $\cancel{\text{r}}$
+               & $\cancel{\text{t}}$ & $\cancel{\text{x}}$ & $\cancel{\text{v}}$
+               & u & y
+        \end{tabular}
+      \end{table}
+      \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[
+          every node/.style={minimum size=0.7cm},
+          ]
+          \node[draw,circle,red] (r) {1} node[above] at (r.north) {r};
+          \node[draw,circle,red] (s) [right=of r] {0} node[above] at (s.north) {s};
+          \node[draw,circle,red] (t) [right=of s] {2} node[above] at (t.north) {t};
+          \node[draw,circle,blue] (u) [right=of t] {3} node[above] at (u.north) {u};
+
+          \node[draw,circle,red] (v) [below=of r] {2} node[below] at (v.south) {v};
+          \node[draw,circle,red] (w) [below=of s] {1} node[below] at (w.south) {w};
+          \node[draw,circle,red] (x) [below=of t] {2} node[below] at (x.south) {x};
+          \node[draw,circle,blue] (y) [below=of u] {3} node[below] at (y.south) {y};
+
+          \draw[->,thick] (r) -- (s);
+          \draw[<-,thick] (r) -- (v);
+          \draw[<-,thick] (s) -- (w);
+          \draw[->,thick] (t) -- (w);
+          \draw (t) -- (x);
+          \draw[<-,thick] (t) -- (u);
+          \draw[<-,thick] (w) -- (x);
+          \draw (u) -- (y);
+          \draw[<-,thick] (x) -- (y);
+        \end{tikzpicture}
+      \end{figure}
+
+    \item Quinto passo:
+      \begin{table}[H]
+        \centering
+        \begin{tabular}{c|cccccccc}
+          Distanza & 0 & 1 & 1 & 2 & 2 & 2 & 3 & 3\\
+          Coda & $\cancel{\text{s}}$ & $\cancel{\text{w}}$ & $\cancel{\text{r}}$
+               & $\cancel{\text{t}}$ & $\cancel{\text{x}}$ & $\cancel{\text{v}}$
+               & $\cancel{\text{u}}$ & $\cancel{\text{y}}$
+        \end{tabular}
+      \end{table}
+      \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[
+          every node/.style={minimum size=0.7cm},
+          ]
+          \node[draw,circle,red] (r) {1} node[above] at (r.north) {r};
+          \node[draw,circle,red] (s) [right=of r] {0} node[above] at (s.north) {s};
+          \node[draw,circle,red] (t) [right=of s] {2} node[above] at (t.north) {t};
+          \node[draw,circle,red] (u) [right=of t] {3} node[above] at (u.north) {u};
+
+          \node[draw,circle,red] (v) [below=of r] {2} node[below] at (v.south) {v};
+          \node[draw,circle,red] (w) [below=of s] {1} node[below] at (w.south) {w};
+          \node[draw,circle,red] (x) [below=of t] {2} node[below] at (x.south) {x};
+          \node[draw,circle,red] (y) [below=of u] {3} node[below] at (y.south) {y};
+
+          \draw[->,thick] (r) -- (s);
+          \draw[<-,thick] (r) -- (v);
+          \draw[<-,thick] (s) -- (w);
+          \draw[->,thick] (t) -- (w);
+          \draw (t) -- (x);
+          \draw[<-,thick] (t) -- (u);
+          \draw[<-,thick] (w) -- (x);
+          \draw (u) -- (y);
+          \draw[<-,thick] (x) -- (y);
+        \end{tikzpicture}
+      \end{figure}
+  \end{enumerate}
+  Se si vuole trovare il cammino minimo tra due nodi, si parte dal nodo di destinazione
+  e si risale al nodo di partenza seguendo il campo \texttt{parent} di ogni nodo.
+
+  \vspace{1em}
+  \noindent
+  Questo algoritmo produce un \textbf{albero dei cammini di lunghezza minima} radicato in
+  \( s \) che ha un cammino minimo per ogni nodo, se tale cammino esiste.
+\end{example}
+
+\noindent
+\textbf{Dimostrazione}: Dimostriamo che l'algoritmo BFS produce sempre un albero dei 
+cammini di lunghezza minima:
+
+Sia \( \delta(v) \) la lunghezza del cammino minimo da \( s \) a \( v \). Dimostrare che
+\[
+  \forall v \quad v.distance = \delta(v)
+\]
+Per dimostrare l'uguaglianza dimostriamo che sia comtemporaneamente maggiore e uguale
+e minore e uguale:
+
+\vspace{1em}
+\noindent
+\textbf{Lemma 1.} \( \forall (u,v) \in E \quad \delta(v) \le \delta(u) + 1 \) 
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \node[draw,circle] (s) at (0,0) {s};
+    \node[draw,circle] (u) [below right=of s] {u};
+    \node[draw,circle] (v) [above right=of s] {v};
+
+    \draw[->,dashed] (s) -- (u) node[midway, below left] {$\delta(u)$};
+    \draw[->,dashed] (s) -- (v) node[midway, above left] {$\delta(v)$};
+    \draw[->] (u) -- (v) node[midway, right] {$\delta(u) + 1$};
+  \end{tikzpicture}
+  \caption{Lemma 1}
+\end{figure}
+
+\noindent
+\textbf{Lemma 2.} \( \forall v \quad v.distance \ge \delta(v) \) perchè:
+\[
+  \begin{aligned}
+    s.distance &= 0 \ge 0\\
+    v.distance &= u.distance + 1 \ge \delta(u) + 1 \ge \delta(v)
+  \end{aligned}
+\] 
+
+\noindent
+\textbf{Lemma 3.} Nella coda \( Q \) ci sono smpre al più 2 valori e la coda è ordinata
+per distanza crescente.
+Sia \( \left<v_1, \ldots, v_r \right> \) il contenuto di \( Q \) in un qualche istante,
+allora:
+\[
+  v_1.distance \le v_2.distance \le \ldots \le v_r.distance \le v_1.distance + 1
+\] 
+Questo è vero per ogni istruzione del programma, è un \textbf{invariante}.
+Ogni istruzione che non modifica \( Q \) e non modifica le distanze non modifica l'invariante.
+L'inizializzazione della coda e la modifica della distanza di un nodo da aggiungere alla
+coda non modificano l'invariante. L'aggiunta di un nodo alla coda mantiene l'invariante.
+Quindi tutte le istruzioni mantengono l'invariante.
+
+\begin{theorem}
+  Sia \( V_k \) l'insieme di nodi \( v \;\big|\; \delta(v) = k \), allora
+  \( \forall v \in V_k \) esiste un punto dell'algoritmo in cui:
+  \begin{itemize}
+    \item \( v \) è grigio (scoperto, ma non esplorato).
+    \item \( k \) è assegnato a \( v.distance \).
+    \item se \( v \neq s \) allora \( v.parent = u \) per qualche \( u \in V_{k-1} \).
+    \item \( v \) è inserito in coda
+  \end{itemize}
+\end{theorem}
+
+\subsubsection{Visita in profondità (DFS: Depth First Search)}
+L'algoritmo è il seguente:
+\begin{lstlisting}[language=Scala]
+// G e' un grafo composto da un insieme di nodi V e un insieme di archi E
+dfs(G)
+  for u in G.V
+    u.color <- white // non esplorato
+    u.parent <- NIL
+
+  time <- 0
+
+  for u in G.V
+    if u.color == white
+      dfs-visit(u)
+\end{lstlisting}
+\begin{lstlisting}[language=Scala]
+// Le variabili della funzione dfs sono accessibili anche da dfs-visit
+dfs_visit(u)
+  u.color <- gray // scoperto, ma non esplorato
+  u.start <- time <- time + 1
+
+  for v in G.adj(u)
+    if v.color == white // non esplorato
+      v.parent <- u
+      dfs-visit(v)
+
+  u.color <- black // esplorato
+  u.finish <- time <- time + 1
+\end{lstlisting}
+La complessità di questo algoritmo è \(O(|V| + |E|)\).
+\begin{example}
+  I numeri a sinistra indicano il tempo di inizio della visita e i numeri a destra
+  la fine della visita
+  \begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[
+      every node/.style={minimum size=1.2cm},
+      ]
+      \node[draw,circle] (y) {3/6} node[above] at (y.north) {y};
+      \node[draw,circle] (z) [right=of y] {2/9} node[above] at (z.north) {z};
+      \node[draw,circle] (s) [right=of z] {1/10} node[above] at (s.north) {s};
+      \node[draw,circle] (t) [right=of s] {11/16} node[above] at (t.north) {t};
+
+      \node[draw,circle] (x) [below=of y] {4/5} node[below] at (x.south) {x};
+      \node[draw,circle] (w) [below=of z] {7/8} node[below] at (w.south) {w};
+      \node[draw,circle] (v) [below=of s] {12/13} node[below] at (v.south) {v};
+      \node[draw,circle] (u) [below=of t] {14/15} node[below] at (u.south) {u};
+
+      \draw[->] (y) -- (x);
+      \draw[<-] (y) -- (z);
+      \draw[->] (z) -- (w);
+      \draw[<-] (z) -- (s);
+      \draw[<-] (s) -- (v);
+      \draw[->] (t) -- (v);
+      \draw[->] (t) -- (u);
+      \draw[->] (v) -- (w);
+      \draw[->] (w) -- (x);
+      \draw[->] (x) -- (z);
+      \draw[->] (s) -- (w);
+
+      \draw[->,thick] (x) to [bend left] (y);
+      \draw[->,thick] (y) to [bend left] (z);
+      \draw[->,thick] (z) to [bend left] (s);
+      \draw[->,thick] (w) to [bend left] (z);
+
+      \draw[->,thick] (v) to [bend left] (t);
+      \draw[->,thick] (u) to [bend left] (t);
+
+      \node[below left=0cm and 0.2cm of y] {Parent};
+    \end{tikzpicture}
+    \caption{Visita in profondità}
+  \end{figure}
+\end{example}
+
+Riprendendo l'esempio precedente scriviamo i passaggi nel seguente modo:
+Il tipo di nodo è denotato dal tipo di parentesi:
+\begin{itemize}
+  \item Parentesi aperta: inizio a visitare il nodo
+  \item Parentesi chiusa: fine della visita del nodo
+\end{itemize}
+
+\begin{table}[H]
+  \centering
+  \setlength{\tabcolsep}{2pt}
+  \begin{tabular}{ccccccccccccccccc}
+    Tempo & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16\\
+  \hline
+          & (s & (z & (y & (x & x) & y) & (w & w) & z) & s) & (t & (v & v) & (u & u) & t)\\
+  \end{tabular}
+\end{table}
+Questa espressione è ben parentesizzata:
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}[scale=0.7]
+    \node (1) at (1,0) {1} node[below=0.2cm] at (1) {(s};
+    \node (2) at (2,0) {2} node[below=0.2cm] at (2) {(z};
+    \node (3) at (3,0) {3} node[below=0.2cm] at (3) {(y};
+    \node (4) at (4,0) {4} node[below=0.2cm] at (4) {(x};
+    \node (5) at (5,0) {5} node[below=0.2cm] at (5) {x)};
+    \node (6) at (6,0) {6} node[below=0.2cm] at (6) {y)};
+    \node (7) at (7,0) {7} node[below=0.2cm] at (7) {(w};
+    \node (8) at (8,0) {8} node[below=0.2cm] at (8) {w)};
+    \node (9) at (9,0) {9} node[below=0.2cm] at (9) {z)};
+    \node (10) at (10,0) {10} node[below=0.2cm] at (10) {s)};
+    \node (11) at (11,0) {11} node[below=0.2cm] at (11) {(t};
+    \node (12) at (12,0) {12} node[below=0.2cm] at (12) {(v};
+    \node (13) at (13,0) {13} node[below=0.2cm] at (13) {v)};
+    \node (14) at (14,0) {14} node[below=0.2cm] at (14) {(u};
+    \node (15) at (15,0) {15} node[below=0.2cm] at (15) {u)};
+    \node (16) at (16,0) {16} node[below=0.2cm] at (16) {t)};
+
+    \draw (4,1) rectangle (5,1.6) node[below left] {x} node[midway] (x) {};
+
+    \draw (3,2) rectangle (6,2.6) node[below left] {y} node[midway] (y) {};
+    \draw (7,2) rectangle (8,2.6) node[below left] {w} node[midway] (w) {};
+
+    \draw (2,3) rectangle (9,3.6) node[below left] {z} node[midway] (z) {};
+    \draw (12,3) rectangle (13,3.6) node[below left] {v} node[midway] (v) {};
+    \draw (14,3) rectangle (15,3.6) node[below left] {u} node[midway] (u) {};
+
+    \draw (1,4) rectangle (10,4.6) node[below left] {s} node[midway] (s) {};
+    \draw (11,4) rectangle (16,4.6) node[below left] {t} node[midway] (t) {};
+
+    \draw[->] (y) -- (x);
+    \draw[->] (z) -- (y);
+    \draw[->] (z) -- (w);
+    \draw[->] (s) -- (z);
+    \draw[->] (t) -- (v);
+    \draw[->] (t) -- (u);
+  \end{tikzpicture}
+  \caption{Visualizzazione dell'albero}
+\end{figure}
+
+\noindent
+Gli archi si dividono in:
+\begin{itemize}
+  \item \textbf{Arco dell'albero} (T): è un arco che collega un nodo a un suo discendente
+  \item \textbf{Arco all'indietro} (B): è un arco che collega un nodo a un suo antenato
+  \item \textbf{Arco in avanti} (F): è un arco che collega un nodo a un discendente non diretto
+  \item \textbf{Arco trasversale} (C): è un arco che collega due nodi non correlati
+\end{itemize}
+Quindi nell'esempio precedente abbiamo:
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}[
+    every node/.style={minimum size=1.2cm},
+    ]
+    \node[draw,circle] (y) {3/6} node[above] at (y.north) {y};
+    \node[draw,circle] (z) [right=of y] {2/9} node[above] at (z.north) {z};
+    \node[draw,circle] (s) [right=of z] {1/10} node[above] at (s.north) {s};
+    \node[draw,circle] (t) [right=of s] {11/16} node[above] at (t.north) {t};
+
+    \node[draw,circle] (x) [below=of y] {4/5} node[below] at (x.south) {x};
+    \node[draw,circle] (w) [below=of z] {7/8} node[below] at (w.south) {w};
+    \node[draw,circle] (v) [below=of s] {12/13} node[below] at (v.south) {v};
+    \node[draw,circle] (u) [below=of t] {14/15} node[below] at (u.south) {u};
+
+    \draw[->] (y) -- (x) node[midway, right=-0.3cm] {T};
+    \draw[<-] (y) -- (z) node[midway, above=-0.3cm] {T};
+    \draw[->] (z) -- (w) node[midway, right=-0.3cm] {T};
+    \draw[<-] (z) -- (s) node[midway, above=-0.3cm] {T};
+    \draw[<-] (s) -- (v) node[midway, right=-0.3cm] {C};
+    \draw[->] (t) -- (v) node[midway, right=-0.2cm] {T};
+    \draw[->] (t) -- (u) node[midway, right=-0.3cm] {T};
+    \draw[->] (v) -- (w) node[midway, above=-0.3cm] {C};
+    \draw[->] (w) -- (x) node[midway, above=-0.3cm] {C};
+    \draw[->] (x) -- (z) node[midway, right=-0.3cm] {B};
+    \draw[->] (s) -- (w) node[midway, right=-0.3cm] {F};
+  \end{tikzpicture}
+  \caption{Tipi di archi}
+\end{figure}
+
+nel nostro algoritmo abbiamo che il clolore degli archi distingue i vari tipi:
+\begin{itemize}
+  \item \textbf{Bianco} (non esplorato): arco trasversale (T)
+  \item \textbf{Grigio} (scoperto, ma non esplorato): arco all'indietro (B)
+  \item \textbf{Nero} (esplorato): arco dell'albero o arco in avanti (F,C)
+\end{itemize}
+Da questo consegue che se ci sono archi all'indietro è presente un ciclo, quindi esiste
+un algoritmo di complessità \(O(|V| + |E|)\) per trovare se un grafo è ciclico e questo
+algoritmo è il DFS.
+
+\begin{theorem}
+  Dopo una DFS \( \forall u, v \) gli intervalli \( [\text{\texttt{u.start}},
+  \text{\texttt{u.finish}}] \) sono disgiunti, oppure uno sottointervallo dell'altro
+
+  \vspace{1em}
+  \noindent
+  \textbf{Dimostrazione}:
+  \begin{enumerate}
+    \item Supponiamo che \( \text{\texttt{u.start}} < \text{\texttt{v.start}} \)
+      \begin{enumerate}
+        \item Se \( \text{\texttt{u.finish}} < \text{\texttt{v.start}} \) allora
+          i due intervalli sono disgiunti
+        \item Se \( \text{\texttt{u.start}} < \text{\texttt{v.finish}} \) allora
+          \( v \) è un sottointervallo di \( u \) 
+      \end{enumerate}
+      \textbf{Corollario}: In DFS \( v \) discende da \( u \) se e solo se:
+      \[
+        \text{\texttt{u.start}} < \text{\texttt{v.start}} < \text{\texttt{v.finish}} < \text{\texttt{u.finish}}
+      \] 
+  \end{enumerate}
+\end{theorem}
+\begin{theorem}
+  Nella foresta di alberi generata da una DFS, un nodo \( v \) è un discendente di un nodo
+  \( u \) se e solo se al tempo \( \text{\texttt{u.start}} \) esiste un cammino da \( u \) 
+  a \( v \) fatto di soli nodi bianchi (non esplorati).
+
+  \vspace{1em}
+  \noindent
+  \textbf{Dimostrazione}: Supponiamo che \( v \) discende da \( u \), sia \( w \) un nodo
+  del cammino da \( u \to v \) della foresta:
+  \[
+    \text{\texttt{u.start}} < \text{\texttt{w.start}}
+  \] 
+  Quindi nel momento in cui \( u \) viene scoperto, \( w \) è ancora bianco.
+  \begin{figure}[H]
+    \begin{itemize}
+      \item Nero: non esplorato,
+      \item \textcolor{blue}{Blu}: scoperto, ma non esplorato,
+      \item \textcolor{red}{Rosso}: esplorato,
+    \end{itemize}
+    \centering
+    \begin{tikzpicture}
+      \node[draw,circle,red] (u) {u};
+      \node[draw,circle] (w) [right=of u] {w};
+      \node[draw,circle] (v) [right=of w] {v};
+
+      \draw[->] (u) -- (w);
+      \draw[->] (w) -- (v);
+    \end{tikzpicture}
+  \end{figure}
+
+  \vspace{1em}
+  \noindent
+  \( v \) raggiungibile da \( u \) al tempo \( \text{\texttt{u.start}} \) con cammino
+  di nodi bianchi (non esplorati). Supponiamo per assurdo che \( v \) non discende da \( u \) 
+  \begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[
+      every node/.style={minimum size=0.8cm},
+      ]
+      \node[draw,circle] (u) {\( u \) };
+      \node[draw,circle] (u1) [right=of u] {\( u_1 \)};
+      \node[draw,circle] (u2) [right=of u1] {\( u_2 \)};
+      \node[draw,circle] (w) [right=of u2] {\( w \)};
+      \node[draw,circle] (v) [right=of w] {\( v \)};
+
+      \draw[->] (u) -- (u1);
+      \draw[->] (u1) -- (u2);
+      \draw[->] (u2) -- (w);
+      \draw[->] (w) -- (v);
+    \end{tikzpicture}
+  \end{figure}
+  \noindent
+  Supponiamo, senza perdita di generalità, che il predecessore di \( v \) discende da \( u \).
+  Sia \( w \) il predecessore di \( v \), allora \( w \) discende da \( u \), quindi:
+  \[
+    \text{\texttt{w.finish}} < \text{\texttt{u.finish}}
+  \] 
+  di conseguenza:
+  \[
+    \text{\texttt{u.start}} < \text{\texttt{w.start}} < 
+    \underbrace{\text{\texttt{v.start}} < \text{\texttt{v.finish}}}_{\text{Sottointervallo
+    di \( u \)}}
+    < \text{\texttt{w.finish}} < \text{\texttt{u.finish}}
+  \] 
+  Quindi l'intervallo \( v \) è un sottointervallo di \( u \) contraddicendo l'ipotesi
+  e dimostrando che \( v \) discende da \( u \).
+\end{theorem}
+
+\begin{theorem}
+  Un grafo è aciclico se e solo se DFS \textbf{non} trova archi indietro, ed è ciclico
+  se e solo se trova almeno un arco indietro.
+
+  \vspace{1em}
+  \noindent
+  \textbf{Dimostrazione}: consideriamo un qualsiasi grafo ciclico. DFS scoprirà un nodo
+  per primo e quel nodo lo chiamiamo \( u \) e ci sarà un nodo scoperto per ultimo
+  chiamato \( v \). Se \( v \) discende da \( u \) allora esiste un cammino da \( u \) a
+  \( v \) fatto di nodi bianchi (non esplorati) e quindi esiste un ciclo.
+\end{theorem}
+
+\begin{example}
+  Un robot si vuole vestire e deve indossare degli indumenti in un certo ordine. Bisogna
+  trovare un algoritmo che trovi una soluzione tenendo in considerazione tutti i vincoli.
+
+  Una rappresentazione più astratta del problema potrebbe essere un grafo orientato
+  in cui i nodi sono gli indumenti e tra due nodi c'è un arco se un indumento deve essere
+  indossato prima dell'altro. Ad esempio:
+  \begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+      \node[draw,ellipse] (slip) {Slip};
+      \node[draw,ellipse] (pantaloni) [below=of slip] {Pantaloni};
+      \node[draw,ellipse] (cintura) [below=of pantaloni] {Cintura};
+      \node[draw,ellipse] (camicia) [above right=of pantaloni] {Camicia};
+      \node[draw,ellipse] (cravatta) [below=of camicia] {Cravatta};
+      \node[draw,ellipse] (giacca) [below=of cravatta] {Giacca};
+      \node[draw,ellipse] (calzini) [above left=of pantaloni] {Calzini};
+      \node[draw,ellipse] (scarpe) [below=of calzini] {Scarpe};
+      \node[draw,ellipse] (orologio) [left=of calzini] {Orologio};
+
+      \draw[->] (slip) -- (pantaloni);
+      \draw[->] (pantaloni) -- (cintura);
+      \draw[->] (camicia) -- (pantaloni);
+      \draw[->] (camicia) -- (cravatta);
+      \draw[->] (cravatta) -- (giacca);
+      \draw[->] (cintura) -- (giacca);
+      \draw[->] (calzini) -- (scarpe);
+      \draw[->] (pantaloni) -- (scarpe);
+    \end{tikzpicture}
+    \caption{Esempio di rappresentazione del problema}
+  \end{figure}
+  \noindent
+  Questo grafo \textbf{rappresenta una relazione} di ordinamento \textbf{parziale} tra gli indumenti
+  (se non sono presenti cicli). L'obiettivo è di prendere la relazione parziale e renderla
+  totale, ma mantenendola compatibile coi vincoli già imposti. In questo caso ad esempio
+  bisogna imporre altri vincoli e dire che l'orologio va messo prima di qualcos'altro
+  mantenendo l'ordinamento parziale dato all'inizio.
+
+  Questo problema si chiama \textbf{Ordinamento topologico} e la risoluzione è la seguente:
+\begin{lstlisting}[language=Scala]
+// G e' un grafo
+topological_sorting(G)
+  stack = dfs(G) // DFS ritorna una pila con i nodi in ordine decrescente di finish
+\end{lstlisting}
+  Questo algoritmo ha complessità \(O(|V| + |E|)\), quindi si può risolvere un ordinamento
+  topologico in tempo lineare.
+
+  \vspace{1em}
+  \noindent
+  L'applicazione dell'algoritmo sul grafo preso in esempio è la seguente consideramdo che
+  si inizi visitando la camicia (i numeri a sinistra indicano il tempo di inizio della visita
+  e i numeri a destra la fine della visita):
+  \begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+      \node[draw,ellipse] (slip) {Slip}
+        node[above,scale=0.7] at (slip.north) {17/18};
+      \node[draw,ellipse] (pantaloni) [below=of slip] {Pantaloni}
+        node[above=0.2cm,scale=0.7] at (pantaloni.west) {6/11};
+      \node[draw,ellipse] (cintura) [below=of pantaloni] {Cintura}
+        node[left,scale=0.7] at (cintura.west) {7/8};
+      \node[draw,ellipse] (camicia) [above right=of pantaloni] {Camicia}
+        node[right,scale=0.7] at (camicia.east) {1/12};
+      \node[draw,ellipse] (cravatta) [below=of camicia] {Cravatta}
+        node[right,scale=0.7] at (cravatta.east) {2/5};
+      \node[draw,ellipse] (giacca) [below=of cravatta] {Giacca}
+        node[right,scale=0.7] at (giacca.east) {3/4};
+      \node[draw,ellipse] (calzini) [above left=of pantaloni] {Calzini}
+        node[above,scale=0.7] at (calzini.north) {15/16};
+      \node[draw,ellipse] (scarpe) [below=of calzini] {Scarpe}
+        node[left,scale=0.7] at (scarpe.west) {9/10};
+      \node[draw,ellipse] (orologio) [left=of calzini] {Orologio}
+        node[above,scale=0.7] at (orologio.north) {13/14};
+
+      \draw[->] (slip) -- (pantaloni);
+      \draw[->] (pantaloni) -- (cintura);
+      \draw[->] (camicia) -- (pantaloni);
+      \draw[->] (camicia) -- (cravatta);
+      \draw[->] (cravatta) -- (giacca);
+      \draw[->] (cintura) -- (giacca);
+      \draw[->] (calzini) -- (scarpe);
+      \draw[->] (pantaloni) -- (scarpe);
+    \end{tikzpicture}
+    \caption{Esempio di rappresentazione del problema}
+  \end{figure}
+  \begin{table}[H]
+    \centering
+    \begin{tabular}{|c|}
+      \hline
+      Slip\\
+      \hline
+      Calzini\\
+      \hline
+      Orologio\\
+      \hline
+      Camicia\\
+      \hline
+      Pantaloni\\
+      \hline
+      Scarpe\\
+      \hline
+      Cintura\\
+      \hline
+      Cravatta\\
+      \hline
+      Giacca\\
+      \hline
+    \end{tabular}
+    \caption{Stack}
+  \end{table}
+  \noindent
+  Per dire che l'algoritmo funziona bisogna dimostrare che:
+  \[
+    \forall (u,v) \in E \quad \text{\texttt{v.finish}} < \text{\texttt{u.finish}}
+  \] 
+  \textbf{Dimostrazione}: Quando \( (u,v) \) viene esplorato, allora se:
+  \begin{itemize}
+    \item \( v \) è bianco (non esplorato) allora \( v \) è un discendente di \( u \),
+      quindi:
+      \[
+        \text{\texttt{v.finish}} < \text{\texttt{u.finish}}
+      \] 
+    \item \( v \) è grigio (scoperto, ma non esplorato) non è possibile, perchè se \( v \) 
+      vosse grigio ci sarebbe un grafo ciclico e la soluzione non esiste.
+    \item \( v \) è nero (esplorato) allora \( u \) non è ancora stato esplorato, quindi: 
+      \[
+        \text{\texttt{v.finish}} < \text{\texttt{u.finish}}
+      \] 
+  \end{itemize}
+  Quindi l'algoritmo funziona.
+\end{example}
+
+\begin{theorem}
+  In un grafo aciclico c'è per forza almeno un nodo che non ha archi entranti.
+
+  \vspace{1em}
+  \noindent
+  \textbf{Dimostrazione}: Supponiamo per assurdo che tutti i nodi abbiano almeno un arco
+  entrante. Si può creare una catena di nodi di grandezza \( |V|+1 \) all'infinito, che
+  prima o poi si ripeterà, creando un ciclo.
+\end{theorem}
+
+\begin{example}
+  Consideriamo le strade d'Italia come grafo, dove i nodi sono le città e gli archi
+  sono le strade a doppio senso. Ci sono parti non raggiungibili (come la Sardegna)
+  e quindi ci sono più grafi separati chiamati \textbf{componenti connesse}.
+\begin{lstlisting}[language=Scala]
+cc(G)
+  for v in G.V
+    make_set(v)
+  for (u,v) in G.E
+    union(u,v)
+\end{lstlisting}
+  Questo algoritmo costruisce le componenti connesse di un grafo in tempo \(O(|V| + |E|)\).
+  Quindi dati 2 elementi si può trovare in tempo costante se appartengono alla stessa
+  componente connessa e di conseguenza se sono raggiungibili.
+
+  Un'alternativa è modificare il DFS in modo che quando si visita un nodo si metta
+  un'etichetta con il numero della componente connessa.
+\begin{lstlisting}[language=Scala]
+dfs_cc(G)
+  for v in G.V
+    v.color <- white
+    v.parent <- NIL
+
+  cc <- 0
+  time <- 0
+
+  for u in G.V
+    if u.color == white
+      cc <- cc + 1
+      dfs_visit_cc(u, cc)
+\end{lstlisting}
+\begin{lstlisting}[language=Scala]
+dfs_visit_cc(u, cc)
+  u.color <- gray
+  u.start <- time <- time + 1
+
+  u.cc <- cc
+
+  for v in G.adj(u)
+    if v.color == white
+      v.parent <- u
+      dfs_visit_cc(v, cc)
+
+  u.color <- black
+  u.finish <- time <- time + 1
+\end{lstlisting}
+\end{example}
+
+\subsection{Componenti fortemente connesse}
+\begin{definition}
+  Dato un grafo orientato \( G = (V,E) \) una componente fortemente connessa (SCC) è un
+  sottoinsieme \( V' \subseteq V \) tale che:
+  \[
+    \forall u,v \in V' \quad \exists \text{ cammino da } u \to v \quad \text{e} \quad
+    \exists \text{ cammino da } v \to u
+  \]
+\end{definition}
+\begin{example}
+  Nel seguente esempio ci sono 2 componenti fortemente connesse, una composta da \( a,b,c,d \)
+  e l'altra da \( e,f,g \).
+  \begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[
+      every node/.style={minimum size=0.8cm},
+      ]
+      \node[draw,circle,blue] (a) {a};
+      \node[draw,circle,blue] (b) [below left=of a] {b};
+      \node[draw,circle,blue] (d) [below right=of b] {d};
+      \node[draw,circle,blue] (c) [below right=of a] {c};
+
+      \draw[->] (a) -- (b);
+      \draw[->] (b) -- (d);
+      \draw[->] (d) -- (c);
+      \draw[->] (c) -- (a);
+
+
+      \node[draw,circle,red] (e) [right=of c] {e};
+      \node[draw,circle,red] (f) [below right=of e] {f};
+      \node[draw,circle,red] (g) [below left=of f] {g};
+      \draw[->] (c) -- (e);
+
+      \draw[->] (e) -- (f);
+      \draw[->] (f) -- (g);
+      \draw[->] (g) -- (e);
+    \end{tikzpicture}
+    \caption{Esempio di grafo con 2 componenti fortemente connesse}
+  \end{figure}
+\end{example}
+L'algoritmo per individuare le componenti fortemente connesse è il seguente:
+\begin{lstlisting}[language=Scala]
+scc(G)
+  finish[] = dfs_finish(G) // Usa DFS per trovare i tempi di fine
+  Gt = G.transpose() // Grafo trasposto
+  dfs_from_highest_finish(Gt) // Visita i nodi in ordine decrescente di finish
+\end{lstlisting}
+Questo algoritmo ha complessità \(O(|V| + |E|)\).
+\begin{example}
+  L'algoritmo eseguito passo passo su un grafo è il seguente:
+  \begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[
+      every node/.style={minimum size=1.2cm},
+      ]
+      \node[draw,circle,blue] (a) {13/14} node[above] at (a.north) {a};
+      \node[draw,circle,blue] (b) [right=of a] {11/16} node[above] at (b.north) {b};
+      \node[draw,circle,red] (c) [right=of b] {1/10} node[above] at (c.north) {c};
+      \node[draw,circle,red] (d) [right=of c] {8/9} node[above] at (d.north) {d};
+
+      \node[draw,circle,blue] (e) [below=of a] {12/15} node[below] at (e.south) {e};
+      \node[draw,circle,red] (f) [below=of b] {3/4} node[below] at (f.south) {f};
+      \node[draw,circle,red] (g) [below=of c] {2/7} node[below] at (g.south) {g};
+      \node[draw,circle,red] (h) [below=of d] {5/6} node[below] at (h.south) {h};
+
+      \draw[->] (a) -- (b);
+      \draw[->] (b) -- (c);
+      \draw[->] (c) edge [bend left] (d);
+      \draw[->] (d) edge [bend left] (c);
+      \draw[->] (d) -- (h);
+      \draw[->] (c) -- (g);
+      \draw[->] (g) edge [bend left] (f);
+      \draw[->] (f) edge [bend left] (g);
+      \draw[->] (e) -- (f);
+      \draw[->] (e) -- (a);
+      \draw[->] (b) -- (e);
+      \draw[->] (b) -- (f);
+      \draw[->] (g) -- (h);
+      \draw[->] (h) edge [loop right] (h);
+    \end{tikzpicture}
+    \caption{Tipi di archi}
+  \end{figure}
+  Mentre sul grafo trasposto:
+  \begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[
+      every node/.style={minimum size=1.2cm},
+      ]
+      \node[draw,circle,blue] (a) {2/5} node[above] at (a.north) {a};
+      \node[draw,circle,blue] (b) [right=of a] {1/6} node[above] at (b.north) {b};
+      \node[draw,circle,red] (c) [right=of b] {7/10} node[above] at (c.north) {c};
+      \node[draw,circle,red] (d) [right=of c] {8/9} node[above] at (d.north) {d};
+
+      \node[draw,circle,blue] (e) [below=of a] {3/4} node[below] at (e.south) {e};
+      \node[draw,circle,green!50!black] (f) [below=of b] {12/13} node[below] at (f.south) {f};
+      \node[draw,circle,green!50!black] (g) [below=of c] {11/14} node[below] at (g.south) {g};
+      \node[draw,circle,magenta] (h) [below=of d] {15/16} node[below] at (h.south) {h};
+
+      \draw[<-] (a) -- (b);
+      \draw[<-] (b) -- (c);
+      \draw[<-] (c) edge [bend left] (d);
+      \draw[<-] (d) edge [bend left] (c);
+      \draw[<-] (d) -- (h);
+      \draw[<-] (c) -- (g);
+      \draw[<-] (g) edge [bend left] (f);
+      \draw[<-] (f) edge [bend left] (g);
+      \draw[<-] (e) -- (f);
+      \draw[<-] (e) -- (a);
+      \draw[<-] (b) -- (e);
+      \draw[<-] (b) -- (f);
+      \draw[<-] (g) -- (h);
+      \draw[<-] (h) edge [loop right] (h);
+    \end{tikzpicture}
+    \caption{Tipi di archi}
+  \end{figure}
+\end{example}
+
+\vspace{1em}
+\noindent
+\textbf{Lemma}: Dopo la prima DFS, ogni componente fortemente connessa è interamente
+inclusa in un albero della foresta DFS.
+
+\vspace{1em}
+\noindent
+Il \textbf{grafo delle componenti fortemente connesse} è un grafo in cui ogni nodo corrisponde
+a una componente fortemente connessa e gli archi tra due nodi indicano che esiste un
+arco tra due nodi delle due componenti connesse.
+
+Se c'è un ciclo tra due componenti fortemente connesse, tutti i nodi che fanno parte 
+del ciclo sono in una stessa componente fortemente connessa.
+
+\vspace{1em}
+\noindent
+Un grafo delle componenti fortemente connesse contiene un cammino infinito che raggiunge
+infinite volte uno stato finale quando il cammino arriva in una componente fortemente
+connessa che contiene almeno 2 nodi o un solo nodo con un autoanello.
+
+\subsubsection{Cammini minimi}
+I ponti di Verona sono tutti rotti e non si possono più riparare, ma bisogna garantire
+un servizio minimo, cioè permettere ad ogni persona di spostarsi in qualunque zona a
+piacimento. Quindi tra 2 zone c'è bisogno di un collegamento. Ogni ponte ha un costo
+di riparazione.
+
+L'obiettivo è quello di trovare il costo minimo per riparare i ponti in modo che
+ogni zona sia raggiungibile da ogni altra zona.
+
+\vspace{1em}
+\noindent
+I nodi saranno le zone e gli archi saranno i ponti. Sappiamo che se il numero di
+nodi è \( n \), allora il numero di ponti per garantire la connettività è \( n-1 \).
+E per induzione se si aggiunge un nodo bisogna aggiungere un arco.
+\begin{enumerate}
+  \item Se si vuole minimizzare il costo, bisogna minimizzare il numero di ponti riparati.
+  \item Presi due nodi esiste un unico modo per andare da un nodo all'altro. Se non fosse
+    così vuol dire che ci sono più ponti che collegano due nodi e quindi il numero di
+    ponti non è minimo. (Quindi il grafo è un albero)
+  \item Bisogna trovare un albero, tra tutti gli alberi che garantisce la connettività
+    del grafo (chiamati \textbf{albero di copertura} o \textbf{spanning tree}), con
+    costo minimo. Quindi bisogna trovare il \textbf{Minimum Spanning Tree} (MST).
+  \item Se i pesi negativi, allora la soluzione potrebbe non essere più un albero,
+    però da questa soluzione si può trovare un albero che collega tutti i nodi con
+    costo minimo. Quindi si può risolvere il problema in modo più generale senza
+    imporre i pesi positivi.
+  \item Si può assegnare ad ogni ponte un indice di gradimento e trovare il MST
+    che massimizza il gradimento. Si può usare un algoritmo che calcola
+    il costo minimo e invertire i segni per trovare il massimo.
+\end{enumerate}
+
+\vspace{1em}
+\noindent
+L'idea dell'algoritmo è quella di \textbf{tagliare} in due un grafo, cioè una bipartizione
+dell'insieme dei nodi. Se gli estremi di un arco fanno parte dello stesso insieme, allora
+l'arco è un \textbf{arco interno}, altrimenti è un \textbf{arco di taglio}. Tra tutti
+gli archi del taglio, quello con costo minimo è chiamato \textbf{arco sicuro}.
+
+\textbf{Lemma}: Dato un albero qualsiasi con un taglio, fra tutti gli MST c'è almeno uno
+che contiene l'arco sicuro.
+
+Con questo si può ridurre il problema ad uno dello stesso tipo, ma con un nodo in meno,
+e questo si può fare rappresentando due nodi collegati da un arco sicuro come un nodo
+singolo e rifare un altro taglio (senza dividere ciò che è stato unito prima).
+
+L'algoritmo è il seguente (algoritmo di Kruskal):
+\begin{lstlisting}[language=Scala]
+// G e' un grafo
+// w e' una matrice che associa ad ogni arco il suo peso
+kruskal(G, w)
+  A <- {}
+
+  for v in G.V
+    make_set(v)
+
+  sort(G.E, w.not_descending) // Ordina per peso NON decrescente
+  for (u,v) in G.E
+    if find_set(u) != find_set(v)
+      A <- union(A, {(u,v)})
+      union(u,v)
+
+  return A
+\end{lstlisting}
+
+\begin{example}
+L'applicazione di questo algoritmo è la seguente:
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \node[draw,circle] (a) {a};
+    \node[draw,circle] (b) [above right=of a] {b};
+    \node[draw,circle] (f) [below right=of b] {f};
+    \node[draw,circle] (d) [above right=of f] {d};
+    \node[draw,circle] (c) [below left=of f] {c};
+    \node[draw,circle] (e) [below right=of f] {e};
+
+    \draw (a) -- (b) node[midway, above] {4};
+    \draw (a) -- (c) node[midway, left] {8};
+    \draw (b) -- (c) node[midway, left] {11};
+    \draw (b) -- (f) node[midway, above right] {9};
+    \draw (f) -- (d) node[midway, below right] {2};
+    \draw (d) -- (e) node[midway, right] {6};
+    \draw (e) -- (f) node[midway, above right] {5};
+    \draw (c) -- (f) node[midway, above left] {7};
+    \draw (c) -- (e) node[midway, below] {1};
+    \draw (b) -- (d) node[midway, above] {8};
+  \end{tikzpicture}
+  \caption{Esempio di grafo}
+\end{figure}
+\begin{enumerate}
+  \item 
+    Eseguiamo il primo taglio e prendiamo il nodo sicuro:
+    \begin{figure}[H]
+      \centering
+      \begin{tikzpicture}
+        \node[draw,circle] (a) {a};
+        \node[draw,circle] (b) [above right=of a] {b};
+        \node[draw,circle] (f) [below right=of b] {f};
+        \node[draw,circle] (d) [above right=of f] {d};
+        \node[draw,circle] (c) [below left=of f] {c};
+        \node[draw,circle] (e) [below right=of f] {e};
+
+        \draw (a) -- (b) node[midway, above] {4};
+        \draw (a) -- (c) node[midway, left] {8};
+        \draw (b) -- (c) node[midway, left] {11};
+        \draw (b) -- (f) node[midway, above right] {9};
+        \draw (f) -- (d) node[midway, below right] {2};
+        \draw (d) -- (e) node[midway, right] {6};
+        \draw (e) -- (f) node[midway, above right] {5};
+        \draw (c) -- (f) node[midway, above left] {7};
+        \draw[thick,blue] (c) -- (e) node[midway, below] {1};
+        \draw (b) -- (d) node[midway, above] {8};
+
+        \draw[dashed] (2.2,2) -- (2.2,-2);
+      \end{tikzpicture}
+    \end{figure}
+
+  \item Secondo taglio
+    \begin{figure}[H]
+      \centering
+      \begin{tikzpicture}
+        \node[draw,circle] (a) {a};
+        \node[draw,circle] (b) [above right=of a] {b};
+        \node[draw,circle] (f) [below right=of b] {f};
+        \node[draw,circle] (d) [above right=of f] {d};
+        \node[draw,circle] (c) [below left=of f] {c};
+        \node[draw,circle] (e) [below right=of f] {e};
+
+        \draw (a) -- (b) node[midway, above] {4};
+        \draw (a) -- (c) node[midway, left] {8};
+        \draw (b) -- (c) node[midway, left] {11};
+        \draw (b) -- (f) node[midway, above right] {9};
+        \draw[thick,blue] (f) -- (d) node[midway, below right] {2};
+        \draw (d) -- (e) node[midway, right] {6};
+        \draw (e) -- (f) node[midway, above right] {5};
+        \draw (c) -- (f) node[midway, above left] {7};
+        \draw[thick] (c) -- (e) node[midway, below] {1};
+        \draw (b) -- (d) node[midway, above] {8};
+
+        \draw[dashed] (3,2) -- (5,0);
+      \end{tikzpicture}
+    \end{figure}
+
+  \item Terzo taglio
+    \begin{figure}[H]
+      \centering
+      \begin{tikzpicture}
+        \node[draw,circle] (a) {a};
+        \node[draw,circle] (b) [above right=of a] {b};
+        \node[draw,circle] (f) [below right=of b] {f};
+        \node[draw,circle] (d) [above right=of f] {d};
+        \node[draw,circle] (c) [below left=of f] {c};
+        \node[draw,circle] (e) [below right=of f] {e};
+
+        \draw[thick,blue] (a) -- (b) node[midway, above] {4};
+        \draw (a) -- (c) node[midway, left] {8};
+        \draw (b) -- (c) node[midway, left] {11};
+        \draw (b) -- (f) node[midway, above right] {9};
+        \draw[thick] (f) -- (d) node[midway, below right] {2};
+        \draw (d) -- (e) node[midway, right] {6};
+        \draw (e) -- (f) node[midway, above right] {5};
+        \draw (c) -- (f) node[midway, above left] {7};
+        \draw[thick] (c) -- (e) node[midway, below] {1};
+        \draw (b) -- (d) node[midway, above] {8};
+
+        \draw[dashed] (0.8,2) -- (0.8,-2);
+      \end{tikzpicture}
+    \end{figure}
+
+  \item Quarto taglio
+    \begin{figure}[H]
+      \centering
+      \begin{tikzpicture}
+        \node[draw,circle] (a) {a};
+        \node[draw,circle] (b) [above right=of a] {b};
+        \node[draw,circle] (f) [below right=of b] {f};
+        \node[draw,circle] (d) [above right=of f] {d};
+        \node[draw,circle] (c) [below left=of f] {c};
+        \node[draw,circle] (e) [below right=of f] {e};
+
+        \draw[thick] (a) -- (b) node[midway, above] {4};
+        \draw (a) -- (c) node[midway, left] {8};
+        \draw (b) -- (c) node[midway, left] {11};
+        \draw (b) -- (f) node[midway, above right] {9};
+        \draw[thick] (f) -- (d) node[midway, below right] {2};
+        \draw (d) -- (e) node[midway, right] {6};
+        \draw[thick,blue] (e) -- (f) node[midway, above right] {5};
+        \draw (c) -- (f) node[midway, above left] {7};
+        \draw[thick] (c) -- (e) node[midway, below] {1};
+        \draw (b) -- (d) node[midway, above] {8};
+
+        \draw[dashed] (-1,-0.8) -- (5,-0.8);
+      \end{tikzpicture}
+    \end{figure}
+
+  \item Quinto taglio
+    \begin{figure}[H]
+      \centering
+      \begin{tikzpicture}
+        \node[draw,circle] (a) {a};
+        \node[draw,circle] (b) [above right=of a] {b};
+        \node[draw,circle] (f) [below right=of b] {f};
+        \node[draw,circle] (d) [above right=of f] {d};
+        \node[draw,circle] (c) [below left=of f] {c};
+        \node[draw,circle] (e) [below right=of f] {e};
+
+        \draw[thick] (a) -- (b) node[midway, above] {4};
+        \draw[thick,blue] (a) -- (c) node[midway, left] {8};
+        \draw (b) -- (c) node[midway, left] {11};
+        \draw (b) -- (f) node[midway, above right] {9};
+        \draw[thick] (f) -- (d) node[midway, below right] {2};
+        \draw (d) -- (e) node[midway, right] {6};
+        \draw[thick] (e) -- (f) node[midway, above right] {5};
+        \draw (c) -- (f) node[midway, above left] {7};
+        \draw[thick] (c) -- (e) node[midway, below] {1};
+        \draw (b) -- (d) node[midway, above] {8};
+
+        \draw[dashed] (0,-1.5) -- (3,2.5);
+      \end{tikzpicture}
+    \end{figure}
+  \item Alla fine la soluzione è:
+    \begin{figure}[H]
+      \centering
+      \begin{tikzpicture}
+        \node[draw,circle] (a) {a};
+        \node[draw,circle] (b) [above right=of a] {b};
+        \node[draw,circle] (f) [below right=of b] {f};
+        \node[draw,circle] (d) [above right=of f] {d};
+        \node[draw,circle] (c) [below left=of f] {c};
+        \node[draw,circle] (e) [below right=of f] {e};
+
+        \draw[thick,blue] (a) -- (b) node[midway, above] {4};
+        \draw[thick,blue] (a) -- (c) node[midway, left] {8};
+        \draw (b) -- (c) node[midway, left] {11};
+        \draw (b) -- (f) node[midway, above right] {9};
+        \draw[thick,blue] (f) -- (d) node[midway, below right] {2};
+        \draw (d) -- (e) node[midway, right] {6};
+        \draw[thick,blue] (e) -- (f) node[midway, above right] {5};
+        \draw (c) -- (f) node[midway, above left] {7};
+        \draw[thick,blue] (c) -- (e) node[midway, below] {1};
+        \draw (b) -- (d) node[midway, above] {8};
+      \end{tikzpicture}
+    \end{figure}
+\end{enumerate}
+\end{example}
+
+\vspace{1em}
+\noindent
+Un altro algoritmo per risolvere questo problema è l'algoritmo di Prim:
+\begin{lstlisting}[language=Scala]
+// G e' un grafo
+// w e' una matrice che associa ad ogni arco il suo peso
+// s e' il nodo di partenza
+prim(G,w,s)
+  Q <- G.V
+  for u in G.V
+    u.key <- +inf
+    s.key <- 0
+    s.parent <- NIL
+
+    while Q != {}
+      u <- extract_min(Q)
+      for v in G.adj(u)
+        if Q.contains(v) and w(u,v) < v.key
+          v.parent <- u
+          v.key <- w(u,v)
+\end{lstlisting}
+La complessità di questo algoritmo è:
+\begin{itemize}
+  \item \( V \) per la \texttt{make\_set}
+  \item \( E \log E \) per l'ordinamento
+  \item \( E \) per la \texttt{find\_set}
+  \item \( V \) union
+\end{itemize}
+Il risultato finale è:
+\[
+  (V+E) \alpha(\ldots) + E \log E
+\] 
+Quindi la complessità è:
+\[
+  O(E \log E)
+\]
+\begin{example}
+  L'applicazione dell'algoritmo è la seguente
+  \begin{enumerate}
+    \item Il grafo è il seguente
+      \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}
+          \node[draw,circle,thick,blue,double] (a) {a} node[above] at (a.north) {0};
+          \node[draw,circle] (b) [above right=of a] {b} node[above] at (b.north) {$\infty$};
+          \node[draw,circle] (f) [below right=of b] {f} node[above] at (f.north) {$\infty$};
+          \node[draw,circle] (d) [above right=of f] {d} node[above] at (d.north) {$\infty$};
+          \node[draw,circle] (c) [below left=of f] {c} node[below] at (c.south) {$\infty$};
+          \node[draw,circle] (e) [below right=of f] {e} node[below] at (e.south) {$\infty$};
+
+          \draw (a) -- (b) node[midway, above] {4};
+          \draw (a) -- (c) node[midway, left] {8};
+          \draw (b) -- (c) node[midway, left] {11};
+          \draw (b) -- (f) node[midway, above right] {9};
+          \draw (f) -- (d) node[midway, below right] {2};
+          \draw (d) -- (e) node[midway, right] {6};
+          \draw (e) -- (f) node[midway, above right] {5};
+          \draw (c) -- (f) node[midway, above left] {7};
+          \draw (c) -- (e) node[midway, below] {1};
+          \draw (b) -- (d) node[midway, above] {8};
+        \end{tikzpicture}
+        \caption{Esempio di grafo}
+      \end{figure}
+
+    \item Secondo passo
+      \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}
+          \node[draw,circle,thick,blue,double] (a) {a} node[above] at (a.north) {0};
+          \node[draw,circle,thick,blue] (b) [above right=of a] {b} node[above] at (b.north) {$4$};
+          \node[draw,circle] (f) [below right=of b] {f} node[above] at (f.north) {$\infty$};
+          \node[draw,circle] (d) [above right=of f] {d} node[above] at (d.north) {$\infty$};
+          \node[draw,circle] (c) [below left=of f] {c} node[below] at (c.south) {$8$};
+          \node[draw,circle] (e) [below right=of f] {e} node[below] at (e.south) {$\infty$};
+
+          \draw[<-,thick,blue] (a) -- (b) node[midway, above] {4};
+          \draw[<-] (a) -- (c) node[midway, left] {8};
+          \draw (b) -- (c) node[midway, left] {11};
+          \draw (b) -- (f) node[midway, above right] {9};
+          \draw (f) -- (d) node[midway, below right] {2};
+          \draw (d) -- (e) node[midway, right] {6};
+          \draw (e) -- (f) node[midway, above right] {5};
+          \draw (c) -- (f) node[midway, above left] {7};
+          \draw (c) -- (e) node[midway, below] {1};
+          \draw (b) -- (d) node[midway, above] {8};
+        \end{tikzpicture}
+        \caption{Esempio di grafo}
+      \end{figure}
+
+    \item Terzo passo
+      \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}
+          \node[draw,circle,thick,blue,double] (a) {a} node[above] at (a.north) {0};
+          \node[draw,circle,thick,blue] (b) [above right=of a] {b} node[above] at (b.north) {$4$};
+          \node[draw,circle] (f) [below right=of b] {f} node[above] at (f.north) {$9$};
+          \node[draw,circle,thick,blue] (d) [above right=of f] {d} node[above] at (d.north) {$8$};
+          \node[draw,circle] (c) [below left=of f] {c} node[below] at (c.south) {$8$};
+          \node[draw,circle] (e) [below right=of f] {e} node[below] at (e.south) {$\infty$};
+
+          \draw[<-,thick,blue] (a) -- (b) node[midway, above] {4};
+          \draw (a) -- (c) node[midway, left] {8};
+          \draw (b) -- (c) node[midway, left] {11};
+          \draw (b) -- (f) node[midway, above right] {9};
+          \draw (f) -- (d) node[midway, below right] {2};
+          \draw (d) -- (e) node[midway, right] {6};
+          \draw (e) -- (f) node[midway, above right] {5};
+          \draw (c) -- (f) node[midway, above left] {7};
+          \draw (c) -- (e) node[midway, below] {1};
+          \draw[<-,thick,blue] (b) -- (d) node[midway, above] {8};
+        \end{tikzpicture}
+        \caption{Esempio di grafo}
+      \end{figure}
+
+    \item Quarto passo
+      \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}
+          \node[draw,circle,thick,blue,double] (a) {a} node[above] at (a.north) {0};
+          \node[draw,circle,thick,blue] (b) [above right=of a] {b} node[above] at (b.north) {$4$};
+          \node[draw,circle,thick,blue] (f) [below right=of b] {f} node[above] at (f.north) {$2$};
+          \node[draw,circle,thick,blue] (d) [above right=of f] {d} node[above] at (d.north) {$8$};
+          \node[draw,circle] (c) [below left=of f] {c} node[below] at (c.south) {$8$};
+          \node[draw,circle] (e) [below right=of f] {e} node[below] at (e.south) {$6$};
+
+          \draw[<-,thick,blue] (a) -- (b) node[midway, above] {4};
+          \draw (a) -- (c) node[midway, left] {8};
+          \draw (b) -- (c) node[midway, left] {11};
+          \draw (b) -- (f) node[midway, above right] {9};
+          \draw[->,thick,blue] (f) -- (d) node[midway, below right] {2};
+          \draw (d) -- (e) node[midway, right] {6};
+          \draw (e) -- (f) node[midway, above right] {5};
+          \draw (c) -- (f) node[midway, above left] {7};
+          \draw (c) -- (e) node[midway, below] {1};
+          \draw[<-,thick,blue] (b) -- (d) node[midway, above] {8};
+        \end{tikzpicture}
+        \caption{Esempio di grafo}
+      \end{figure}
+
+    \item Quinto passo
+      \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}
+          \node[draw,circle,thick,blue,double] (a) {a} node[above] at (a.north) {0};
+          \node[draw,circle,thick,blue] (b) [above right=of a] {b} node[above] at (b.north) {$4$};
+          \node[draw,circle,thick,blue] (f) [below right=of b] {f} node[above] at (f.north) {$2$};
+          \node[draw,circle,thick,blue] (d) [above right=of f] {d} node[above] at (d.north) {$8$};
+          \node[draw,circle] (c) [below left=of f] {c} node[below] at (c.south) {$7$};
+          \node[draw,circle,thick,blue] (e) [below right=of f] {e} node[below] at (e.south) {$5$};
+
+          \draw[<-,thick,blue] (a) -- (b) node[midway, above] {4};
+          \draw (a) -- (c) node[midway, left] {8};
+          \draw (b) -- (c) node[midway, left] {11};
+          \draw (b) -- (f) node[midway, above right] {9};
+          \draw[->,thick,blue] (f) -- (d) node[midway, below right] {2};
+          \draw (d) -- (e) node[midway, right] {6};
+          \draw[->,thick,blue] (e) -- (f) node[midway, above right] {5};
+          \draw (c) -- (f) node[midway, above left] {7};
+          \draw (c) -- (e) node[midway, below] {1};
+          \draw[<-,thick,blue] (b) -- (d) node[midway, above] {8};
+        \end{tikzpicture}
+        \caption{Esempio di grafo}
+      \end{figure}
+
+    \item Ultimo passo
+      \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}
+          \node[draw,circle,thick,blue,double] (a) {a} node[above] at (a.north) {0};
+          \node[draw,circle,thick,blue] (b) [above right=of a] {b} node[above] at (b.north) {$4$};
+          \node[draw,circle,thick,blue] (f) [below right=of b] {f} node[above] at (f.north) {$2$};
+          \node[draw,circle,thick,blue] (d) [above right=of f] {d} node[above] at (d.north) {$8$};
+          \node[draw,circle,thick,blue] (c) [below left=of f] {c} node[below] at (c.south) {$1$};
+          \node[draw,circle,thick,blue] (e) [below right=of f] {e} node[below] at (e.south) {$5$};
+
+          \draw[<-,thick,blue] (a) -- (b) node[midway, above] {4};
+          \draw (a) -- (c) node[midway, left] {8};
+          \draw (b) -- (c) node[midway, left] {11};
+          \draw (b) -- (f) node[midway, above right] {9};
+          \draw[->,thick,blue] (f) -- (d) node[midway, below right] {2};
+          \draw (d) -- (e) node[midway, right] {6};
+          \draw[->,thick,blue] (e) -- (f) node[midway, above right] {5};
+          \draw (c) -- (f) node[midway, above left] {7};
+          \draw[<-,thick,blue] (c) -- (e) node[midway, below] {1};
+          \draw[<-,thick,blue] (b) -- (d) node[midway, above] {8};
+        \end{tikzpicture}
+        \caption{Esempio di grafo}
+      \end{figure}
+  \end{enumerate}
+  Anche con questo algoritmo abbiamo trovato un MST.
+\end{example}
+
+\vspace{1em}
+\noindent
+Esiste un algoritmo per risolvere il problema dei cammini minimi che parte dal presupposto
+che tutti gli archi non devono essere negativi:
+\begin{lstlisting}[language=Scala]
+// G e' un grafo
+// s e' il nodo di partenza
+init(G, s)
+  for v in G.V
+    v.distance <- +inf
+    v.parent <- NIL
+  s.distance <- 0
+
+// u e v sono due nodi
+// w rappresenta il tempo di percorrenza tra i 2 nodi
+// Prende l'arco u-v che costa w e controlla se
+// esiste un cammino minimo migliore di quello da s a v
+// passando per u
+relax(u, v, w)
+  if v.distance > u.distance + w(u,v)
+    v.distance <- u.distance + w(u,v)
+    v.parent <- u
+
+// G e' un grafo
+// s e' il nodo di partenza
+// w indica la distanza tra i nodi
+dijkstra(G,s,w)
+  init(G,s)
+  Q <- G.V
+  while Q != {}
+    u <- extract_min(Q)
+    for v in G.adj(u)
+      relax(u,v,w)
+\end{lstlisting}
+In questo algoritmo la relax viene effettuata una sola volta per arco perchè ogni
+nodo viene estratto dalla coda una sola volta e la lista di adiacenza viene esaminata
+soltanto una volta per nodo.
+
+\vspace{1em}
+\noindent
+La complessità di questo algoritmo è
+\begin{itemize}
+  \item \( V \) volte la init
+  \item \( V \) volte la extract min
+  \item \( E \) volte la reduce key, quindi a seconda di come viene
+    implementata la coda cambia la complessità dell'algoritmo
+    \begin{itemize}
+      \item Liste non ordinate: Complessità \( V \) per trovare il nodo minimo
+        \begin{itemize}
+          \item \( V^2 \) per la extract min, quindi la complessità diventa:
+            \[
+              V + V^2 + E = O(V^2)
+            \] 
+        \end{itemize}
+
+      \item Liste ordinate: La extract min è costante, la reduce key è lineare
+        \begin{itemize}
+          \item \( V \) volte un lavoro costante ed \( E \) volte un lavoro linere:
+            \[
+              EV
+            \] 
+        \end{itemize}
+
+      \item Heap: La extract min è logaritmica, la reduce key è costante
+        \begin{itemize}
+          \item 
+            \[
+              (V + E) \log V
+            \] 
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\vspace{1em}
+\noindent
+Un altro algoritmo per trovare i cammini minimi è quello di Bellman-Ford:
+\begin{lstlisting}[language=Scala]
+bellman_ford(G, w, s)
+  init(G,s)
+  for i <- 1 to |G.V| - 1 // --
+    for (u,v) in G.E      //  | VE
+      relax(u,v,w)        // --
+
+  for (u,v) in G.E        // E
+    if v.distance > u.distance + w(u,v)
+      return false // ciclo negativo
+  return true
+\end{lstlisting}
+Se esistono archi rilassabili la soluzione non è stata trovata, se invece non esistono
+archi rilassabili è stata trovata la soluzione. La complessità di questo algoritmo è:
+\[
+  O(VE)
+\] 
+\vspace{1em}
+\noindent
+\textbf{Lemma}: Dopo \( i \) iterazioni di Bellman-Ford, tutti i cammini minimi di
+lunghezza al più \( i \) sono stati trovati.
+
+Quindi l'algoritmo di Bellman-Ford trova sempre la soluzione se essa esiste.
+
+\vspace{1em}
+\noindent
+Consideriamo un grafo che contiene un ciclo negativo.
+\[
+  u_1 \to u_2 \to u_3 \to \ldots \to u_n \to u_1
+\] 
+Supponiamo per assurdo che
+Bellman-Ford non dia false, sappiamo che per ognuno dei seguenti archi vale la
+seguente disequazione:
+\[
+\begin{aligned}
+  u_2.\text{distance} & \le u_1.\text{distance} + w(u_1,u_2) \\
+  u_3.\text{distance} & \le u_2.\text{distance} + w(u_2,u_3) \\
+  \vdots\\
+  u_n.\text{distance} & \le u_{n-1}.\text{distance} + w(u_{n-1},u_n) \\
+  u_1.\text{distance} & \le u_{n}.\text{distance} + w(u_{n},u_1) \\
+\end{aligned}
+\] 
+Se sommiamo queste cose si ottiene:
+\[
+  \sum_{i=1}^n u_i.\text{distance} \le \sum_{i=1}^m u_i + \text{costo\_ciclico}
+\] 
+\[
+  \cancel{\sum_{i=1}^n u_i.\text{distance}} \le \cancel{\sum_{i=1}^m u_i} + \text{costo\_ciclico}
+\] 
+Quindi otteniamo una contraddizione.
+
+\vspace{1em}
+\noindent
+Per risolvere il problema dei cammini minimi sui grafi aciclici esiste l'algoritmo
+Directed Acyclic Graph Shortest Path:
+\begin{lstlisting}[language=Scala]
+dag_sp(G, s, w)
+  init(G,s) // V
+  topological_sort(G) // V + E
+  for u in G.V        // -------+ 
+    for v in G.adj(u) // -| < E | V = V + E
+      relax(u,v,w)    // -------+
+\end{lstlisting}
+Ogni arco viene rilassato soltanto una volta. La complessità di questo algoritmo è:
+\[
+  V + (V + E) + (V + E) = 3V + 2E = O(V + E)
+\] 
+
+\begin{exercise}
+  In una gara vengono consegnati dei dischi con un diametro e una morbidezza.
+  L'obiettivo è quello di formare la pila più alta, ma un piatto grande non può essere
+  messo sopra un piatto piccolo e un piatto duro non deve essere messo sopra un piatto
+  morbido.
+
+  \vspace{1em}
+  \noindent
+  Il problema si può rappresentare come un grafo in cui i nodi sono i dischi e due
+  nodi \( a \) e \( b \) sono connessi se \( a \) può stare sotto a \( b \). Gli
+  archi sono orientati e il peso è \( -1 \).
+
+  \vspace{1em}
+  \noindent
+  Non è definito però il nodo di partenza, quindi bisogna ridurre il problema ad uno
+  in cui il nodo di partenza è definito, e di conseguenza bisogna trasformare il grafo.
+  Si possono aggiungere due nodi che sono collegati a tutti gli altri nodi con archi
+  a peso 0 che funzionano rispettivamente da punto di partenza e da punto di arrivo.
+  Questi nodi sono chiamati \textbf{supernodi}.
+
+  \vspace{1em}
+  \noindent
+  Se esistessero più piatti uguali, allora essi dovrebbero essere messi tutti insieme,
+  quidi si aggiunge al peso il numero di piatti uguali messi nella pila. In questo
+  modo il cammino di costo minimo risolve il problema.
+\end{exercise}
+
+\subsubsection{Cammini minimi con tutte le sorgenti}
+Il problema dei cammini minimi con tutte le sorgenti è la risoluzione del problema
+dei cammini minimi per ogni nodo del grafo. Si avrà un vettore di parent e un vettore
+di distanze che rappresentano la soluzione per ogni sorgente:
+\[
+  \begin{aligned}
+    \pi = \begin{pmatrix} 
+      \pi_1\\
+      \pi_2\\
+      \vdots\\
+      \pi_n
+    \end{pmatrix} 
+    \quad
+    D = \begin{pmatrix} 
+      D_1\\
+      D_2\\
+      \vdots\\
+      D_n
+    \end{pmatrix}
+  \end{aligned}
+\] 
+dove \( \pi \) è la matrice dei parent e \( D \) è la matrice delle distanze.
+
+La matrice \( D \) ha 0 sulla diagonale e infinito altrove:
+\[
+  \begin{pmatrix} 
+    0 & \infty & \ldots & \infty\\
+    \infty & 0 & \ldots & \infty\\
+    \vdots & \vdots & \ddots & \vdots\\
+    \infty & \infty & \ldots & 0
+  \end{pmatrix} 
+\] 
+
+Per calcolare \( D \) si usa il seguente algoritmo:
+\begin{lstlisting}[language=Scala]
+// G e' un grafo
+// w e' la matrice dei pesi
+distance_matrix(G,w)
+  D <- init(G)
+  for l <- 1 to n-1
+    D <- extend_SP(D, w)
+\end{lstlisting}
+\begin{lstlisting}[language=Scala]
+// D e' la matrice delle distanze
+// w e' la matrice dei pesi
+extend_sp(D, w)
+  n <- rows(D)
+  for i <- 1 to n // per ogni istanza
+    for j <- 1 to n // per ogni sorgente
+      D_1[i][j] <- inf
+      for k <- 1 to n // per ogni destinazione
+        D_1[i][j] <- min(D_1[i][j], D[i][k] + w[k][j])
+\end{lstlisting}
+Per ogni arco si tenta di "rilassare" l'arco \( i \to j \) passando per \( k \):
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \node (i) {i};
+    \node (k) [right=of i] {k};
+    \node (j) [above right=of i] {j};
+
+    \draw[->] (i) -- (k) node[midway, below] {D[i][k]};
+    \draw[->] (k) -- (j) node[midway, right] {w[k][j]};
+    \draw[->] (i) -- (j) node[midway, above left] {D\_1[i][j]};
+  \end{tikzpicture}
+\end{figure}
+L'algoritmo che moltiplica due matrici è:
+\begin{lstlisting}[language=Scala]
+mult(D,w)
+  n <- rows(D)
+  for i <- 1 to n
+    for j <- 1 to n
+      D_1[i][j] <- 0
+      for k <- 1 to n
+        D_1[i][j] <- D_1[i][j] + D[i][k] * w[k][j]
+\end{lstlisting}
+si nota che la moltiplicazione è molto simile alla extend\_sp, solo che al posto
+dell'operazione di sommma si fa un minimo e al posto del prodotto si fa una somma.
+Quindi Bellman Ford è una moltiplicazione tra matrici, ma in un algebra diversa:
+\[
+  D \cdot w
+\] 
+Nello specifico si sta facendo un prodotto tante volte tenendo in considerazione che
+dopo aver trovato la soluzione il risultato non varia più:
+\[
+  I \cdot w \cdot w \cdots w = w^{n-1} = w^{n} = w^{n+l} \forall l > 0
+\] 
+Questo algoritmo ha una complessità di: \( \Theta (n^4) \), però si possono sfruttare
+tutti quegli algoritmi fatti per migliorare la complessità della moltiplicazione tra
+matrici.
+
+Per eseguire moltiplicazioni di seguito si può sfruttare il \textbf{iterative squaring}:
+\[
+  \begin{aligned}
+    w^2 & \leftarrow w \cdot w \\
+    w^4 & \leftarrow w^2 \cdot w^2 \\
+    w^8 & \leftarrow w^4 \cdot w^4 \\
+    \vdots & \\
+  \end{aligned}
+\] 
+e questo permette di calcolare potenze pari in \( log(n) \) operazioni.
+
+\vspace{1em}
+\noindent
+L'algoritmo di Floyd Warshal calcola gli elementi \( D_{ij}^k \) dove \( k \) è il numero
+di nodi intermedi che si possono usare per calcolare il cammino minimo tra \( i \) e \( j \):
+\[
+  D^0 = w
+\] 
+La soluzione sarà quindi \( D^n \) 
+\begin{lstlisting}[language=Scala]
+floyd_warshal(G,w)
+  n <- rows(G)
+  D^0 <- w
+  for k <- 1 to n
+    for i <- 1 to n
+      for j <- 1 to n
+        D^k[i][j] <- min(D^{k-1}[i][j], D^{k-1}[i][k] + D^{k-1}[k][j])
+\end{lstlisting}
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \node (i) {i};
+    \node (k) [right=of i] {k};
+    \node (j) [above right=of i] {j};
+
+    \draw[->] (i) -- (k) node[midway, below, scale=0.8] {\( [1 .. k-1] \) };
+    \draw[->] (k) -- (j) node[midway, right, scale=0.8] {\( [1 .. k-1] \) };
+    \draw[->] (i) -- (j) node[midway, above left, scale=0.8] {\( [1 .. k-1] \) };
+  \end{tikzpicture}
+\end{figure}
+
+\vspace{1em}
+\noindent
+Se i pesi degli archi fossero tutti positivi si potrebbe applicare l'algoritmo di
+Dijkstra ad ogni singola sorgente, questo algoritmo si chiama algoritmo di Johnson:
+\begin{lstlisting}[language=Scala]
+johnson(G,w)
+  for i <- 1 to n
+    D[i] = dijkstra(G, i, w)
+\end{lstlisting}
+e la complessità è:
+\[
+  V(V+E) \log(V)
+\] 
+se il grafo è connesso si ottiene:
+\[
+  VE \log(V)
+\] 
+
+Il problema è che questo algoritmo non si può usare su grafi con archi negativi. Per farlo
+si deve trasformare il grafo in modo da non avere archi negativi e mantenere il fatto che
+i cammini minimi non cambiano tra il grafo originale e quello trasformato. Se la trasformazione
+ha costo maggiore dell'algoritmo da eseguire, non ha senso farla.
+
+I cammini minimi dipendono solo dal punto di partenza e punto di arrivo, quindi Johnson
+ha definito la seguente funzione:
+\[
+  h: V \to R \quad \hat{w}(u,v) = w(u,v) + h(v) - h(u)
+\] 
+quindi:
+\[
+  \hat{w}(v_0,v_1, \ldots, v_k) = \sum_{i=0}^{k-1} \hat{w}(v_i,v_{i+1}) =
+\] 
+\[
+\begin{aligned}
+  w(v_0,v_1)& + \cancel{h(v_1)} - h(v_0)\\
+  w(v_1,v_2)& + \cancel{h(v_2)} - \cancel{h(v_1)}\\
+  \vdots\\
+  w(v_{k-1},v_k)& + \cancel{h(v_k)} - \cancel{h(v_{k-1})}\\
+\end{aligned}
+\] 
+\[
+  = \sum_{i=0}^{k-1} w(v_i,v_{i+1}) + h(v_k) - h(v_0)
+\] 
+Questa trasformazione produce nuovi pesi in cui i cammini minimi non cambiano. Bisogna ora
+trovare la funzione \( h \) che produca pesi che non sono negativi. La disequazione di
+Bellman Ford era:
+\[
+  v.distance \le u.distance + w(u,v)
+\] 
+e questo diventa:
+\[
+  w(u,v) + u.distance - v.distance \ge 0
+\] 
+
+\subsection{Grafo bipartito}
+Un grafo bipartito è un grafo in cui ogni ogni arco unisce due nodi appartenenti a
+due insiemi distinti.
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \node[draw,circle,blue] (a) {a};
+    \node[draw,circle,blue] (b) [below=of a] {b};
+    \node[draw,circle,blue] (c) [below=of b] {c};
+
+    \node[draw,circle,red] (e) [right=of a] {e};
+    \node[draw,circle,red] (f) [below=of e] {f};
+    \node[draw,circle,red] (g) [below=of f] {g};
+
+    \draw (a) -- (e);
+    \draw (e) -- (b);
+    \draw (e) -- (c);
+    \draw (c) -- (f);
+    \draw (c) -- (g);
+  \end{tikzpicture}
+  \caption{Esempio di grafo bipartito}
+\end{figure}
+Un altro esempio sarebbe un grafo numerato in cui si dividono i numeri pari e quelli dispari.
+
+\vspace{1em}
+\noindent
+Se c'è una bipartizione si possono colorare diversamente i nodi appartenenti ai due
+insiemi. Quindi un grafo è bipartito se e solo se è \textbf{bicolorabile}.
+
+Una volta scelto il colore del primo nodo, il colore di tutti gli altri è vincolato
+dalla scelta del primo nodo. Se si incontra un nodo già colorato e il colore è
+diverso da quello che si aspetta, il grafo non è bipartito.
+
+\vspace{1em}
+\noindent
+Un algoritmo per trovare se un grafo è bipartito è il seguente:
+\begin{lstlisting}[language=Scala]
+is_bipartito(u, color, G)
+  // DFS visit
+  u.discovered <- gray // scoperto, ma non esplorato
+  u.color <- color // colore della bipartizione
+
+  for v in G.adj(u)
+    if v.discovered == white // non esplorato
+      v.parent <- u
+      v.color <- !color
+      is_bipartito(v, !color, G)
+    else v.color == c
+      return false
+
+  u.color <- black // esplorato
+  return true
+\end{lstlisting}
+
+\subsection{Problema di flusso massimo}
+\begin{example}
+  Piove e dai monti viene giù molta acqua che finirà a valle. Vogliamo che quest'acqua
+  defluisca nel mare passando per una rete di canali. L'obiettivo è sapere quanta acqua
+  può passare per i canali senza che questi straripino.
+
+  Si vuole trasferire un flusso materiale da un punto sorgente a un punto di destinazione rendendo
+  massimo il flusso.
+\end{example}
+Questo tipo di problema è rappresentabile con i grafi tramite una \textbf{rete di flusso}.
+I nodi rappresentano i punti di partenza e arrivo del flusso, gli archi rappresentano i canali.
+Per ogni canale è indicato quante unità di flusso \textbf{netto} passano rispetto al totale.
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}[
+    node distance=1.5cm,
+    every edge quotes/.style = {auto, font=\footnotesize, sloped}
+    ]
+    \node[draw,circle,minimum size=0.8cm] (s) {s};
+    \node[draw,circle,minimum size=0.8cm] (a1) [above right=of s] {a};
+    \node[draw,circle,minimum size=0.8cm] (a2) [right=of a1] {b};
+    \node[draw,circle,minimum size=0.8cm] (d) [below right=of a2] {d};
+    \node[draw,circle,minimum size=0.8cm] (b1) [below right=of s] {c};
+    \node[draw,circle,minimum size=0.8cm] (b2) [right=of b1] {e};
+
+    \draw[->] (s) edge["11/16"] (a1);
+    \draw[->] (s) edge["8/13",swap] (b1);
+    \draw[->] (a1) edge[bend right,"0/10"] (b1);
+    \draw[<-] (a1) edge[bend left,"1/4"] (b1);
+    \draw[->] (a1) edge["12/12"] (a2);
+    \draw[->] (b1) edge["11/14"] (b2);
+    \draw[->] (b2) edge["7/7"] (a2);
+    \draw[->] (a2) edge["15/20"] (d);
+    \draw[->] (b2) edge["4/4",swap] (d);
+    \draw[->] (a2) edge["4/9",swap] (b1);
+  \end{tikzpicture}
+  \caption{Esempio di rete di flusso}
+\end{figure}
+
+\subsubsection{Funzione di flusso e le sue proprietà}
+La funzione di flusso è:
+\[
+  f: V \times V \to \mathbb{R}
+\] 
+e deve soddisfare:
+\begin{itemize}
+  \item Il flusso di un arco non deve superare la propria capacità:
+    \[
+      \forall (u,v) \; f(u,v) < c(u,v)
+    \]
+
+  \item Anti simmetria, cioè il flusso da \( u \) a \( v \) è uguale al
+    negativo del flusso da \( v \) a \( u \):
+    \[
+      f(u,v) = -f(v,u)
+    \] 
+
+  \item Conservazione: ciò che entra è uguale a ciò che esce, non si consuma niente
+    \[
+      \forall u \in  V - \{s,d\} \; \sum_v f(u,v) = 0
+    \] 
+    oppure
+    \[
+      |f| = \sum_v f(s,v) = \sum_u f(u,d)
+    \] 
+\end{itemize}
+\vspace{1em}
+\noindent
+\begin{define}
+  Il \textbf{taglio di un grafo} è una bipartizione (S,T) dell'insieme dei nodi del grafo 
+  \[
+    S \cup T = V
+  \] 
+  Ogni arco che va da un nodo in \( S \) a un nodo in \( T \) è detto \textbf{arco di taglio}.
+\end{define}
+
+Se assegnamo il nodo sorgente all'insieme \( s \in S \) e il nodo destinazione
+all'insieme \( d \in T \) possiamo definire la quantità di liquido che attraversa il
+taglio come:
+\[
+  \sum_{\underset{v \in T}{u \in S}} f(u,v)
+\] 
+Per ogni taglio che separa \( s \) e \( d \) il flusso che attraversa il taglio è
+sempre uguale al modulo del flusso che esce da \( s \): \( |f| \) 
+
+\textbf{Dimostrazione}: 
+\begin{itemize}
+  \item Caso base: c'è solo il nodo sorgente, quindi il flusso è la somma del flusso
+    uscente:
+    \[
+      |f| = \sum_{v} f(s,v)
+    \]
+  \item Caso induttivo: si aggiunge un nuovo nodo all'interno del taglio,
+    la variazione di flusso per un nuovo arco all'interno del taglio
+    è 0 perchè la somma del flusso che entra e che esce dal nuovo arco è 0.
+    \[
+      |f| = \sum_{v} f(s,v) + 0
+    \]
+\end{itemize}
+Il flusso massimo non può superare la capacità minima del taglio.
+
+\subsubsection{Rete residua}
+La rete residua è una rete in cui gli archi hanno una capacità residua, cioè
+quanto flusso può ancora passare. La rete residua è definita come:
+\[
+  \forall u,v \; c_f(u,v) = c(u,v) - f(u,v)
+\] 
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}[
+    node distance=1.5cm,
+    every edge quotes/.style = {auto, font=\footnotesize, sloped}
+    ]
+    \node[draw,circle,minimum size=0.8cm] (s) {s};
+    \node[draw,circle,minimum size=0.8cm] (a1) [above right=of s] {a};
+    \node[draw,circle,minimum size=0.8cm] (a2) [right=of a1] {b};
+    \node[draw,circle,minimum size=0.8cm] (d) [below right=of a2] {d};
+    \node[draw,circle,minimum size=0.8cm] (b1) [below right=of s] {c};
+    \node[draw,circle,minimum size=0.8cm] (b2) [right=of b1] {e};
+
+    \draw[->] (s) edge[bend left=10,"5"] (a1);
+    \draw[<-] (s) edge[bend right=10,"11",swap] (a1);
+
+    \draw[->] (s) edge[bend left=10,"5"] (b1);
+    \draw[<-] (s) edge[bend right=10,"8",swap] (b1);
+
+    \draw[->] (a1) edge[bend right=10,"11",swap] (b1);
+    \draw[<-] (a1) edge[bend left=10,"3"] (b1);
+
+    \draw[<-] (a1) edge["12"] (a2);
+
+    \draw[->] (b1) edge[bend left=10,"3"] (b2);
+    \draw[<-] (b1) edge[bend right=10,"11",swap] (b2);
+
+    \draw[<-] (b2) edge["7"] (a2);
+    
+    \draw[->] (a2) edge[bend left=10,"5"] (d);
+    \draw[<-] (a2) edge[bend right=10,"15",swap] (d);
+
+    \draw[<-] (b2) edge["4",swap] (d);
+
+    \draw[->] (a2) edge[bend left=10,"5",swap] (b1);
+    \draw[<-] (a2) edge[bend right=10,"4"] (b1);
+  \end{tikzpicture}
+  \caption{Esempio di rete residua}
+\end{figure}
+\noindent
+Si dice \textbf{cammino aumentante} un cammino che va da \( s \) a \( d \) in cui
+il flusso può essere aumentato, e quindi il residuo diminuito. In questo cammino
+si dice \textbf{arco critico} l'arco con capacità residua minima.
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}[
+    node distance=1.5cm,
+    every edge quotes/.style = {auto, font=\footnotesize, sloped}
+    ]
+    \node[draw,circle,minimum size=0.8cm] (s) {s};
+    \node[draw,circle,minimum size=0.8cm] (a1) [above right=of s] {a};
+    \node[draw,circle,minimum size=0.8cm] (a2) [right=of a1] {b};
+    \node[draw,circle,minimum size=0.8cm] (d) [below right=of a2] {d};
+    \node[draw,circle,minimum size=0.8cm] (b1) [below right=of s] {c};
+    \node[draw,circle,minimum size=0.8cm] (b2) [right=of b1] {e};
+
+    \draw[->] (s) edge[bend left=10,"5"] (a1);
+    \draw[<-] (s) edge[bend right=10,"11",swap] (a1);
+
+    \draw[->] (s) edge[bend left=10,"5"] (b1);
+    \draw[<-] (s) edge[bend right=10,"8",swap] (b1);
+    \draw[->,blue,thick] (s) edge[] (b1);
+
+    \draw[->] (a1) edge[bend right=10,"11",swap] (b1);
+    \draw[<-] (a1) edge[bend left=10,"3"] (b1);
+
+    \draw[<-] (a1) edge["12"] (a2);
+
+    \draw[->] (b1) edge[bend left=10,"3"] (b2);
+    \draw[<-] (b1) edge[bend right=10,"11",swap] (b2);
+
+    \draw[<-] (b2) edge["7"] (a2);
+    
+    \draw[->] (a2) edge[bend left=10,"5"] (d);
+    \draw[<-] (a2) edge[bend right=10,"15",swap] (d);
+    \draw[->,blue,thick] (a2) edge[] (d);
+
+    \draw[<-] (b2) edge["4",swap] (d);
+
+    \draw[->] (a2) edge[bend left=10,"5",swap] (b1);
+    \draw[<-] (a2) edge[bend right=10,"4"] (b1);
+    \draw[->,blue,thick] (b1) edge[] (a2);
+  \end{tikzpicture}
+  \caption{Esempio di cammino aumentante}
+\end{figure}
+\noindent
+Quando non si trovano più cammini aumentanti si dice che il flusso è massimo.
+Esiste l'algoritmo di Ford-Fulkerson che trova il flusso massimo in un grafo iterando
+al massimo \( |f^*| \), cioè il flusso ottimo. La complessità di questo algoritmo
+è \( O(|f^*| \cdot |V + E|) \) e si basa sull'idea di trovare un cammino
+aumentante e aumentare di una unità il flusso lungo quel cammino fino a quando non
+si trovano più cammini aumentanti.
+
+\vspace{1em}
+\noindent
+Il teorema di Max-Flow Min-Cut afferma che il flusso massimo è uguale alla capacità
+del taglio minimo.
+
+\vspace{1em}
+\noindent
+Considerando \( \delta(u) \) come distanza di un nodo \( u \) dal nodo sorgente \( s \)
+definiamo \( \delta_0 \), \( \delta_1 \) \( \ldots \delta_n \) come la distanza
+dalla sorgente \( s \) a un nodo \( u \) all'iterazione \( i \) dell'algoritmo di
+Ford-Fulkerson. È stato dimostrato che la funzione \( \delta \) è monotona non decrescente:
+\[
+  \delta_0(u) \le \delta_1(u) \le \ldots \le \delta_n(u)
+\] 
+Consideriamo due nodi \( u \) e \( v \) collegati da un arco critico che fa parte di un
+cammino aumentante. La distanza di \( u \) dalla sorgente è \( \delta(u) \) e la 
+distanza di \( v \) è \( \delta(u) + 1 \). Se si aumenta l'arco critico della sua
+capacità residua, allora esso diventa saturo e quindi nella rete residua quell'arco
+viene rimosso. L'unico modo per far tornare l'arco \( (u,v) \) è necessario aumentare
+il flusso lungo \( (v,u) \). Per aumentere \( (v,u) \) però è necessario che ci
+sia un cammino aumentante che contiene l'arco critico \( (v,u) \) e il nodo v
+avrà distanza \( \delta'(v) \) e sapendo che è monotona non decrescente vale:
+\[
+  \delta'(v) \ge  \delta(u) + 1
+\] 
+e quindi la distanza di u è:
+\[
+  \delta'(v) + 1 \ge \delta(u) + 2
+\] 
+Quindi ogni volta che un arco \( (u,v) \) diventa critico, la distanza di \( u \)
+aumenta di 2 dalla sorgente.
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture} [
+      node distance=2.5cm,
+      every edge quotes/.style = {auto, font=\footnotesize, sloped}
+    ]
+    \node[draw,circle,minimum size=0.8cm] (u) {u};
+    \node[draw,circle,minimum size=0.8cm] (v) [right=of u] {v};
+    \node[above] at (u.north) {\( \delta(u) \)};
+    \node[above] at (v.north) {\( \delta(u) + 1 \)};
+    \node[below] at (u.south) {\( \delta'(v) \ge \delta(u) + 1 \)};
+    \node[below] at (v.south) {\( \delta'(v) + 1 \ge \delta(u) + 2 \)};
+
+    \draw[->] (u) edge[bend left=20] (v);
+    \draw[<-,dashed] (u) edge[bend right=20] (v);
+  \end{tikzpicture}
+\end{figure}
+\noindent
+La distanza di \( u \) può aumentare al massimo di \( \frac{v}{2} \) volte, perchè
+altrimenti la sua distanza sarebbe superiore a \( v \) e quindi non esisterebbe più un
+cammino aumentante. Quindi il massimo numero di volte che si può trovare un cammino
+aumentante è \( E \cdot \frac{v}{2} \). Quindi un altro limite superiore al numero
+di operazioni dell'algoritmo di Ford-Fulkerson è:
+\[
+  VE(V+E)
+\] 
+
+\begin{exercise}
+  Si ha una rete e due punti \( A \) e \( B \). Si vuole trovare il massimo \textbf{numero}
+  di cammini disgiunti (cioè che non abbiano archi in comune) che si possono creare
+  da \( A \) a \( B \). Una volta trovato il numero trovare i cammini.
+\end{exercise}
+
+\section{Programmazione Lineare}
+È lo studio di algoritmi che permettono di risolvere problemi descritti da equazioni
+lineari.
+\begin{example}
+  In una fabbrica di cioccolato si producono due tipi di cioccolato:
+  \begin{itemize}
+    \item Cioccolatini normali: \( 1 \) euro a scatola
+    \item Cioccolatini deliziosi: \( 6 \) euro a scatola
+  \end{itemize}
+  L'azienda ha i seguenti vincoli:
+  \begin{itemize}
+    \item Non può produrre più di \( 200 \) scatole di cioccolatini normali al giorno
+    \item Non può produrre più di \( 300 \) scatole di cioccolatini deliziosi al giorno
+    \item Non può produrre più di \( 400 \) scatole di cioccolatini al giorno
+  \end{itemize}
+  La soluzione è quella di prendere il massimo numero di scatole di cioccolatini deliziosi
+  e il resto di cioccolatini normali.
+
+  \vspace{1em}
+  \noindent
+  \textbf{Definiamo meglio il problema}:
+  Chiamiamo \( x_1 \) i coccolatini normali e \( x_2 \) i cioccolatini deliziosi. Si vuole
+  trovare il valore massimo di
+  \[
+    max \;\; x_1 + 6 x_2
+  \]
+  (questa funzione è chiamata \textbf{funzione obiettivo})
+  I vincoli sono un sistema di disequazioni (\textbf{vincoli lineari}):
+  \[
+    \begin{cases}
+      x_1 & \le 200\\
+      x_2 & \le 300\\
+      x_1 + x_2 &\le 400
+    \end{cases}
+  \] 
+  Il problema può essere rappresentato più generalmente come una \textbf{forma canonica}:
+  \[
+    \begin{cases}
+      max \;\; \bar{c} \bar{x}\\
+      A \bar{x} \le \bar{b}
+    \end{cases}
+  \] 
+  che rappresenta:
+  \[
+    \begin{cases}
+      max \;\; \begin{pmatrix} 1 & 6 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} \\
+      \begin{pmatrix} 
+        1 & 0 \\
+        0 & 1 \\
+        1 & 1 \\
+      \end{pmatrix} 
+      \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} 
+      \le 
+      \begin{pmatrix} 200 \\ 300 \\ 400 \end{pmatrix} 
+    \end{cases}
+  \] 
+  Fa comodo avere variabili non negative, quindi si può considerare la variabile \( x \)
+  come somma di variabili non negative:
+  \[
+    x = x^+ - x^-
+  \] 
+  e da questo si ottiene:
+  \[
+    x^+ > 0 \quad x^- > 0
+  \] 
+  
+  \vspace{1em}
+  \noindent
+  Rappresentiamo questo problema in un piano cartesiano:
+  \begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+      \draw[->] (0,0) -- (5,0) node[below] {x1};
+      \draw[->] (0,0) -- (0,5) node[left] {x2};
+
+      \draw[thick,blue] (0,4) -- (4,0);
+      \draw[thick,green!50!black] (2,3) -- (2,0);
+      \draw[thick,purple] (2,3) -- (0,3);
+
+      \node at (2,-0.3) {200};
+      \node at (-0.3,3) {300};
+      \node at (-0.3,4) {400};
+      \node at (4,-0.3) {400};
+
+      \fill[green,opacity=0.2] (0,0) -- (0,3) -- (1,3) -- (2,2) -- (2,0) -- cycle;
+    \end{tikzpicture}
+    \caption{Rappresentazione dei vincoli}
+  \end{figure}
+  \noindent
+  Si vuole prendere la retta che ha il massimo valore di \( x_1 + 6x_2 \):
+  \begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+      \draw[->] (0,0) -- (5,0) node[below] {x1};
+      \draw[->] (0,0) -- (0,5) node[left] {x2};
+
+      \node at (2,-0.3) {200};
+      \node at (-0.3,3) {300};
+      \node at (-0.3,4) {400};
+      \node at (4,-0.3) {400};
+
+      \draw[green!50!black] (0,0) -- (0,3) -- (1,3) -- (2,2) -- (2,0) -- cycle;
+      \fill[green,opacity=0.2] (0,0) -- (0,3) -- (1,3) -- (2,2) -- (2,0) -- cycle;
+
+      \draw[thick,red] (0,3.15) -- (5,2.5) node[above] {$x_1 + 6x_2$};
+
+      \fill[red] (1,3) circle (2pt);
+    \end{tikzpicture}
+    \caption{Retta più alta}
+  \end{figure}
+\end{example}
+\begin{theorem}
+  Qualunque problema di programmazione lineare può essere ricondotto ad una forma canonica.
+\end{theorem}
+
+\begin{exercise}
+  Si hanno due miccie che impiegano un'ora a consumarsi, ma la velocità di combustione non è
+  costante e si ha un accendino per accenderle. L'obiettivo è quello di misurare 45 minuti.
+\end{exercise}
+
+\subsection{Algoritmo del simplesso}
+L'idea per un algoritmo è quella di percorrere gli spigoli del vincolo e trovare il
+punto in cui la funzione obiettivo è massima. Finchè esiste uno spigolo sul vincolo
+che produce un valore maggiore della funzione obiettivo, si può continuare a
+cercare. Se non esiste più uno spigolo che produce un valore maggiore della funzione
+obiettivo, si è trovato il massimo.
+
+Questo funziona perchè l'insieme dei vincoli è
+\textbf{convesso}, cioè se si prendono due punti all'interno del vincolo, la retta
+che li unisce è anch'essa interamente all'interno del vincolo.
+
+La complessità dell'algoritmo del simplesso è esponenziale.
+
+\begin{example}
+  Estendiamo l'esempio precedente. 
+  In una fabbrica di cioccolato si producono tre tipi di cioccolato:
+  \begin{itemize}
+    \item Cioccolatini normali: \( 1 \) euro a scatola
+    \item Cioccolatini deliziosi: \( 6 \) euro a scatola
+    \item Cioccolatini deluxe: \( 13 \) euro a scatola
+  \end{itemize}
+  L'azienda ha i seguenti vincoli:
+  \begin{itemize}
+    \item Non può produrre più di \( 200 \) scatole di cioccolatini normali al giorno
+    \item Non può produrre più di \( 300 \) scatole di cioccolatini deliziosi al giorno
+    \item Non può produrre più di \( 400 \) scatole di cioccolatini al giorno
+    \item I cioccolatini deluxe richiedono il triplo del materiale dei deliziosi
+  \end{itemize}
+  Il problema è rappresentato da:
+  \[
+    \begin{cases}
+      max \;\; x_1 + 6 x_2 + 13 x_3\\
+      x_1 & \le 200\\
+      x_2 & \le 300\\
+      x_1 + x_2 + 3 x_3 & \le 400\\
+      x_2 + 3x_3 & \le 600
+    \end{cases}
+  \] 
+  Questa soluzione non è immediata come prima.
+
+  Si può fare una combinazione lineare dei vincoli per ottenere un \textbf{limite
+  superiore} al valore della funzione obiettivo. Se il minimo limite superiore coincide
+  con il massimo limite inferiore (la soluzione al problema), allora la soluzione è ottima.
+
+  Una soluzione è \( (0, 300, 100) = 3100 \), quindi un limite superiore è:
+  \[
+    x_1 + 6x_2 + 13x_3 \le 3100
+  \] 
+
+  \vspace{1em}
+  \noindent
+  Si vuole trovare un peso \( y_i \) tale per cui la combinazione lineare dei vincoli
+  con i pesi \( y_i \) sia un limite superiore alla funzione obiettivo:
+  \[
+    \begin{cases}
+     y_1 \quad (x_1)               & \le 200\\
+     y_2 \quad (x_2)               & \le 300\\
+     y_3 \quad (x_1 + x_2 + 3 x_3) & \le 400\\
+     y_4 \quad (x_2 + 3x_3)        & \le 600
+    \end{cases}
+  \] 
+  Rappresentiamo il problema in forma matriciale:
+  \[
+  A = \begin{pmatrix} 
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    1 & 1 & 1 \\
+    0 & 1 & 3
+  \end{pmatrix} 
+  \quad
+  b = \begin{pmatrix} 
+    200 \\ 300 \\ 400 \\ 600
+  \end{pmatrix} 
+  \quad
+  c = \begin{pmatrix} 
+    1 & 6 & 13
+  \end{pmatrix}
+  \] 
+  \[
+    \begin{cases}
+      A \bar{x} \le b\\
+      max \;\; c \bar{x}
+    \end{cases}
+  \] 
+  La disequazione risultante è:
+  \[
+    (y_1 + y_3) x_1 + (y_2 + y_3 + y_4) x_2 + (y_3 + 3y_4) x_3
+    \le 200 y_1 + 300 y_2 + 400 y_3 + 600 y_4
+  \] 
+  se ogni coefficiente \( y_i \) è maggiore o uguale dei coefficienti della funzione
+  obiettivo, allora la disequazione da un limite superiore alla funzione obiettivo.
+
+  Quindi se valgono i seguenti vincoli:
+  \[
+    \begin{cases}
+      y_1 + y_3 & \ge 1\\
+      y_2 + y_3 + y_4 & \ge 6\\
+      y_3 + 3y_4 & \ge 13
+    \end{cases}
+  \] 
+  allora la seguente funzione è un limite superiore alla funzione obiettivo:
+  \[
+    200 y_1 + 300 y_2 + 400 y_3 + 600 y_4
+  \] 
+  Si vuole trovare quindi il minimo limite superiore alla funzione obiettivo, cioè:
+  \[
+    \begin{cases}
+      min \;\; 200 y_1 + 300 y_2 + 400 y_3 + 600 y_4 \\
+      y_1 + y_3 & \ge 1\\
+      y_2 + y_3 + y_4 & \ge 6\\
+      y_3 + 3y_4 & \ge 13
+    \end{cases}
+  \] 
+  La matrice che rappresenta i vincoli dei pesi è:
+  \[
+    \begin{pmatrix} 
+      1 & 0 & 1 & 0 \\
+      0 & 1 & 1 & 1 \\
+      0 & 0 & 1 & 3
+    \end{pmatrix} = A^T
+  \] 
+  Quindi si ha la seguente rappresentazione del problema in forma duale:
+  \[
+    \begin{cases}
+      A^T y \ge c^T\\
+      min \;\; b^T y
+    \end{cases}
+  \] 
+  Si ha quindi la seguente distinzione:
+  \begin{itemize}
+    \item \textbf{Problema primale}: si vuole massimizzare la funzione obiettivo
+      soggetta a vincoli lineari:
+      \[
+        \begin{cases}
+          max \;\; c \bar{x}\\
+          A \bar{x} \le b
+        \end{cases}
+      \] 
+    \item \textbf{Problema duale}: si vuole minimizzare la funzione obiettivo
+      soggetta a vincoli lineari:
+      \[
+        \begin{cases}
+          min \;\; b^T y\\
+          A^T y \ge c^T
+        \end{cases}
+      \]
+  \end{itemize}
+  Ad ogni problema primale corrisponde un problema duale, e i due problemi
+  hanno la stessa soluzione ottima.
+\end{example}
+
+\begin{example}
+  Una fabbrica di tappeti all'inizio dell'anno ha delle richieste mensili per l'anno
+  successivo:
+  \[
+   d_1, d_2, \ldots, d_{12}
+  \] 
+  Si hanno poi le seguenti informazioni:
+  \begin{itemize}
+    \item Ci sono 30 dipendenti iniziali
+    \item Ogni dipendente produce 20 tappeti al mese
+    \item Il salario mensile di un dipendente è di 2000 euro
+    \item All'inizio dell'anno non si ha nessun tappeto in magazzino
+    \item Lo straordinario costa l'80\% in più del salario normale
+    \item Al massimo si può fare il 30\% di straordinario
+    \item Il costo di assunzione è di 320 euro
+    \item Il costo di licenziamento è di 400 euro
+    \item Il costo di stoccaggio di un tappeto in magazzino è di 8 euro al mese
+  \end{itemize}
+  L'obiettivo è capire quanti dipendenti avere al mese, quanti straordinari fare, quanti
+  tappeti produrre. Si vuole quindi minimizzare il costo totale.
+  
+  Creiamo le variabili:
+  \begin{itemize}
+    \item \( d_i \): Tappeti venduti nel mese \( i \)
+    \item \( w_i \): Lavoratori a fine mese \( i \)
+    \item \( x_i \): Tappeti prodotti nel mese \( i \)
+    \item \( o_i \): Tappeti prodotti in straordinario nel mese \( i \)
+    \item \( h_i \): Numero di dipendenti assunti alla fine del mese \( i \)
+    \item \( f_i \): Numero di dipendenti licenziati alla fine del mese \( i \)
+    \item \( s_i \): Tappeti in magazzino nel mese \( i \)
+  \end{itemize}
+  Osservazioni:
+  \[
+  \begin{aligned}
+    s_0 &= 0 \quad w_0 = 30 \\
+    x_i &= 20 w_i + o_i \\
+    o_i &\le (0.3*20) w_i \le 6 w_i \\
+    w_i &= w_{i-1} + h_i - f_i \\
+    s_i &= s_{i-1} + 20 w_i + o_i - d_i \\
+  \end{aligned}
+  \] 
+  (tutte le variabili sono non negative).
+  
+  \vspace{1em}
+  \noindent
+  Si vuole minimizzare il costo totale:
+  \[
+    \sum 2000 w_i + \sum 320 h_i + \sum 400 f_i + \sum 8 s_i +
+    \sum \underbrace{\left(\frac{2000}{20} * 1.8\right)}_{=180} o_i
+  \] 
+  alcune variabili sembrano superflue, come \( h_i \) e \( f_i \), ma queste servono
+  per mantenere la rappresentazione in forma lineare.
+  
+\end{example}
+
+\end{document}

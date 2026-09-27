@@ -1,0 +1,165 @@
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[italian]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{booktabs,xltabular}
+\usepackage{amsfonts}
+\usepackage{subcaption}
+\usepackage{amsthm}
+\usepackage{cancel}
+\usepackage{mdframed}
+\usepackage{makecell}
+\usepackage{float}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{listings}
+\usepackage{gensymb}
+\usepackage{graphicx}
+\usepackage{ebproof}
+\usepackage{bodeplot}
+\usepackage{physics}
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows, automata, petri, decorations.markings, decorations.pathreplacing, positioning, calc, quotes}
+\usepackage{circuitikz}
+\usepackage[label=corner]{karnaugh-map}
+\graphicspath{{./figures/}}
+
+% Prevent overfull hbox warnings
+\emergencystretch=1.5em
+
+% Set default font to sans-serif
+\renewcommand{\familydefault}{\sfdefault} 
+\usepackage{eulervm}
+
+\usepackage{forest}
+
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+% \usepackage{ntheorem}
+
+\usepackage{import}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=false,
+}
+
+% Code blocks
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.95}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\usepackage{color}
+\usepackage{import}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
+
+% Example frame
+\theoremstyle{definition}
+\newmdtheoremenv[%
+	linecolor=gray,leftmargin=0,%
+	rightmargin=0,
+	innertopmargin=8pt,%
+	innerbottommargin=8pt,
+	ntheorem]{example}{Esempio}[section]
+
+% Important definition frame
+\theoremstyle{definition}
+\newmdtheoremenv[%
+	linecolor=gray,leftmargin=0,%
+	rightmargin=0,
+	backgroundcolor=gray!40,%
+	innertopmargin=8pt,%
+	innerbottommargin=8pt,
+	ntheorem]{definition}{Definizione}[section]
+
+% Exercise frame
+\theoremstyle{definition}
+\newmdtheoremenv[%
+	linecolor=gray,leftmargin=0,%
+	rightmargin=0,
+	innertopmargin=8pt,%
+	innerbottommargin=8pt,
+	ntheorem]{exercise}{Esercizio}[section]
+
+% Theorem frame
+\theoremstyle{definition}
+\newmdtheoremenv[%
+  linecolor=gray,leftmargin=0,%
+  rightmargin=0,
+  innertopmargin=8pt,%
+  innerbottommargin=8pt,
+  ntheorem]{theorem}{Teorema}[section]
+
+\theoremstyle{definition}
+\newmdtheoremenv[%
+  linecolor=white,leftmargin=0,%
+  rightmargin=0,
+  innertopmargin=8pt,%
+  innerbottommargin=8pt,
+  ntheorem]{define}{Definizione utile}[section]
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+
+% FSM tikz
+\tikzset{
+    place/.style={
+        circle,
+        thick,
+        draw=black,
+        minimum size=6mm,
+    },
+        state/.style={
+        circle,
+        thick,
+        draw=black,
+        fill=white,
+        minimum size=6mm,
+    },
+}
+
+\pdfsuppresswarningpagegroup=1
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18,width=10cm}
+
+% Save plots as pdf and reuse them without compiling every time
+\usetikzlibrary{external}
+\tikzexternalize[prefix=figures/tikz/, optimize=false]
