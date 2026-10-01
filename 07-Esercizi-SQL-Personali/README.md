@@ -45,7 +45,7 @@ Al primo avvio crea il container e carica schema e dati, poi esegue `query.sql` 
 
 Connessione da client esterni (DBeaver, VS Code...): `postgresql://scuola:scuola@localhost:5433/scuola` e `postgresql://turismo:turismo@localhost:5434/turismo`, `postgresql://pokemon:pokemon@localhost:5435/pokemon`.
 
-Nota su `pokemon/`: `query.sql` contiene gli esercizi a livelli (tutti commentati con `--`), `es_corrected.sql` le soluzioni annotate (`./run.sh es_corrected.sql`). I CSV vengono dal [repo veekun/pokedex](https://github.com/veekun/pokedex).
+Nota su `pokemon/`: `query.sql` contiene gli esercizi a livelli (tutti commentati con `--`), `query-soluzioni.sql` le soluzioni annotate (`./run.sh query-soluzioni.sql`). I CSV vengono dal [repo veekun/pokedex](https://github.com/veekun/pokedex).
 
 ## 3. Trucco: test delle query in tempo reale
 
