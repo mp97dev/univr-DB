@@ -14,6 +14,7 @@ Moduli: **Teoria** · **Tecnologie** (Dr. Sara Migliorini) · **Laboratorio** (D
 04-Esami/              temi d'esame degli anni precedenti, divisi per prova
 05-Appunti-Riassunto/  appunti riassuntivi in PDF + sorgente LaTeX + dataset SQL d'esempio
 06-Simulazioni/        6 temi d'esame inediti (3 per prova) con soluzioni ragionate
+07-Esercizi-SQL-Personali/  2 mini-DB (Docker + PostgreSQL) per esercitarsi con query via CLI
 _Fuori-corso/          file trovati nella cartella ma non pertinenti a Basi di Dati
 ```
 
@@ -222,6 +223,23 @@ Sei temi d'esame **inediti** costruiti sul formato dei temi reali, con soluzioni
 | `Teoria-Simulazione-1/2/3.md` | Tre prove di teoria complete (comprensorio sciistico · rete di ricarica elettrica · festival musicale) |
 | `Tecnologie-Lab-Simulazione-1/2/3.md` | Tre prove di tecnologie e laboratorio complete (e-commerce · biblioteca · palestra) |
 | `Soluzioni/` | Una soluzione commentata per ciascuna delle sei tracce, con motivazioni ed errori tipici |
+
+---
+
+## 07-Esercizi-SQL-Personali
+
+Due mini-database indipendenti, ciascuno con schema + dati di esempio + script per lanciarli in un
+container PostgreSQL via Docker, pensati per esercitarsi a scrivere query SQL (in particolare query
+annidate con più filtri/sottoquery, come richiesto agli esami).
+
+| Cartella | Schema | Contenuto |
+|---|---|---|
+| `scuola/` | `insegnante`, `classe`, `studente`, `esame` | `query.sql` con una query corretta + 23 esercizi (solo enunciati, difficoltà crescente: SELECT/WHERE → JOIN → GROUP BY/HAVING → subquery scalari → EXISTS/NOT EXISTS → ALL/ANY → subquery annidate per gruppo → insiemistica/divisione relazionale) |
+| `turismo/` | `turista`, `attrazione`, `prenotazione` | `query.sql` con due query risolte e commentate (conteggio turisti con più attrazioni distinte nel 2026 vs 2025; attrazioni con prenotazioni 2025 superiori a ogni anno precedente) |
+
+Ogni cartella è autonoma: `./run.sh` avvia un container Postgres dedicato (porte diverse: 5433 per
+`scuola`, 5434 per `turismo`), carica schema e dati da `init/`, poi esegue `query.sql`.
+`./run.sh reset` ricrea il database da zero, `./run.sh psql` apre una shell interattiva.
 
 ---
 
