@@ -1,12 +1,13 @@
 # Esercizi SQL personali
 
-Due mini-database PostgreSQL (`scuola`, `turismo`) in container Docker per esercitarsi a scrivere query. Funziona su Ubuntu, Linux in generale e WSL2.
+Tre mini-database PostgreSQL (`scuola`, `turismo`, `pokemon`) in container Docker per esercitarsi a scrivere query. Funziona su Ubuntu, Linux in generale e WSL2.
 
 ```
 install.sh        installa Docker e prepara l'ambiente (una volta sola)
 common.sh         logica condivisa dei run.sh
 scuola/           porta 5433 · tabelle: insegnante, classe, studente, esame
 turismo/          porta 5434 · tabelle: turista, attrazione, prenotazione
+pokemon/          porta 5435 · Pokédex reale (CSV in init/csv/), vista pokemon_with_type
   ├─ init/        schema + dati, caricati alla creazione del container
   ├─ query.sql    le tue query
   └─ run.sh       avvia il db ed esegue query.sql
@@ -28,7 +29,7 @@ Se lo script ti ha aggiunto al gruppo, apri un nuovo terminale (o `newgrp docker
 Entra nella cartella del database e lancia:
 
 ```bash
-cd scuola          # oppure turismo
+cd scuola          # oppure turismo, pokemon
 ./run.sh
 ```
 
@@ -42,7 +43,9 @@ Al primo avvio crea il container e carica schema e dati, poi esegue `query.sql` 
 | `./run.sh reset` | ricrea il database da zero (utile dopo aver modificato `init/`) |
 | `./run.sh stop` | ferma e rimuove il container |
 
-Connessione da client esterni (DBeaver, VS Code...): `postgresql://scuola:scuola@localhost:5433/scuola` e `postgresql://turismo:turismo@localhost:5434/turismo`.
+Connessione da client esterni (DBeaver, VS Code...): `postgresql://scuola:scuola@localhost:5433/scuola` e `postgresql://turismo:turismo@localhost:5434/turismo`, `postgresql://pokemon:pokemon@localhost:5435/pokemon`.
+
+Nota su `pokemon/`: `query.sql` contiene gli esercizi a livelli (tutti commentati con `--`), `es_corrected.sql` le soluzioni annotate (`./run.sh es_corrected.sql`). I CSV vengono dal [repo veekun/pokedex](https://github.com/veekun/pokedex).
 
 ## 3. Trucco: test delle query in tempo reale
 

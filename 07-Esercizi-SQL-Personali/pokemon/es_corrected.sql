@@ -1,7 +1,7 @@
 -- es_corrected.sql
 --
--- Corrected + annotated version of es.sql. Every query below was actually
--- run against `pokedata` with `psql -d pokedata -f es_corrected.sql` while
+-- Corrected + annotated version of query.sql. Every query below was actually
+-- run against `pokemon` with `./run.sh es_corrected.sql` while
 -- writing this, so the comments describe real, verified behavior (errors,
 -- silent wrong results, etc.), not just theory.
 --

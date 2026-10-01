@@ -282,7 +282,7 @@ Ripercorri le 8 lezioni; per ciascuna il testo dell'esercitazione e (dove c'è) 
 Rifai in particolare le lezioni **02, 03, 04** (query SQL), **05** (indici e prestazioni, `EXPLAIN`), **06** (concorrenza in SQL: anomalie + livelli di isolamento → domanda g), **07** (Python + `psycopg2`: query parametriche → domanda h) e **08** (MongoDB).
 
 > 📌 Domanda h): prepara uno scheletro da riscrivere a memoria — connessione, `input()`, `cur.execute("… WHERE stelle >= %s AND regione = %s", (x, y))` con **parametri** (mai concatenare stringhe), ciclo sui risultati, messaggio se la lista è vuota, chiusura della connessione.
-Per esercitarti su dati reali usa `05-Appunti-Riassunto/pokedata-esempio-SQL/` (`tables.sql` per creare lo schema, poi i CSV).
+Per esercitarti su dati reali usa `07-Esercizi-SQL-Personali/pokemon/` (database Pokédex pronto in Docker: `./run.sh`).
 
 ---
 
